@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Aus_EnemyExplosionSound.mp3-5f6431d8bc94131c0b6fd79845807123.mp3str"
+
+[deps]
+
+source_file="res://Audio/Aus_EnemyExplosionSound.mp3"
+dest_files=[ "res://.import/Aus_EnemyExplosionSound.mp3-5f6431d8bc94131c0b6fd79845807123.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

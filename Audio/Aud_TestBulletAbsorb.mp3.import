@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Aud_TestBulletAbsorb.mp3-ca91366e1305f374e2d1414fceb4bd4c.mp3str"
+
+[deps]
+
+source_file="res://Audio/Aud_TestBulletAbsorb.mp3"
+dest_files=[ "res://.import/Aud_TestBulletAbsorb.mp3-ca91366e1305f374e2d1414fceb4bd4c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

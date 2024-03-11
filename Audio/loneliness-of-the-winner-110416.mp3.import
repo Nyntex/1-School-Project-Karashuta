@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/loneliness-of-the-winner-110416.mp3-2ce78eb89ee82122f31cbe4303b553a0.mp3str"
+
+[deps]
+
+source_file="res://Audio/loneliness-of-the-winner-110416.mp3"
+dest_files=[ "res://.import/loneliness-of-the-winner-110416.mp3-2ce78eb89ee82122f31cbe4303b553a0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

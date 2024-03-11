@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BossDoor.mp3-ec1ece9a0ce41de986914958f117d1a1.mp3str"
+
+[deps]
+
+source_file="res://Audio/BossDoor.mp3"
+dest_files=[ "res://.import/BossDoor.mp3-ec1ece9a0ce41de986914958f117d1a1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

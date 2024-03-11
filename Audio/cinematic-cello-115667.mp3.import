@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cinematic-cello-115667.mp3-e402504a76bcdfe416193605c080fcc6.mp3str"
+
+[deps]
+
+source_file="res://Audio/cinematic-cello-115667.mp3"
+dest_files=[ "res://.import/cinematic-cello-115667.mp3-e402504a76bcdfe416193605c080fcc6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
