@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/VFX/HP_UP.tres" type="Material" id=1]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/HPFloor.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/HP_Up.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/VFX/VFX_NonDeletingParticles.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/VFX/HP_UP.gd" type="Script" id=5]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.159794, 0.43299, 0.819588, 1 )
+colors = PoolColorArray( 0.290196, 1, 0, 0, 0.290196, 1, 0, 0.435294, 0.290196, 1, 0, 0.625961, 0.290196, 1, 0, 0.627451, 0.290196, 1, 0, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel_random = 1.0
+angle_random = 1.0
+scale = 0.25
+color = Color( 1, 2, 1, 1 )
+color_ramp = SubResource( 2 )
+
+[node name="HP_UP VFX" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="PlusParticles" type="Particles2D" parent="."]
+position = Vector2( -1, 11 )
+rotation = 1.5708
+scale = Vector2( 1, 0.892517 )
+emitting = false
+amount = 15
+one_shot = true
+visibility_rect = Rect2( -500, -500, 1000, 1000 )
+process_material = ExtResource( 1 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="GreenBase" type="Particles2D" parent="."]
+position = Vector2( 0, 12 )
+scale = Vector2( 1, 0.892517 )
+emitting = false
+amount = 1
+one_shot = true
+visibility_rect = Rect2( -500, -500, 1000, 1000 )
+process_material = SubResource( 3 )
+texture = ExtResource( 2 )
+script = ExtResource( 4 )

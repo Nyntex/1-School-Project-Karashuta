@@ -1,0 +1,134 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Movements/Sc_MovingEnemy_MovementEngage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/SpriteHolder and WallChecker/Sc_MovingEnemy_ColorSpriteHoider.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Weapons/Weapons/Enemy Weapons/Sc_Weapon_BasicEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Movements/Sc_MovingEnemy_MovementSearching.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Movements/Sc_MovingEnemy_MovementIdle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Scripts/AdvancedEnemy.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Characters/Particles/DeathParticles.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Characters/Enemy/EnemyHealth.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/VFX/FrozenFeedBack.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/SpriteManager/MovementAnimation.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Characters/DeathSound.tscn" type="PackedScene" id=13]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.0312
+
+[sub_resource type="Animation" id=2]
+resource_name = "DamageAnimation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.34902, 0.34902, 1 ), Color( 1, 0.34902, 0.34902, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="MovingEnemy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 1.0
+script = ExtResource( 7 )
+spriteHolder = NodePath("ColorSpriteHolder")
+deathParticles = ExtResource( 8 )
+weaponScene = ExtResource( 3 )
+maxHealth = 25.0
+engageRange = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="WalkingDirection" type="Position2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="WalkingDirection"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 1, 0.05 )
+texture = ExtResource( 6 )
+
+[node name="RotationNode" type="Position2D" parent="."]
+visible = false
+
+[node name="RayCaster" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 0 )
+collision_mask = 5
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+neighbor_dist = 5000.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="IdleMovement" parent="." instance=ExtResource( 5 )]
+visible = false
+maxDistanceFromOrigin = 200.0
+
+[node name="SearchingMovement" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="EngagingMovement" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="EnemyHealth" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 10 )
+
+[node name="Healthbar" type="TextureProgress" parent="EnemyHealth"]
+margin_left = -9.33333
+margin_top = -23.3333
+margin_right = 9.66667
+margin_bottom = -19.3333
+value = 50.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 9 )
+tint_under = Color( 1, 1, 1, 0.392157 )
+tint_progress = Color( 1, 0, 0, 0.392157 )
+nine_patch_stretch = true
+
+[node name="Timer" type="Timer" parent="EnemyHealth"]
+wait_time = 2.0
+
+[node name="MovementAnimation" parent="." instance=ExtResource( 12 )]
+scale = Vector2( 0.15, 0.15 )
+
+[node name="FrozenFeedback" parent="." instance=ExtResource( 11 )]
+
+[node name="ColorSpriteHolder" parent="." instance=ExtResource( 2 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DamageAnimation = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+next/DamageAnimation = "RESET"
+
+[node name="DeathSound" parent="." instance=ExtResource( 13 )]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="EnemyHealth/Timer" to="EnemyHealth" method="_on_Timer_timeout"]

@@ -1,0 +1,18 @@
+extends Particles2D
+
+
+<<<<<<< working copy
+func FadeIn():
+	$AnimationPlayer.play("FadeIn")
+=======
+func SetParticleEmissionAmount():
+	#print(process_material.radial_accel)
+	if particleAmount >= 1:
+		visible = true
+		amount = particleAmount
+	else:
+		visible = false
+>>>>>>> destination
+
+func FadeOut():
+	$AnimationPlayer.play("FadeOut")

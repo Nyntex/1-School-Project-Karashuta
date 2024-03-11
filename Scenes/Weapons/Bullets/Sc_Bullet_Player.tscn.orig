@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://General Scripts/AudioStreamEnhancer.gd" type="Script" id=1]
+[ext_resource path="res://General Scripts/ColorSpriteManager.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Weapons/Scripts/PatternBullet.gd" type="Script" id=3]
+[ext_resource path="res://Audio/Aud_BulletHit.tres" type="AudioStream" id=4]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_Circle.png" type="Texture" id=5]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_Tiles.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Weapons/DamageNumber.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Bullets/PlayerBullet.png" type="Texture" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.0
+
+<<<<<<< working copy
+[sub_resource type="CapsuleShape2D" id=2]
+resource_local_to_scene = true
+radius = 0.666664
+height = 2.33334
+=======
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.0
+>>>>>>> destination
+
+[node name="Player Bullet" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 3 )
+damageNumber = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2( 3, 3 )
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="ColorSpriteHolder" type="Node2D" parent="."]
+script = ExtResource( 2 )
+blue = NodePath("Blue")
+red = NodePath("Red")
+yellow = NodePath("Yellow")
+
+[node name="Blue" type="Sprite" parent="ColorSpriteHolder"]
+modulate = Color( 0.78, 0.78, 7.8, 1 )
+rotation = 1.5708
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 8 )
+
+[node name="Red" type="Sprite" parent="ColorSpriteHolder"]
+visible = false
+modulate = Color( 7.8, 0.78, 0.78, 1 )
+rotation = 1.5708
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 8 )
+
+[node name="Yellow" type="Sprite" parent="ColorSpriteHolder"]
+visible = false
+modulate = Color( 0.945098, 1, 0, 1 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 5 )
+
+[node name="ImpactSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -7.5
+script = ExtResource( 1 )
+pitchVariance = 0.25
+volumeVariance = 2.5
+
+[node name="DirectionMarker" type="Sprite" parent="."]
+position = Vector2( 32, 0 )
+scale = Vector2( 0.05, 0.01 )
+texture = ExtResource( 6 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

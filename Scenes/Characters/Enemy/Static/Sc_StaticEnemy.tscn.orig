@@ -1,0 +1,209 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_8.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_4.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_7.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_6.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_4.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_5.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_8.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_5.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_6.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/Sp_StaticEnemy_Blue_7.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_5.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Yellow/Sp_StaticEnemy_Yellow_2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_7.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_6.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_8.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_3.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/Sp_StaticEnemy_Red_1.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/RotatingSprite.gd" type="Script" id=25]
+[ext_resource path="res://General Scripts/ColorSpriteManager.gd" type="Script" id=26]
+[ext_resource path="res://Scenes/Characters/Enemy/Static/StaticEnemy.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/Weapons/Weapons/Sc_Weapon_BasicEnemy.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Characters/Particles/DeathParticles.tscn" type="PackedScene" id=29]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 19.0
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Direction_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Direction_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Direction_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Direction_3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Direction_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Direction_5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "Direction_6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Direction_7",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "Direction_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "Direction_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "Direction_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Direction_3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Direction_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "Direction_5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "Direction_6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "Direction_7",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "Direction_0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "Direction_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Direction_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Direction_3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Direction_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Direction_5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Direction_6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Direction_7",
+"speed": 5.0
+} ]
+
+[node name="Enemy" type="StaticBody2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 27 )
+deathParticles = ExtResource( 29 )
+weaponScene = ExtResource( 28 )
+health = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 0 )
+collision_mask = 5
+
+[node name="ColorAndSpriteHolder" type="Node2D" parent="."]
+script = ExtResource( 26 )
+blue = NodePath("Blue")
+red = NodePath("Red")
+yellow = NodePath("Yellow")
+
+[node name="Blue" type="AnimatedSprite" parent="ColorAndSpriteHolder"]
+position = Vector2( 1, 1.25 )
+scale = Vector2( 0.28125, 0.277344 )
+frames = SubResource( 4 )
+animation = "Direction_0"
+script = ExtResource( 25 )
+
+[node name="Red" type="AnimatedSprite" parent="ColorAndSpriteHolder"]
+visible = false
+position = Vector2( 1, 1.25 )
+scale = Vector2( 0.28125, 0.277344 )
+frames = SubResource( 5 )
+animation = "Direction_0"
+script = ExtResource( 25 )
+
+[node name="Yellow" type="AnimatedSprite" parent="ColorAndSpriteHolder"]
+visible = false
+position = Vector2( 1, 1.25 )
+scale = Vector2( 0.28125, 0.277344 )
+frames = SubResource( 6 )
+animation = "Direction_0"
+script = ExtResource( 25 )

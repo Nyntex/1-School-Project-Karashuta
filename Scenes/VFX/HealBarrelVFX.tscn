@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/Cloud.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.1, 0.878947, 1 )
+colors = PoolColorArray( 0.145098, 0.368627, 0.113725, 0, 0.0738703, 0.206543, 0.0500221, 1, 0.237138, 0.57373, 0.0694752, 1, 0.352941, 0.858824, 0.0941176, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+max_value = 2.0
+_data = [ Vector2( 0, 2 ), 0.0, -13.3311, 0, 0, Vector2( 0.234742, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.737089, 0.997727 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -11.9409, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 1
+emission_sphere_radius = 0.01
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.59
+initial_velocity_random = 0.52
+angular_velocity = 71.98
+angular_velocity_random = 1.0
+orbit_velocity = 0.07
+orbit_velocity_random = 0.0
+damping = 8.87
+angle = 720.0
+angle_random = 1.0
+scale = 0.2
+scale_random = 0.07
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[node name="Particles2D" type="Particles2D"]
+material = SubResource( 1 )
+position = Vector2( 0, 5 )
+scale = Vector2( 1.36, 0.952 )
+emitting = false
+amount = 69
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.84
+visibility_rect = Rect2( -500, -500, 1000, 1000 )
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )

@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/Sp_VFX_ShieldHit_Red.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.490323, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 7.79424, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.5
+trail_divisor = 2
+trail_size_modifier = SubResource( 9 )
+emission_shape = 1
+emission_sphere_radius = 7.5
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+radial_accel_curve = SubResource( 5 )
+damping = 425.0
+scale = 0.03
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EplsosionRed" type="Particles2D" parent="."]
+modulate = Color( 1.5, 0.15, 0, 1 )
+material = SubResource( 1 )
+scale = Vector2( 3.37494, 3.37494 )
+emitting = false
+amount = 66
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 10 )
+texture = ExtResource( 1 )

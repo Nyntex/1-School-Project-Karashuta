@@ -1,0 +1,1458 @@
+[gd_scene load_steps=905 format=2]
+
+[ext_resource path="res://Scenes/Characters/Player/Scripts/Particles.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/Camera_.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/PlayerHitEmission.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/ColorContainer.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Weapons/Weapons/Sc_Weapon_Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/PlayerSpriteHolder.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/RotatingSprite.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/StatContainer.gd" type="Script" id=10]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/ColorBar.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Weapons/Weapons/Sc_Weapon_SpecialRed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Weapons/Weapons/Sc_Weapon_SpecialBlue.tscn" type="PackedScene" id=14]
+[ext_resource path="res://General Scripts/AudioStreamEnhancer.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/UI/Healthbar.gd" type="Script" id=16]
+[ext_resource path="res://Assets/UI/DamageScreen/DamageScreen.png" type="Texture" id=17]
+[ext_resource path="res://Audio/Aud_PlayerHit.tres" type="AudioStream" id=18]
+[ext_resource path="res://Scenes/Characters/Player/Containers.gd" type="Script" id=19]
+[ext_resource path="res://Assets/UI/RECTANGULAR BUTTONS 1/Rb1_1.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/VFX/PlayerHit.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Characters/Player/Scripts/ColorBarProgress.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Characters/Player/Shield.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0039.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0001.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0008.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0000.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0000.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0032.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0025.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0017.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0048.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0002.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0011.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0029.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0031.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0035.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0015.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0019.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0034.png" type="Texture" id=40]
+[ext_resource path="res://Assets/UI/PROGRESS BARS/Progress bar 4/progress_empty.png" type="Texture" id=41]
+[ext_resource path="res://Assets/UI/PROGRESS BARS/Progress bar 4/progress_top.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0038.png" type="Texture" id=43]
+[ext_resource path="res://Scenes/UI/HealthMarker.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Assets/UI/progress_bar_ability.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0003.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0005.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0018.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0010.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0020.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0024.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0007.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0014.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0018.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0010.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0013.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0021.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0022.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0029.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0024.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0028.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0020.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0030.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0013.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0037.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0008.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0019.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0036.png" type="Texture" id=68]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0006.png" type="Texture" id=69]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0027.png" type="Texture" id=70]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0016.png" type="Texture" id=71]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0026.png" type="Texture" id=72]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0003.png" type="Texture" id=73]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0012.png" type="Texture" id=74]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0025.png" type="Texture" id=75]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0004.png" type="Texture" id=76]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0023.png" type="Texture" id=77]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0031.png" type="Texture" id=78]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0002.png" type="Texture" id=79]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0017.png" type="Texture" id=80]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0001.png" type="Texture" id=81]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0005.png" type="Texture" id=82]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0011.png" type="Texture" id=83]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0015.png" type="Texture" id=84]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0009.png" type="Texture" id=85]
+[ext_resource path="res://Assets/Characters/Player/without_shield/0016.png" type="Texture" id=86]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0040.png" type="Texture" id=87]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0009.png" type="Texture" id=88]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0041.png" type="Texture" id=89]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0023.png" type="Texture" id=90]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0006.png" type="Texture" id=91]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0028.png" type="Texture" id=92]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0007.png" type="Texture" id=93]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0022.png" type="Texture" id=94]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0027.png" type="Texture" id=95]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0021.png" type="Texture" id=96]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0030.png" type="Texture" id=97]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0014.png" type="Texture" id=98]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0033.png" type="Texture" id=99]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0042.png" type="Texture" id=100]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0004.png" type="Texture" id=101]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0012.png" type="Texture" id=102]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0026.png" type="Texture" id=103]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0000.png" type="Texture" id=104]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0009.png" type="Texture" id=105]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0045.png" type="Texture" id=106]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0046.png" type="Texture" id=107]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0047.png" type="Texture" id=108]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0042.png" type="Texture" id=109]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0036.png" type="Texture" id=110]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0024.png" type="Texture" id=111]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0002.png" type="Texture" id=112]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0018.png" type="Texture" id=113]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0048.png" type="Texture" id=114]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0049.png" type="Texture" id=115]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0078.png" type="Texture" id=116]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0023.png" type="Texture" id=117]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0007.png" type="Texture" id=118]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0017.png" type="Texture" id=119]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0075.png" type="Texture" id=120]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0031.png" type="Texture" id=121]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0008.png" type="Texture" id=122]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0035.png" type="Texture" id=123]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0039.png" type="Texture" id=124]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0040.png" type="Texture" id=125]
+[ext_resource path="res://Scenes/Characters/Player/Scenes/Sc_PowerMeter_Blue.tscn" type="PackedScene" id=126]
+[ext_resource path="res://Scenes/Characters/Player/Scenes/Sc_PowerMeter_Red.tscn" type="PackedScene" id=127]
+[ext_resource path="res://Scenes/Characters/Player/HealthContainer.gd" type="Script" id=128]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0006.png" type="Texture" id=129]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0029.png" type="Texture" id=130]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0013.png" type="Texture" id=131]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0046.png" type="Texture" id=132]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0011.png" type="Texture" id=133]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0025.png" type="Texture" id=134]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0005.png" type="Texture" id=135]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0044.png" type="Texture" id=136]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0045.png" type="Texture" id=137]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0028.png" type="Texture" id=138]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0030.png" type="Texture" id=139]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0033.png" type="Texture" id=140]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0010.png" type="Texture" id=141]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0044.png" type="Texture" id=142]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0049.png" type="Texture" id=143]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0015.png" type="Texture" id=144]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0047.png" type="Texture" id=145]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0014.png" type="Texture" id=146]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0016.png" type="Texture" id=147]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0019.png" type="Texture" id=148]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0001.png" type="Texture" id=149]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0027.png" type="Texture" id=150]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0021.png" type="Texture" id=151]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0026.png" type="Texture" id=152]
+[ext_resource path="res://Assets/Characters/Player/Shield/blue/0043.png" type="Texture" id=153]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0032.png" type="Texture" id=154]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0034.png" type="Texture" id=155]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0003.png" type="Texture" id=156]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0037.png" type="Texture" id=157]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0038.png" type="Texture" id=158]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0041.png" type="Texture" id=159]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0004.png" type="Texture" id=160]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0012.png" type="Texture" id=161]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0020.png" type="Texture" id=162]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0022.png" type="Texture" id=163]
+[ext_resource path="res://Assets/Characters/Player/Shield/red/0043.png" type="Texture" id=164]
+[ext_resource path="res://Assets/UI/PROGRESS BARS/Progress bar 4/Bottom_Progress.png" type="Texture" id=165]
+[ext_resource path="res://Scenes/Characters/Player/Big.gd" type="Script" id=166]
+[ext_resource path="res://Scenes/Characters/Player/Small.gd" type="Script" id=167]
+[ext_resource path="res://Assets/UI/1200px-Hexagon_1.svg.png" type="Texture" id=168]
+[ext_resource path="res://Assets/Fonts/neuropol.otf" type="DynamicFontData" id=169]
+[ext_resource path="res://Assets/UI/SMALL PANALS/Small panal 1.png" type="Texture" id=170]
+[ext_resource path="res://Scenes/VFX/HP_UP.tscn" type="PackedScene" id=171]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0016.png" type="Texture" id=172]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0018.png" type="Texture" id=173]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0000.png" type="Texture" id=174]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0013.png" type="Texture" id=175]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0014.png" type="Texture" id=176]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0027.png" type="Texture" id=177]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0005.png" type="Texture" id=178]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0009.png" type="Texture" id=179]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0019.png" type="Texture" id=180]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0002.png" type="Texture" id=181]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0030.png" type="Texture" id=182]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0025.png" type="Texture" id=183]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0010.png" type="Texture" id=184]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0012.png" type="Texture" id=185]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0022.png" type="Texture" id=186]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0023.png" type="Texture" id=187]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0017.png" type="Texture" id=188]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0029.png" type="Texture" id=189]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0015.png" type="Texture" id=190]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0001.png" type="Texture" id=191]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0020.png" type="Texture" id=192]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0003.png" type="Texture" id=193]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0006.png" type="Texture" id=194]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0021.png" type="Texture" id=195]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0026.png" type="Texture" id=196]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0028.png" type="Texture" id=197]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0008.png" type="Texture" id=198]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0031.png" type="Texture" id=199]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0004.png" type="Texture" id=200]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0024.png" type="Texture" id=201]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0007.png" type="Texture" id=202]
+[ext_resource path="res://Assets/Characters/Player/Neutral_Shoot/0011.png" type="Texture" id=203]
+[ext_resource path="res://Assets/Characters/Player/player_shadow_player.png" type="Texture" id=204]
+[ext_resource path="res://Scenes/VFX/RageMode.tscn" type="PackedScene" id=205]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0073.png" type="Texture" id=206]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0074.png" type="Texture" id=207]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0076.png" type="Texture" id=208]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0077.png" type="Texture" id=209]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0035.png" type="Texture" id=210]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0024.png" type="Texture" id=211]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0031.png" type="Texture" id=212]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0033.png" type="Texture" id=213]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0034.png" type="Texture" id=214]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0037.png" type="Texture" id=215]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0018.png" type="Texture" id=216]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0036.png" type="Texture" id=217]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0010.png" type="Texture" id=218]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0023.png" type="Texture" id=219]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0029.png" type="Texture" id=220]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0021.png" type="Texture" id=221]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0026.png" type="Texture" id=222]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0013.png" type="Texture" id=223]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0016.png" type="Texture" id=224]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0028.png" type="Texture" id=225]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0030.png" type="Texture" id=226]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0015.png" type="Texture" id=227]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0011.png" type="Texture" id=228]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0012.png" type="Texture" id=229]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0025.png" type="Texture" id=230]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0022.png" type="Texture" id=231]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0014.png" type="Texture" id=232]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0032.png" type="Texture" id=233]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0020.png" type="Texture" id=234]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0017.png" type="Texture" id=235]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0027.png" type="Texture" id=236]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0019.png" type="Texture" id=237]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0056.png" type="Texture" id=238]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0057.png" type="Texture" id=239]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0062.png" type="Texture" id=240]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0065.png" type="Texture" id=241]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0038.png" type="Texture" id=242]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0039.png" type="Texture" id=243]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0069.png" type="Texture" id=244]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0040.png" type="Texture" id=245]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0044.png" type="Texture" id=246]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0049.png" type="Texture" id=247]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0053.png" type="Texture" id=248]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0058.png" type="Texture" id=249]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0059.png" type="Texture" id=250]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0063.png" type="Texture" id=251]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0064.png" type="Texture" id=252]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0054.png" type="Texture" id=253]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0066.png" type="Texture" id=254]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0042.png" type="Texture" id=255]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0051.png" type="Texture" id=256]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0046.png" type="Texture" id=257]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0060.png" type="Texture" id=258]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0068.png" type="Texture" id=259]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0052.png" type="Texture" id=260]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0070.png" type="Texture" id=261]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0045.png" type="Texture" id=262]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0061.png" type="Texture" id=263]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0071.png" type="Texture" id=264]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0072.png" type="Texture" id=265]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0048.png" type="Texture" id=266]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0067.png" type="Texture" id=267]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0041.png" type="Texture" id=268]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0043.png" type="Texture" id=269]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0047.png" type="Texture" id=270]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0050.png" type="Texture" id=271]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0055.png" type="Texture" id=272]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0105.png" type="Texture" id=273]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0106.png" type="Texture" id=274]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0109.png" type="Texture" id=275]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0113.png" type="Texture" id=276]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0096.png" type="Texture" id=277]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0124.png" type="Texture" id=278]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0104.png" type="Texture" id=279]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0136.png" type="Texture" id=280]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0084.png" type="Texture" id=281]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0086.png" type="Texture" id=282]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0092.png" type="Texture" id=283]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0103.png" type="Texture" id=284]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0107.png" type="Texture" id=285]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0097.png" type="Texture" id=286]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0101.png" type="Texture" id=287]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0108.png" type="Texture" id=288]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0110.png" type="Texture" id=289]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0123.png" type="Texture" id=290]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0126.png" type="Texture" id=291]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0081.png" type="Texture" id=292]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0089.png" type="Texture" id=293]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0120.png" type="Texture" id=294]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0127.png" type="Texture" id=295]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0128.png" type="Texture" id=296]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0118.png" type="Texture" id=297]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0122.png" type="Texture" id=298]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0129.png" type="Texture" id=299]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0111.png" type="Texture" id=300]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0102.png" type="Texture" id=301]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0093.png" type="Texture" id=302]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0090.png" type="Texture" id=303]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0132.png" type="Texture" id=304]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0087.png" type="Texture" id=305]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0082.png" type="Texture" id=306]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0115.png" type="Texture" id=307]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0116.png" type="Texture" id=308]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0119.png" type="Texture" id=309]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0125.png" type="Texture" id=310]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0095.png" type="Texture" id=311]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0099.png" type="Texture" id=312]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0131.png" type="Texture" id=313]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0100.png" type="Texture" id=314]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0133.png" type="Texture" id=315]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0098.png" type="Texture" id=316]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0134.png" type="Texture" id=317]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0135.png" type="Texture" id=318]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0137.png" type="Texture" id=319]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0121.png" type="Texture" id=320]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0138.png" type="Texture" id=321]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0079.png" type="Texture" id=322]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0094.png" type="Texture" id=323]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0139.png" type="Texture" id=324]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0117.png" type="Texture" id=325]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0140.png" type="Texture" id=326]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0141.png" type="Texture" id=327]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0142.png" type="Texture" id=328]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0112.png" type="Texture" id=329]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0085.png" type="Texture" id=330]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0130.png" type="Texture" id=331]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0114.png" type="Texture" id=332]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0080.png" type="Texture" id=333]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0088.png" type="Texture" id=334]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0083.png" type="Texture" id=335]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0091.png" type="Texture" id=336]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0153.png" type="Texture" id=337]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0164.png" type="Texture" id=338]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0167.png" type="Texture" id=339]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0183.png" type="Texture" id=340]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0155.png" type="Texture" id=341]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0188.png" type="Texture" id=342]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0179.png" type="Texture" id=343]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0151.png" type="Texture" id=344]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0172.png" type="Texture" id=345]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0161.png" type="Texture" id=346]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0174.png" type="Texture" id=347]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0146.png" type="Texture" id=348]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0178.png" type="Texture" id=349]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0143.png" type="Texture" id=350]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0162.png" type="Texture" id=351]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0160.png" type="Texture" id=352]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0198.png" type="Texture" id=353]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0180.png" type="Texture" id=354]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0185.png" type="Texture" id=355]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0145.png" type="Texture" id=356]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0156.png" type="Texture" id=357]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0154.png" type="Texture" id=358]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0149.png" type="Texture" id=359]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0157.png" type="Texture" id=360]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0166.png" type="Texture" id=361]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0173.png" type="Texture" id=362]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0159.png" type="Texture" id=363]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0175.png" type="Texture" id=364]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0176.png" type="Texture" id=365]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0182.png" type="Texture" id=366]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0186.png" type="Texture" id=367]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0170.png" type="Texture" id=368]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0150.png" type="Texture" id=369]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0171.png" type="Texture" id=370]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0147.png" type="Texture" id=371]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0187.png" type="Texture" id=372]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0148.png" type="Texture" id=373]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0190.png" type="Texture" id=374]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0192.png" type="Texture" id=375]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0195.png" type="Texture" id=376]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0177.png" type="Texture" id=377]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0197.png" type="Texture" id=378]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0144.png" type="Texture" id=379]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0196.png" type="Texture" id=380]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0189.png" type="Texture" id=381]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0199.png" type="Texture" id=382]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0152.png" type="Texture" id=383]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0193.png" type="Texture" id=384]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0200.png" type="Texture" id=385]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0194.png" type="Texture" id=386]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0165.png" type="Texture" id=387]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0163.png" type="Texture" id=388]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0181.png" type="Texture" id=389]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0201.png" type="Texture" id=390]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0202.png" type="Texture" id=391]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0203.png" type="Texture" id=392]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0204.png" type="Texture" id=393]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0205.png" type="Texture" id=394]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0169.png" type="Texture" id=395]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0158.png" type="Texture" id=396]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0184.png" type="Texture" id=397]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0206.png" type="Texture" id=398]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0191.png" type="Texture" id=399]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0168.png" type="Texture" id=400]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0216.png" type="Texture" id=401]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0237.png" type="Texture" id=402]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0233.png" type="Texture" id=403]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0243.png" type="Texture" id=404]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0208.png" type="Texture" id=405]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0212.png" type="Texture" id=406]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0224.png" type="Texture" id=407]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0227.png" type="Texture" id=408]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0241.png" type="Texture" id=409]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0246.png" type="Texture" id=410]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0221.png" type="Texture" id=411]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0230.png" type="Texture" id=412]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0247.png" type="Texture" id=413]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0207.png" type="Texture" id=414]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0229.png" type="Texture" id=415]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0231.png" type="Texture" id=416]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0209.png" type="Texture" id=417]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0219.png" type="Texture" id=418]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0215.png" type="Texture" id=419]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0248.png" type="Texture" id=420]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0249.png" type="Texture" id=421]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0225.png" type="Texture" id=422]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0220.png" type="Texture" id=423]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0236.png" type="Texture" id=424]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0235.png" type="Texture" id=425]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0239.png" type="Texture" id=426]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0242.png" type="Texture" id=427]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0245.png" type="Texture" id=428]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0217.png" type="Texture" id=429]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0210.png" type="Texture" id=430]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0218.png" type="Texture" id=431]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0244.png" type="Texture" id=432]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0223.png" type="Texture" id=433]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0226.png" type="Texture" id=434]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0232.png" type="Texture" id=435]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0234.png" type="Texture" id=436]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0214.png" type="Texture" id=437]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0222.png" type="Texture" id=438]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0240.png" type="Texture" id=439]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0213.png" type="Texture" id=440]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0228.png" type="Texture" id=441]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0250.png" type="Texture" id=442]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0211.png" type="Texture" id=443]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/ShieldAnimation/0238.png" type="Texture" id=444]
+[ext_resource path="res://Scenes/Characters/Player/DeathAnimation.gd" type="Script" id=445]
+[ext_resource path="res://Scenes/VFX/AbsorbSound.tscn" type="PackedScene" id=446]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0143.png" type="Texture" id=447]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0138.png" type="Texture" id=448]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0139.png" type="Texture" id=449]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0137.png" type="Texture" id=450]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0141.png" type="Texture" id=451]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0140.png" type="Texture" id=452]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0118.png" type="Texture" id=453]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0110.png" type="Texture" id=454]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0114.png" type="Texture" id=455]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0124.png" type="Texture" id=456]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0116.png" type="Texture" id=457]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0131.png" type="Texture" id=458]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0132.png" type="Texture" id=459]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0133.png" type="Texture" id=460]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0121.png" type="Texture" id=461]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0119.png" type="Texture" id=462]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0135.png" type="Texture" id=463]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0125.png" type="Texture" id=464]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0136.png" type="Texture" id=465]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0120.png" type="Texture" id=466]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0112.png" type="Texture" id=467]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0134.png" type="Texture" id=468]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0129.png" type="Texture" id=469]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0117.png" type="Texture" id=470]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0127.png" type="Texture" id=471]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0126.png" type="Texture" id=472]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0111.png" type="Texture" id=473]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0113.png" type="Texture" id=474]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0115.png" type="Texture" id=475]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0088.png" type="Texture" id=476]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0080.png" type="Texture" id=477]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0054.png" type="Texture" id=478]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0068.png" type="Texture" id=479]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0083.png" type="Texture" id=480]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0089.png" type="Texture" id=481]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0092.png" type="Texture" id=482]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0093.png" type="Texture" id=483]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0061.png" type="Texture" id=484]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0051.png" type="Texture" id=485]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0047.png" type="Texture" id=486]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0087.png" type="Texture" id=487]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0095.png" type="Texture" id=488]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0096.png" type="Texture" id=489]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0066.png" type="Texture" id=490]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0060.png" type="Texture" id=491]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0037.png" type="Texture" id=492]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0070.png" type="Texture" id=493]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0074.png" type="Texture" id=494]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0081.png" type="Texture" id=495]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0064.png" type="Texture" id=496]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0039.png" type="Texture" id=497]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0084.png" type="Texture" id=498]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0098.png" type="Texture" id=499]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0036.png" type="Texture" id=500]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0091.png" type="Texture" id=501]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0052.png" type="Texture" id=502]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0072.png" type="Texture" id=503]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0075.png" type="Texture" id=504]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0076.png" type="Texture" id=505]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0099.png" type="Texture" id=506]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0100.png" type="Texture" id=507]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0038.png" type="Texture" id=508]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0046.png" type="Texture" id=509]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0053.png" type="Texture" id=510]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0057.png" type="Texture" id=511]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0097.png" type="Texture" id=512]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0040.png" type="Texture" id=513]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0049.png" type="Texture" id=514]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0041.png" type="Texture" id=515]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0055.png" type="Texture" id=516]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0044.png" type="Texture" id=517]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0073.png" type="Texture" id=518]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0085.png" type="Texture" id=519]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0045.png" type="Texture" id=520]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0065.png" type="Texture" id=521]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0067.png" type="Texture" id=522]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0078.png" type="Texture" id=523]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0090.png" type="Texture" id=524]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0077.png" type="Texture" id=525]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0094.png" type="Texture" id=526]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0071.png" type="Texture" id=527]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0069.png" type="Texture" id=528]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0079.png" type="Texture" id=529]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0043.png" type="Texture" id=530]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0062.png" type="Texture" id=531]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0050.png" type="Texture" id=532]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0063.png" type="Texture" id=533]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0059.png" type="Texture" id=534]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0056.png" type="Texture" id=535]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0082.png" type="Texture" id=536]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0086.png" type="Texture" id=537]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0048.png" type="Texture" id=538]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0058.png" type="Texture" id=539]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0101.png" type="Texture" id=540]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0240.png" type="Texture" id=541]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0016.png" type="Texture" id=542]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0009.png" type="Texture" id=543]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0130.png" type="Texture" id=544]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0102.png" type="Texture" id=545]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0227.png" type="Texture" id=546]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0042.png" type="Texture" id=547]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0109.png" type="Texture" id=548]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0012.png" type="Texture" id=549]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0128.png" type="Texture" id=550]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0204.png" type="Texture" id=551]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0142.png" type="Texture" id=552]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0212.png" type="Texture" id=553]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0000.png" type="Texture" id=554]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0001.png" type="Texture" id=555]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0104.png" type="Texture" id=556]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0002.png" type="Texture" id=557]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0005.png" type="Texture" id=558]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0239.png" type="Texture" id=559]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0103.png" type="Texture" id=560]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0191.png" type="Texture" id=561]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0105.png" type="Texture" id=562]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0106.png" type="Texture" id=563]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0123.png" type="Texture" id=564]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0122.png" type="Texture" id=565]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0107.png" type="Texture" id=566]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0108.png" type="Texture" id=567]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0011.png" type="Texture" id=568]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0006.png" type="Texture" id=569]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0007.png" type="Texture" id=570]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0010.png" type="Texture" id=571]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0004.png" type="Texture" id=572]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0013.png" type="Texture" id=573]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0014.png" type="Texture" id=574]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0017.png" type="Texture" id=575]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0018.png" type="Texture" id=576]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0020.png" type="Texture" id=577]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0021.png" type="Texture" id=578]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0023.png" type="Texture" id=579]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0022.png" type="Texture" id=580]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0024.png" type="Texture" id=581]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0026.png" type="Texture" id=582]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0027.png" type="Texture" id=583]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0029.png" type="Texture" id=584]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0030.png" type="Texture" id=585]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0019.png" type="Texture" id=586]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0033.png" type="Texture" id=587]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0032.png" type="Texture" id=588]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0034.png" type="Texture" id=589]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0025.png" type="Texture" id=590]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0028.png" type="Texture" id=591]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0035.png" type="Texture" id=592]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0003.png" type="Texture" id=593]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0008.png" type="Texture" id=594]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0015.png" type="Texture" id=595]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0031.png" type="Texture" id=596]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0199.png" type="Texture" id=597]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0176.png" type="Texture" id=598]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0170.png" type="Texture" id=599]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0149.png" type="Texture" id=600]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0169.png" type="Texture" id=601]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0181.png" type="Texture" id=602]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0198.png" type="Texture" id=603]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0163.png" type="Texture" id=604]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0165.png" type="Texture" id=605]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0172.png" type="Texture" id=606]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0183.png" type="Texture" id=607]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0167.png" type="Texture" id=608]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0187.png" type="Texture" id=609]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0188.png" type="Texture" id=610]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0195.png" type="Texture" id=611]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0197.png" type="Texture" id=612]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0157.png" type="Texture" id=613]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0151.png" type="Texture" id=614]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0180.png" type="Texture" id=615]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0174.png" type="Texture" id=616]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0200.png" type="Texture" id=617]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0206.png" type="Texture" id=618]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0152.png" type="Texture" id=619]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0184.png" type="Texture" id=620]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0144.png" type="Texture" id=621]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0186.png" type="Texture" id=622]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0150.png" type="Texture" id=623]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0190.png" type="Texture" id=624]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0148.png" type="Texture" id=625]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0202.png" type="Texture" id=626]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0201.png" type="Texture" id=627]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0154.png" type="Texture" id=628]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0161.png" type="Texture" id=629]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0193.png" type="Texture" id=630]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0205.png" type="Texture" id=631]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0189.png" type="Texture" id=632]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0178.png" type="Texture" id=633]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0207.png" type="Texture" id=634]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0208.png" type="Texture" id=635]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0209.png" type="Texture" id=636]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0177.png" type="Texture" id=637]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0203.png" type="Texture" id=638]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0171.png" type="Texture" id=639]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0173.png" type="Texture" id=640]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0156.png" type="Texture" id=641]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0158.png" type="Texture" id=642]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0153.png" type="Texture" id=643]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0162.png" type="Texture" id=644]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0160.png" type="Texture" id=645]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0146.png" type="Texture" id=646]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0147.png" type="Texture" id=647]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0155.png" type="Texture" id=648]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0159.png" type="Texture" id=649]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0164.png" type="Texture" id=650]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0168.png" type="Texture" id=651]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0145.png" type="Texture" id=652]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0175.png" type="Texture" id=653]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0179.png" type="Texture" id=654]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0166.png" type="Texture" id=655]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0182.png" type="Texture" id=656]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0185.png" type="Texture" id=657]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0192.png" type="Texture" id=658]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0194.png" type="Texture" id=659]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0196.png" type="Texture" id=660]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0216.png" type="Texture" id=661]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0224.png" type="Texture" id=662]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0230.png" type="Texture" id=663]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0219.png" type="Texture" id=664]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0217.png" type="Texture" id=665]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0211.png" type="Texture" id=666]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0215.png" type="Texture" id=667]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0233.png" type="Texture" id=668]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0229.png" type="Texture" id=669]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0232.png" type="Texture" id=670]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0218.png" type="Texture" id=671]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0235.png" type="Texture" id=672]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0221.png" type="Texture" id=673]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0234.png" type="Texture" id=674]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0220.png" type="Texture" id=675]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0222.png" type="Texture" id=676]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0226.png" type="Texture" id=677]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0210.png" type="Texture" id=678]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0223.png" type="Texture" id=679]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0231.png" type="Texture" id=680]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0236.png" type="Texture" id=681]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0213.png" type="Texture" id=682]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0214.png" type="Texture" id=683]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0225.png" type="Texture" id=684]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0238.png" type="Texture" id=685]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0237.png" type="Texture" id=686]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/PlayerAnimation/0228.png" type="Texture" id=687]
+[ext_resource path="res://Scenes/Characters/Player/ControlContainer.gd" type="Script" id=688]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0274.png" type="Texture" id=689]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0275.png" type="Texture" id=690]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0273.png" type="Texture" id=691]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0276.png" type="Texture" id=692]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0266.png" type="Texture" id=693]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0267.png" type="Texture" id=694]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0272.png" type="Texture" id=695]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0269.png" type="Texture" id=696]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0271.png" type="Texture" id=697]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0268.png" type="Texture" id=698]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0270.png" type="Texture" id=699]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0277.png" type="Texture" id=700]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0280.png" type="Texture" id=701]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0282.png" type="Texture" id=702]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0281.png" type="Texture" id=703]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0279.png" type="Texture" id=704]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0283.png" type="Texture" id=705]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0284.png" type="Texture" id=706]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0278.png" type="Texture" id=707]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0248.png" type="Texture" id=708]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0285.png" type="Texture" id=709]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0287.png" type="Texture" id=710]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0288.png" type="Texture" id=711]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0290.png" type="Texture" id=712]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0291.png" type="Texture" id=713]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0286.png" type="Texture" id=714]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0289.png" type="Texture" id=715]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0257.png" type="Texture" id=716]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0260.png" type="Texture" id=717]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0256.png" type="Texture" id=718]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0262.png" type="Texture" id=719]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0253.png" type="Texture" id=720]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0252.png" type="Texture" id=721]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0263.png" type="Texture" id=722]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0264.png" type="Texture" id=723]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0265.png" type="Texture" id=724]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0249.png" type="Texture" id=725]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0254.png" type="Texture" id=726]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0250.png" type="Texture" id=727]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0255.png" type="Texture" id=728]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0261.png" type="Texture" id=729]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0258.png" type="Texture" id=730]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0251.png" type="Texture" id=731]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0259.png" type="Texture" id=732]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0321.png" type="Texture" id=733]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0316.png" type="Texture" id=734]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0314.png" type="Texture" id=735]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0326.png" type="Texture" id=736]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0317.png" type="Texture" id=737]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0325.png" type="Texture" id=738]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0327.png" type="Texture" id=739]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0322.png" type="Texture" id=740]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0328.png" type="Texture" id=741]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0330.png" type="Texture" id=742]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0332.png" type="Texture" id=743]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0341.png" type="Texture" id=744]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0296.png" type="Texture" id=745]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0307.png" type="Texture" id=746]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0340.png" type="Texture" id=747]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0335.png" type="Texture" id=748]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0333.png" type="Texture" id=749]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0297.png" type="Texture" id=750]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0300.png" type="Texture" id=751]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0318.png" type="Texture" id=752]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0337.png" type="Texture" id=753]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0313.png" type="Texture" id=754]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0303.png" type="Texture" id=755]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0301.png" type="Texture" id=756]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0324.png" type="Texture" id=757]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0310.png" type="Texture" id=758]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0311.png" type="Texture" id=759]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0293.png" type="Texture" id=760]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0323.png" type="Texture" id=761]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0319.png" type="Texture" id=762]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0294.png" type="Texture" id=763]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0320.png" type="Texture" id=764]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0329.png" type="Texture" id=765]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0331.png" type="Texture" id=766]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0343.png" type="Texture" id=767]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0344.png" type="Texture" id=768]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0345.png" type="Texture" id=769]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0346.png" type="Texture" id=770]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0347.png" type="Texture" id=771]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0349.png" type="Texture" id=772]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0309.png" type="Texture" id=773]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0350.png" type="Texture" id=774]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0302.png" type="Texture" id=775]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0351.png" type="Texture" id=776]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0334.png" type="Texture" id=777]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0352.png" type="Texture" id=778]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0354.png" type="Texture" id=779]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0306.png" type="Texture" id=780]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0299.png" type="Texture" id=781]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0292.png" type="Texture" id=782]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0315.png" type="Texture" id=783]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0342.png" type="Texture" id=784]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0304.png" type="Texture" id=785]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0338.png" type="Texture" id=786]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0348.png" type="Texture" id=787]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0339.png" type="Texture" id=788]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0305.png" type="Texture" id=789]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0295.png" type="Texture" id=790]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0298.png" type="Texture" id=791]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0353.png" type="Texture" id=792]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0308.png" type="Texture" id=793]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0336.png" type="Texture" id=794]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0355.png" type="Texture" id=795]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0312.png" type="Texture" id=796]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0400.png" type="Texture" id=797]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0401.png" type="Texture" id=798]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0411.png" type="Texture" id=799]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0374.png" type="Texture" id=800]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0365.png" type="Texture" id=801]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0394.png" type="Texture" id=802]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0412.png" type="Texture" id=803]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0387.png" type="Texture" id=804]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0383.png" type="Texture" id=805]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0364.png" type="Texture" id=806]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0405.png" type="Texture" id=807]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0356.png" type="Texture" id=808]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0375.png" type="Texture" id=809]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0406.png" type="Texture" id=810]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0376.png" type="Texture" id=811]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0368.png" type="Texture" id=812]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0388.png" type="Texture" id=813]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0391.png" type="Texture" id=814]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0371.png" type="Texture" id=815]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0377.png" type="Texture" id=816]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0398.png" type="Texture" id=817]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0393.png" type="Texture" id=818]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0384.png" type="Texture" id=819]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0366.png" type="Texture" id=820]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0362.png" type="Texture" id=821]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0373.png" type="Texture" id=822]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0378.png" type="Texture" id=823]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0380.png" type="Texture" id=824]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0402.png" type="Texture" id=825]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0407.png" type="Texture" id=826]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0392.png" type="Texture" id=827]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0382.png" type="Texture" id=828]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0360.png" type="Texture" id=829]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0403.png" type="Texture" id=830]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0408.png" type="Texture" id=831]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0409.png" type="Texture" id=832]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0386.png" type="Texture" id=833]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0359.png" type="Texture" id=834]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0370.png" type="Texture" id=835]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0404.png" type="Texture" id=836]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0413.png" type="Texture" id=837]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0357.png" type="Texture" id=838]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0414.png" type="Texture" id=839]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0416.png" type="Texture" id=840]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0361.png" type="Texture" id=841]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0379.png" type="Texture" id=842]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0415.png" type="Texture" id=843]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0372.png" type="Texture" id=844]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0417.png" type="Texture" id=845]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0418.png" type="Texture" id=846]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0390.png" type="Texture" id=847]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0367.png" type="Texture" id=848]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0369.png" type="Texture" id=849]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0410.png" type="Texture" id=850]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0419.png" type="Texture" id=851]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0363.png" type="Texture" id=852]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0381.png" type="Texture" id=853]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0358.png" type="Texture" id=854]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0396.png" type="Texture" id=855]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0385.png" type="Texture" id=856]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0389.png" type="Texture" id=857]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0395.png" type="Texture" id=858]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0397.png" type="Texture" id=859]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0399.png" type="Texture" id=860]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0435.png" type="Texture" id=861]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0447.png" type="Texture" id=862]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0440.png" type="Texture" id=863]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0437.png" type="Texture" id=864]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0446.png" type="Texture" id=865]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0421.png" type="Texture" id=866]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0448.png" type="Texture" id=867]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0445.png" type="Texture" id=868]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0426.png" type="Texture" id=869]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0427.png" type="Texture" id=870]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0434.png" type="Texture" id=871]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0443.png" type="Texture" id=872]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0439.png" type="Texture" id=873]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0441.png" type="Texture" id=874]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0431.png" type="Texture" id=875]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0430.png" type="Texture" id=876]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0425.png" type="Texture" id=877]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0423.png" type="Texture" id=878]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0428.png" type="Texture" id=879]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0429.png" type="Texture" id=880]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0438.png" type="Texture" id=881]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0420.png" type="Texture" id=882]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0444.png" type="Texture" id=883]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0422.png" type="Texture" id=884]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0450.png" type="Texture" id=885]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0432.png" type="Texture" id=886]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0424.png" type="Texture" id=887]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0436.png" type="Texture" id=888]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0449.png" type="Texture" id=889]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0442.png" type="Texture" id=890]
+[ext_resource path="res://Assets/Characters/Player/StoryAnimation/End/AuferstehungPlayer/0433.png" type="Texture" id=891]
+[ext_resource path="res://Scenes/VFX/NewPlayerDeath.tscn" type="PackedScene" id=892]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.0
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 81 ), ExtResource( 79 ), ExtResource( 73 ), ExtResource( 76 ), ExtResource( 82 ), ExtResource( 69 ), ExtResource( 52 ), ExtResource( 66 ), ExtResource( 85 ), ExtResource( 55 ), ExtResource( 83 ), ExtResource( 74 ), ExtResource( 56 ), ExtResource( 53 ), ExtResource( 84 ), ExtResource( 86 ), ExtResource( 80 ), ExtResource( 54 ), ExtResource( 67 ), ExtResource( 62 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 77 ), ExtResource( 60 ), ExtResource( 75 ), ExtResource( 72 ), ExtResource( 70 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 63 ), ExtResource( 78 ) ],
+"loop": true,
+"name": "Neutral",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 174 ), ExtResource( 191 ), ExtResource( 181 ), ExtResource( 193 ), ExtResource( 200 ), ExtResource( 178 ), ExtResource( 194 ), ExtResource( 202 ), ExtResource( 198 ), ExtResource( 179 ), ExtResource( 184 ), ExtResource( 203 ), ExtResource( 185 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 190 ), ExtResource( 172 ), ExtResource( 188 ), ExtResource( 173 ), ExtResource( 180 ), ExtResource( 192 ), ExtResource( 195 ), ExtResource( 186 ), ExtResource( 187 ), ExtResource( 201 ), ExtResource( 183 ), ExtResource( 196 ), ExtResource( 177 ), ExtResource( 197 ), ExtResource( 189 ), ExtResource( 182 ), ExtResource( 199 ) ],
+"loop": true,
+"name": "Shooting",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 27 ), ExtResource( 25 ), ExtResource( 33 ), ExtResource( 46 ), ExtResource( 101 ), ExtResource( 47 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 26 ), ExtResource( 88 ), ExtResource( 49 ), ExtResource( 34 ), ExtResource( 102 ), ExtResource( 64 ), ExtResource( 98 ), ExtResource( 38 ), ExtResource( 71 ), ExtResource( 31 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 50 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 90 ), ExtResource( 51 ), ExtResource( 30 ), ExtResource( 103 ), ExtResource( 95 ), ExtResource( 92 ), ExtResource( 35 ), ExtResource( 97 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 99 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 43 ), ExtResource( 24 ), ExtResource( 87 ), ExtResource( 89 ), ExtResource( 100 ), ExtResource( 153 ), ExtResource( 142 ), ExtResource( 137 ), ExtResource( 132 ), ExtResource( 145 ), ExtResource( 32 ), ExtResource( 143 ) ],
+"loop": true,
+"name": "Blue",
+"speed": 30.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Neutral",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 104 ), ExtResource( 149 ), ExtResource( 112 ), ExtResource( 156 ), ExtResource( 160 ), ExtResource( 135 ), ExtResource( 129 ), ExtResource( 118 ), ExtResource( 122 ), ExtResource( 105 ), ExtResource( 141 ), ExtResource( 133 ), ExtResource( 161 ), ExtResource( 131 ), ExtResource( 146 ), ExtResource( 144 ), ExtResource( 147 ), ExtResource( 119 ), ExtResource( 113 ), ExtResource( 148 ), ExtResource( 162 ), ExtResource( 151 ), ExtResource( 163 ), ExtResource( 117 ), ExtResource( 111 ), ExtResource( 134 ), ExtResource( 152 ), ExtResource( 150 ), ExtResource( 138 ), ExtResource( 130 ), ExtResource( 139 ), ExtResource( 121 ), ExtResource( 154 ), ExtResource( 140 ), ExtResource( 155 ), ExtResource( 123 ), ExtResource( 110 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 159 ), ExtResource( 109 ), ExtResource( 164 ), ExtResource( 136 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 114 ), ExtResource( 115 ) ],
+"loop": true,
+"name": "Red",
+"speed": 30.0
+} ]
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ ExtResource( 554 ), ExtResource( 555 ), ExtResource( 557 ), ExtResource( 593 ), ExtResource( 572 ), ExtResource( 558 ), ExtResource( 569 ), ExtResource( 570 ), ExtResource( 594 ), ExtResource( 543 ), ExtResource( 571 ), ExtResource( 568 ), ExtResource( 549 ), ExtResource( 573 ), ExtResource( 574 ), ExtResource( 595 ), ExtResource( 542 ), ExtResource( 575 ), ExtResource( 576 ), ExtResource( 586 ), ExtResource( 577 ), ExtResource( 578 ), ExtResource( 580 ), ExtResource( 579 ), ExtResource( 581 ), ExtResource( 590 ), ExtResource( 582 ), ExtResource( 583 ), ExtResource( 591 ), ExtResource( 584 ), ExtResource( 585 ), ExtResource( 596 ), ExtResource( 588 ), ExtResource( 587 ), ExtResource( 589 ), ExtResource( 592 ), ExtResource( 500 ), ExtResource( 492 ), ExtResource( 508 ), ExtResource( 497 ), ExtResource( 513 ), ExtResource( 515 ), ExtResource( 547 ), ExtResource( 530 ), ExtResource( 517 ), ExtResource( 520 ), ExtResource( 509 ), ExtResource( 486 ), ExtResource( 538 ), ExtResource( 514 ), ExtResource( 532 ), ExtResource( 485 ), ExtResource( 502 ), ExtResource( 510 ), ExtResource( 478 ), ExtResource( 516 ), ExtResource( 535 ), ExtResource( 511 ), ExtResource( 539 ), ExtResource( 534 ), ExtResource( 491 ), ExtResource( 484 ), ExtResource( 531 ), ExtResource( 533 ), ExtResource( 496 ), ExtResource( 521 ), ExtResource( 490 ), ExtResource( 522 ), ExtResource( 479 ), ExtResource( 528 ), ExtResource( 493 ), ExtResource( 527 ), ExtResource( 503 ), ExtResource( 518 ), ExtResource( 494 ), ExtResource( 504 ), ExtResource( 505 ), ExtResource( 525 ), ExtResource( 523 ), ExtResource( 529 ), ExtResource( 477 ), ExtResource( 495 ), ExtResource( 536 ), ExtResource( 480 ), ExtResource( 498 ), ExtResource( 519 ), ExtResource( 537 ), ExtResource( 487 ), ExtResource( 476 ), ExtResource( 481 ), ExtResource( 524 ), ExtResource( 501 ), ExtResource( 482 ), ExtResource( 483 ), ExtResource( 526 ), ExtResource( 488 ), ExtResource( 489 ), ExtResource( 512 ), ExtResource( 499 ), ExtResource( 506 ), ExtResource( 507 ), ExtResource( 540 ), ExtResource( 545 ), ExtResource( 560 ), ExtResource( 556 ), ExtResource( 562 ), ExtResource( 563 ), ExtResource( 566 ), ExtResource( 567 ), ExtResource( 548 ), ExtResource( 454 ), ExtResource( 473 ), ExtResource( 467 ), ExtResource( 474 ), ExtResource( 455 ), ExtResource( 475 ), ExtResource( 457 ), ExtResource( 470 ), ExtResource( 453 ), ExtResource( 462 ), ExtResource( 466 ), ExtResource( 461 ), ExtResource( 565 ), ExtResource( 564 ), ExtResource( 456 ), ExtResource( 464 ), ExtResource( 472 ), ExtResource( 471 ), ExtResource( 550 ), ExtResource( 469 ), ExtResource( 544 ), ExtResource( 458 ), ExtResource( 459 ), ExtResource( 460 ), ExtResource( 468 ), ExtResource( 463 ), ExtResource( 465 ), ExtResource( 450 ), ExtResource( 448 ), ExtResource( 449 ), ExtResource( 452 ), ExtResource( 451 ), ExtResource( 552 ), ExtResource( 447 ), ExtResource( 621 ), ExtResource( 652 ), ExtResource( 646 ), ExtResource( 647 ), ExtResource( 625 ), ExtResource( 600 ), ExtResource( 623 ), ExtResource( 614 ), ExtResource( 619 ), ExtResource( 643 ), ExtResource( 628 ), ExtResource( 648 ), ExtResource( 641 ), ExtResource( 613 ), ExtResource( 642 ), ExtResource( 649 ), ExtResource( 645 ), ExtResource( 629 ), ExtResource( 644 ), ExtResource( 604 ), ExtResource( 650 ), ExtResource( 605 ), ExtResource( 655 ), ExtResource( 608 ), ExtResource( 651 ), ExtResource( 601 ), ExtResource( 599 ), ExtResource( 639 ), ExtResource( 606 ), ExtResource( 640 ), ExtResource( 616 ), ExtResource( 653 ), ExtResource( 598 ), ExtResource( 637 ), ExtResource( 633 ), ExtResource( 654 ), ExtResource( 615 ), ExtResource( 602 ), ExtResource( 656 ), ExtResource( 607 ), ExtResource( 620 ), ExtResource( 657 ), ExtResource( 622 ), ExtResource( 609 ), ExtResource( 610 ), ExtResource( 632 ), ExtResource( 624 ), ExtResource( 561 ), ExtResource( 658 ), ExtResource( 630 ), ExtResource( 659 ), ExtResource( 611 ), ExtResource( 660 ), ExtResource( 612 ), ExtResource( 603 ), ExtResource( 597 ), ExtResource( 617 ), ExtResource( 627 ), ExtResource( 626 ), ExtResource( 638 ), ExtResource( 551 ), ExtResource( 631 ), ExtResource( 618 ), ExtResource( 634 ), ExtResource( 635 ), ExtResource( 636 ), ExtResource( 678 ), ExtResource( 666 ), ExtResource( 553 ), ExtResource( 682 ), ExtResource( 683 ), ExtResource( 667 ), ExtResource( 661 ), ExtResource( 665 ), ExtResource( 671 ), ExtResource( 664 ), ExtResource( 675 ), ExtResource( 673 ), ExtResource( 676 ), ExtResource( 679 ), ExtResource( 662 ), ExtResource( 684 ), ExtResource( 677 ), ExtResource( 546 ), ExtResource( 687 ), ExtResource( 669 ), ExtResource( 663 ), ExtResource( 680 ), ExtResource( 670 ), ExtResource( 668 ), ExtResource( 674 ), ExtResource( 672 ), ExtResource( 681 ), ExtResource( 686 ), ExtResource( 685 ), ExtResource( 559 ), ExtResource( 541 ) ],
+"loop": true,
+"name": "Death",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 708 ), ExtResource( 725 ), ExtResource( 727 ), ExtResource( 731 ), ExtResource( 721 ), ExtResource( 720 ), ExtResource( 726 ), ExtResource( 728 ), ExtResource( 718 ), ExtResource( 716 ), ExtResource( 730 ), ExtResource( 732 ), ExtResource( 717 ), ExtResource( 729 ), ExtResource( 719 ), ExtResource( 722 ), ExtResource( 723 ), ExtResource( 724 ), ExtResource( 693 ), ExtResource( 694 ), ExtResource( 698 ), ExtResource( 696 ), ExtResource( 699 ), ExtResource( 697 ), ExtResource( 695 ), ExtResource( 691 ), ExtResource( 689 ), ExtResource( 690 ), ExtResource( 692 ), ExtResource( 700 ), ExtResource( 707 ), ExtResource( 704 ), ExtResource( 701 ), ExtResource( 703 ), ExtResource( 702 ), ExtResource( 705 ), ExtResource( 706 ), ExtResource( 709 ), ExtResource( 714 ), ExtResource( 710 ), ExtResource( 711 ), ExtResource( 715 ), ExtResource( 712 ), ExtResource( 713 ), ExtResource( 782 ), ExtResource( 760 ), ExtResource( 763 ), ExtResource( 790 ), ExtResource( 745 ), ExtResource( 750 ), ExtResource( 791 ), ExtResource( 781 ), ExtResource( 751 ), ExtResource( 756 ), ExtResource( 775 ), ExtResource( 755 ), ExtResource( 785 ), ExtResource( 789 ), ExtResource( 780 ), ExtResource( 746 ), ExtResource( 793 ), ExtResource( 773 ), ExtResource( 758 ), ExtResource( 759 ), ExtResource( 796 ), ExtResource( 754 ), ExtResource( 735 ), ExtResource( 783 ), ExtResource( 734 ), ExtResource( 737 ), ExtResource( 752 ), ExtResource( 762 ), ExtResource( 764 ), ExtResource( 733 ), ExtResource( 740 ), ExtResource( 761 ), ExtResource( 757 ), ExtResource( 738 ), ExtResource( 736 ), ExtResource( 739 ), ExtResource( 741 ), ExtResource( 765 ), ExtResource( 742 ), ExtResource( 766 ), ExtResource( 743 ), ExtResource( 749 ), ExtResource( 777 ), ExtResource( 748 ), ExtResource( 794 ), ExtResource( 753 ), ExtResource( 786 ), ExtResource( 788 ), ExtResource( 747 ), ExtResource( 744 ), ExtResource( 784 ), ExtResource( 767 ), ExtResource( 768 ), ExtResource( 769 ), ExtResource( 770 ), ExtResource( 771 ), ExtResource( 787 ), ExtResource( 772 ), ExtResource( 774 ), ExtResource( 776 ), ExtResource( 778 ), ExtResource( 792 ), ExtResource( 779 ), ExtResource( 795 ), ExtResource( 808 ), ExtResource( 838 ), ExtResource( 854 ), ExtResource( 834 ), ExtResource( 829 ), ExtResource( 841 ), ExtResource( 821 ), ExtResource( 852 ), ExtResource( 806 ), ExtResource( 801 ), ExtResource( 820 ), ExtResource( 848 ), ExtResource( 812 ), ExtResource( 849 ), ExtResource( 835 ), ExtResource( 815 ), ExtResource( 844 ), ExtResource( 822 ), ExtResource( 800 ), ExtResource( 809 ), ExtResource( 811 ), ExtResource( 816 ), ExtResource( 823 ), ExtResource( 842 ), ExtResource( 824 ), ExtResource( 853 ), ExtResource( 828 ), ExtResource( 805 ), ExtResource( 819 ), ExtResource( 856 ), ExtResource( 833 ), ExtResource( 804 ), ExtResource( 813 ), ExtResource( 857 ), ExtResource( 847 ), ExtResource( 814 ), ExtResource( 827 ), ExtResource( 818 ), ExtResource( 802 ), ExtResource( 858 ), ExtResource( 855 ), ExtResource( 859 ), ExtResource( 817 ), ExtResource( 860 ), ExtResource( 797 ), ExtResource( 798 ), ExtResource( 825 ), ExtResource( 830 ), ExtResource( 836 ), ExtResource( 807 ), ExtResource( 810 ), ExtResource( 826 ), ExtResource( 831 ), ExtResource( 832 ), ExtResource( 850 ), ExtResource( 799 ), ExtResource( 803 ), ExtResource( 837 ), ExtResource( 839 ), ExtResource( 843 ), ExtResource( 840 ), ExtResource( 845 ), ExtResource( 846 ), ExtResource( 851 ), ExtResource( 882 ), ExtResource( 866 ), ExtResource( 884 ), ExtResource( 878 ), ExtResource( 887 ), ExtResource( 877 ), ExtResource( 869 ), ExtResource( 870 ), ExtResource( 879 ), ExtResource( 880 ), ExtResource( 876 ), ExtResource( 875 ), ExtResource( 886 ), ExtResource( 891 ), ExtResource( 871 ), ExtResource( 861 ), ExtResource( 888 ), ExtResource( 864 ), ExtResource( 881 ), ExtResource( 873 ), ExtResource( 863 ), ExtResource( 874 ), ExtResource( 890 ), ExtResource( 872 ), ExtResource( 883 ), ExtResource( 868 ), ExtResource( 865 ), ExtResource( 862 ), ExtResource( 867 ), ExtResource( 889 ), ExtResource( 885 ) ],
+"loop": true,
+"name": "Revive",
+"speed": 24.0
+} ]
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 218 ), ExtResource( 228 ), ExtResource( 229 ), ExtResource( 223 ), ExtResource( 232 ), ExtResource( 227 ), ExtResource( 224 ), ExtResource( 235 ), ExtResource( 216 ), ExtResource( 237 ), ExtResource( 234 ), ExtResource( 221 ), ExtResource( 231 ), ExtResource( 219 ), ExtResource( 211 ), ExtResource( 230 ), ExtResource( 222 ), ExtResource( 236 ), ExtResource( 225 ), ExtResource( 220 ), ExtResource( 226 ), ExtResource( 212 ), ExtResource( 233 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 210 ), ExtResource( 217 ), ExtResource( 215 ), ExtResource( 242 ), ExtResource( 243 ), ExtResource( 245 ), ExtResource( 268 ), ExtResource( 255 ), ExtResource( 269 ), ExtResource( 246 ), ExtResource( 262 ), ExtResource( 257 ), ExtResource( 270 ), ExtResource( 266 ), ExtResource( 247 ), ExtResource( 271 ), ExtResource( 256 ), ExtResource( 260 ), ExtResource( 248 ), ExtResource( 253 ), ExtResource( 272 ), ExtResource( 238 ), ExtResource( 239 ), ExtResource( 249 ), ExtResource( 250 ), ExtResource( 258 ), ExtResource( 263 ), ExtResource( 240 ), ExtResource( 251 ), ExtResource( 252 ), ExtResource( 241 ), ExtResource( 254 ), ExtResource( 267 ), ExtResource( 259 ), ExtResource( 244 ), ExtResource( 261 ), ExtResource( 264 ), ExtResource( 265 ), ExtResource( 206 ), ExtResource( 207 ), ExtResource( 120 ), ExtResource( 208 ), ExtResource( 209 ), ExtResource( 116 ), ExtResource( 322 ), ExtResource( 333 ), ExtResource( 292 ), ExtResource( 306 ), ExtResource( 335 ), ExtResource( 281 ), ExtResource( 330 ), ExtResource( 282 ), ExtResource( 305 ), ExtResource( 334 ), ExtResource( 293 ), ExtResource( 303 ), ExtResource( 336 ), ExtResource( 283 ), ExtResource( 302 ), ExtResource( 323 ), ExtResource( 311 ), ExtResource( 277 ), ExtResource( 286 ), ExtResource( 316 ), ExtResource( 312 ), ExtResource( 314 ), ExtResource( 287 ), ExtResource( 301 ), ExtResource( 284 ), ExtResource( 279 ), ExtResource( 273 ), ExtResource( 274 ), ExtResource( 285 ), ExtResource( 288 ), ExtResource( 275 ), ExtResource( 289 ), ExtResource( 300 ), ExtResource( 329 ), ExtResource( 276 ), ExtResource( 332 ), ExtResource( 307 ), ExtResource( 308 ), ExtResource( 325 ), ExtResource( 297 ), ExtResource( 309 ), ExtResource( 294 ), ExtResource( 320 ), ExtResource( 298 ), ExtResource( 290 ), ExtResource( 278 ), ExtResource( 310 ), ExtResource( 291 ), ExtResource( 295 ), ExtResource( 296 ), ExtResource( 299 ), ExtResource( 331 ), ExtResource( 313 ), ExtResource( 304 ), ExtResource( 315 ), ExtResource( 317 ), ExtResource( 318 ), ExtResource( 280 ), ExtResource( 319 ), ExtResource( 321 ), ExtResource( 324 ), ExtResource( 326 ), ExtResource( 327 ), ExtResource( 328 ), ExtResource( 350 ), ExtResource( 379 ), ExtResource( 356 ), ExtResource( 348 ), ExtResource( 371 ), ExtResource( 373 ), ExtResource( 359 ), ExtResource( 369 ), ExtResource( 344 ), ExtResource( 383 ), ExtResource( 337 ), ExtResource( 358 ), ExtResource( 341 ), ExtResource( 357 ), ExtResource( 360 ), ExtResource( 396 ), ExtResource( 363 ), ExtResource( 352 ), ExtResource( 346 ), ExtResource( 351 ), ExtResource( 388 ), ExtResource( 338 ), ExtResource( 387 ), ExtResource( 361 ), ExtResource( 339 ), ExtResource( 400 ), ExtResource( 395 ), ExtResource( 368 ), ExtResource( 370 ), ExtResource( 345 ), ExtResource( 362 ), ExtResource( 347 ), ExtResource( 364 ), ExtResource( 365 ), ExtResource( 377 ), ExtResource( 349 ), ExtResource( 343 ), ExtResource( 354 ), ExtResource( 389 ), ExtResource( 366 ), ExtResource( 340 ), ExtResource( 397 ), ExtResource( 355 ), ExtResource( 367 ), ExtResource( 372 ), ExtResource( 342 ), ExtResource( 381 ), ExtResource( 374 ), ExtResource( 399 ), ExtResource( 375 ), ExtResource( 384 ), ExtResource( 386 ), ExtResource( 376 ), ExtResource( 380 ), ExtResource( 378 ), ExtResource( 353 ), ExtResource( 382 ), ExtResource( 385 ), ExtResource( 390 ), ExtResource( 391 ), ExtResource( 392 ), ExtResource( 393 ), ExtResource( 394 ), ExtResource( 398 ), ExtResource( 414 ), ExtResource( 405 ), ExtResource( 417 ), ExtResource( 430 ), ExtResource( 443 ), ExtResource( 406 ), ExtResource( 440 ), ExtResource( 437 ), ExtResource( 419 ), ExtResource( 401 ), ExtResource( 429 ), ExtResource( 431 ), ExtResource( 418 ), ExtResource( 423 ), ExtResource( 411 ), ExtResource( 438 ), ExtResource( 433 ), ExtResource( 407 ), ExtResource( 422 ), ExtResource( 434 ), ExtResource( 408 ), ExtResource( 441 ), ExtResource( 415 ), ExtResource( 412 ), ExtResource( 416 ), ExtResource( 435 ), ExtResource( 403 ), ExtResource( 436 ), ExtResource( 425 ), ExtResource( 424 ), ExtResource( 402 ), ExtResource( 444 ), ExtResource( 426 ), ExtResource( 439 ), ExtResource( 409 ), ExtResource( 427 ), ExtResource( 404 ), ExtResource( 432 ), ExtResource( 428 ), ExtResource( 410 ), ExtResource( 413 ), ExtResource( 420 ), ExtResource( 421 ), ExtResource( 442 ) ],
+"loop": true,
+"name": "Death",
+"speed": 24.0
+} ]
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "TakeDamage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.592157 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "ImprovedPlay"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=14]
+size = 15
+font_data = ExtResource( 169 )
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../HighLight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.941176, 0.0627451, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "StartHighLight"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../HighLight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.941176, 0.0627451, 0 ), Color( 1, 0.937255, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "BlueGlow"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 3, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "RedGlow"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 3, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 7
+script = ExtResource( 2 )
+weaponScene = ExtResource( 6 )
+berserkDamage = 50.0
+baseMovementSpeed = 250.0
+maxHealth = 5000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprites" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="PlayerShadowPlayer" type="Sprite" parent="Sprites"]
+position = Vector2( 0.5, 10.8125 )
+scale = Vector2( 0.167969, 0.186035 )
+z_index = -4
+texture = ExtResource( 204 )
+
+[node name="PlayerSprite" type="AnimatedSprite" parent="Sprites"]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.14, 0.14 )
+frames = SubResource( 6 )
+animation = "Neutral"
+script = ExtResource( 8 )
+directions = 32.0
+
+[node name="Shield" type="AnimatedSprite" parent="Sprites"]
+position = Vector2( -1.43051e-06, 2 )
+scale = Vector2( 0.05625, 0.05625 )
+frames = SubResource( 13 )
+animation = "Blue"
+script = ExtResource( 23 )
+
+[node name="PlayerDeathAnimation" type="AnimatedSprite" parent="Sprites"]
+visible = false
+scale = Vector2( 0.14, 0.14 )
+frames = SubResource( 18 )
+animation = "Revive"
+script = ExtResource( 445 )
+
+[node name="ShieldDisruptAnimation" type="AnimatedSprite" parent="Sprites"]
+visible = false
+position = Vector2( 0, 2 )
+scale = Vector2( 0.056, 0.056 )
+frames = SubResource( 17 )
+script = ExtResource( 445 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+show_behind_parent = true
+current = true
+zoom = Vector2( 0.6, 0.6 )
+script = ExtResource( 3 )
+shakeDuration = 0.025
+shakeImpact = 0.025
+
+[node name="Containers" type="Node2D" parent="."]
+script = ExtResource( 19 )
+
+[node name="HealthContainer" type="Node2D" parent="Containers"]
+script = ExtResource( 128 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Containers/HealthContainer"]
+layer = 0
+
+[node name="Background" type="TextureRect" parent="Containers/HealthContainer/CanvasLayer"]
+margin_left = -7.0
+margin_top = -3.0
+margin_right = 287.0
+margin_bottom = 139.0
+texture = ExtResource( 170 )
+expand = true
+
+[node name="HealthbarBackground" type="TextureRect" parent="Containers/HealthContainer/CanvasLayer"]
+margin_left = -4.0
+margin_top = 1.0
+margin_right = 245.0
+margin_bottom = 47.0
+texture = ExtResource( 20 )
+expand = true
+
+[node name="TakeDamage" type="TextureRect" parent="Containers/HealthContainer/CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.639
+anchor_top = 0.5
+anchor_right = 0.639
+anchor_bottom = 0.5
+margin_left = -704.336
+margin_top = -317.0
+margin_right = 394.664
+margin_bottom = 337.0
+mouse_filter = 2
+texture = ExtResource( 17 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Containers/HealthContainer/CanvasLayer/TakeDamage"]
+anims/RESET = SubResource( 4 )
+anims/TakeDamage = SubResource( 5 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Containers/HealthContainer/CanvasLayer/TakeDamage"]
+position = Vector2( 631, 365 )
+stream = ExtResource( 18 )
+volume_db = 3.0
+bus = "Effects"
+script = ExtResource( 15 )
+pitchVariance = 0.25
+
+[node name="Healthbar" type="TextureProgress" parent="Containers/HealthContainer/CanvasLayer"]
+margin_left = 17.0
+margin_top = 11.0
+margin_right = 223.0
+margin_bottom = 29.0
+value = 100.0
+texture_progress = ExtResource( 11 )
+texture_progress_offset = Vector2( -1, 0 )
+tint_progress = Color( 0, 1, 0, 1 )
+nine_patch_stretch = true
+script = ExtResource( 16 )
+
+[node name="HealthMarker" parent="Containers/HealthContainer/CanvasLayer/Healthbar" instance=ExtResource( 44 )]
+margin_top = -14.0
+margin_bottom = -14.0
+
+[node name="HealthMarker2" parent="Containers/HealthContainer/CanvasLayer/Healthbar" instance=ExtResource( 44 )]
+margin_left = 206.0
+margin_top = -14.0
+margin_right = 206.0
+margin_bottom = -14.0
+
+[node name="HealthMarker3" parent="Containers/HealthContainer/CanvasLayer/Healthbar" instance=ExtResource( 44 )]
+margin_left = 165.0
+margin_top = -14.0
+margin_right = 165.0
+margin_bottom = -14.0
+
+[node name="HealthMarker4" parent="Containers/HealthContainer/CanvasLayer/Healthbar" instance=ExtResource( 44 )]
+margin_left = 123.0
+margin_top = -14.0
+margin_right = 123.0
+margin_bottom = -14.0
+
+[node name="HealthMarker5" parent="Containers/HealthContainer/CanvasLayer/Healthbar" instance=ExtResource( 44 )]
+margin_left = 82.0
+margin_top = -14.0
+margin_right = 82.0
+margin_bottom = -14.0
+
+[node name="HealthMarker6" parent="Containers/HealthContainer/CanvasLayer/Healthbar" instance=ExtResource( 44 )]
+margin_left = 41.0
+margin_top = -14.0
+margin_right = 41.0
+margin_bottom = -14.0
+
+[node name="InvincibilityDuration" type="Timer" parent="Containers/HealthContainer"]
+wait_time = 0.5
+one_shot = true
+
+[node name="ColorContainer" type="Node2D" parent="Containers"]
+script = ExtResource( 5 )
+ConversionRate = 0.015
+absorbSound = ExtResource( 446 )
+
+[node name="Big" type="CanvasLayer" parent="Containers/ColorContainer"]
+layer = 0
+script = ExtResource( 166 )
+
+[node name="HighLight" type="TextureRect" parent="Containers/ColorContainer/Big"]
+modulate = Color( 1, 0.941176, 0.0627451, 0 )
+margin_left = -7.0
+margin_top = -3.0
+margin_right = 287.0
+margin_bottom = 139.0
+rect_scale = Vector2( 1.25, 1.5 )
+texture = ExtResource( 170 )
+expand = true
+
+[node name="HighLight2" type="TextureRect" parent="Containers/ColorContainer/Big/HighLight"]
+margin_right = 294.0
+margin_bottom = 142.0
+texture = ExtResource( 170 )
+expand = true
+
+[node name="HighLight3" type="TextureRect" parent="Containers/ColorContainer/Big/HighLight"]
+margin_right = 294.0
+margin_bottom = 142.0
+texture = ExtResource( 170 )
+expand = true
+
+[node name="HighLight4" type="TextureRect" parent="Containers/ColorContainer/Big/HighLight"]
+margin_right = 294.0
+margin_bottom = 142.0
+texture = ExtResource( 170 )
+expand = true
+
+[node name="Red" type="TextureProgress" parent="Containers/ColorContainer/Big"]
+margin_left = 79.0
+margin_top = 86.0
+margin_right = 241.0
+margin_bottom = 96.0
+value = 100.0
+texture_under = ExtResource( 165 )
+texture_progress = ExtResource( 165 )
+tint_progress = Color( 1, 0.0196078, 0.0196078, 1 )
+nine_patch_stretch = true
+script = ExtResource( 22 )
+
+[node name="Blue" type="TextureProgress" parent="Containers/ColorContainer/Big"]
+margin_left = 79.0
+margin_top = 63.0
+margin_right = 241.0
+margin_bottom = 74.0
+value = 100.0
+texture_under = ExtResource( 42 )
+texture_progress = ExtResource( 42 )
+tint_progress = Color( 0, 0.27451, 1, 1 )
+nine_patch_stretch = true
+script = ExtResource( 22 )
+
+[node name="Bonusdamage" type="Control" parent="Containers/ColorContainer/Big"]
+margin_top = 46.0
+margin_right = 80.0
+margin_bottom = 114.0
+
+[node name="TextureRect" type="TextureRect" parent="Containers/ColorContainer/Big/Bonusdamage"]
+margin_left = 13.0
+margin_top = 6.0
+margin_right = 74.0
+margin_bottom = 63.0
+texture = ExtResource( 168 )
+expand = true
+
+[node name="BlueBonusDamage" type="Label" parent="Containers/ColorContainer/Big/Bonusdamage"]
+margin_left = 23.0
+margin_top = 9.0
+margin_right = 63.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 14 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="RedBonusDamage" type="Label" parent="Containers/ColorContainer/Big/Bonusdamage"]
+margin_left = 23.0
+margin_top = 33.0
+margin_right = 63.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Background" type="TextureRect" parent="Containers/ColorContainer/Big"]
+margin_left = -1.0
+margin_top = 32.0
+margin_right = 274.0
+margin_bottom = 128.0
+texture = ExtResource( 41 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Containers/ColorContainer/Big"]
+root_node = NodePath("../Background")
+anims/RESET = SubResource( 15 )
+anims/StartHighLight = SubResource( 16 )
+
+[node name="Small" type="Node2D" parent="Containers/ColorContainer"]
+script = ExtResource( 167 )
+
+[node name="Blue" type="TextureProgress" parent="Containers/ColorContainer/Small"]
+margin_left = 7.0
+margin_top = 17.0
+margin_right = 44.0
+margin_bottom = 131.0
+rect_rotation = 90.0
+rect_scale = Vector2( 0.05, 0.125 )
+value = 50.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 45 )
+fill_mode = 3
+tint_under = Color( 1, 1, 1, 0.392157 )
+tint_progress = Color( 0, 0.25098, 1, 1 )
+nine_patch_stretch = true
+script = ExtResource( 22 )
+
+[node name="Red" type="TextureProgress" parent="Containers/ColorContainer/Small"]
+margin_left = 7.0
+margin_top = 20.0
+margin_right = 44.0
+margin_bottom = 134.0
+rect_rotation = 90.0
+rect_scale = Vector2( 0.05, 0.125 )
+value = 50.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 45 )
+fill_mode = 3
+tint_under = Color( 1, 1, 1, 0.392157 )
+tint_progress = Color( 1, 0, 0, 1 )
+nine_patch_stretch = true
+script = ExtResource( 22 )
+
+[node name="Blue" type="Node2D" parent="Containers/ColorContainer"]
+script = ExtResource( 12 )
+specialWeapon = ExtResource( 14 )
+powerMeter = NodePath("../../../Particles/PowerMeter_Blue")
+
+[node name="DecreaseTimer" type="Timer" parent="Containers/ColorContainer/Blue"]
+
+[node name="HoldTimer" type="Timer" parent="Containers/ColorContainer/Blue"]
+wait_time = 2.0
+
+[node name="CooldownTimer" type="Timer" parent="Containers/ColorContainer/Blue"]
+wait_time = 5.0
+
+[node name="Red" type="Node2D" parent="Containers/ColorContainer"]
+script = ExtResource( 12 )
+specialWeapon = ExtResource( 13 )
+powerMeter = NodePath("../../../Particles/PowerMeter_Red")
+
+[node name="DecreaseTimer" type="Timer" parent="Containers/ColorContainer/Red"]
+
+[node name="HoldTimer" type="Timer" parent="Containers/ColorContainer/Red"]
+wait_time = 2.0
+
+[node name="CooldownTimer" type="Timer" parent="Containers/ColorContainer/Red"]
+wait_time = 5.0
+
+[node name="ControlContainer" type="Node2D" parent="Containers"]
+script = ExtResource( 688 )
+
+[node name="StatContainer" type="Node2D" parent="Containers"]
+script = ExtResource( 10 )
+
+[node name="ItemContainer" type="Node2D" parent="Containers"]
+
+[node name="Particles" type="Node2D" parent="."]
+script = ExtResource( 1 )
+deathParticles = ExtResource( 892 )
+
+[node name="PowerParticles" type="Node2D" parent="Particles"]
+
+[node name="PowerMeter_Blue" parent="Particles" instance=ExtResource( 126 )]
+
+[node name="PowerMeter_Red" parent="Particles" instance=ExtResource( 127 )]
+
+[node name="PlayerHitEffect" parent="Particles" instance=ExtResource( 21 )]
+script = ExtResource( 4 )
+
+[node name="GlowAnimationPlayer" type="AnimationPlayer" parent="Particles"]
+anims/BlueGlow = SubResource( 12 )
+anims/RESET = SubResource( 10 )
+anims/RedGlow = SubResource( 11 )
+
+[node name="HealParticles" parent="Particles" instance=ExtResource( 171 )]
+
+[node name="RageMode" parent="Particles" instance=ExtResource( 205 )]
+
+[connection signal="OnDeath" from="Containers/HealthContainer" to="." method="Die"]
+[connection signal="onBerserkEnd" from="Containers/HealthContainer" to="." method="DisableBerserk"]
+[connection signal="onBerserkStart" from="Containers/HealthContainer" to="." method="ActivateBerserk"]
+[connection signal="OnSpecial" from="Containers/ColorContainer/Blue" to="Containers/ColorContainer" method="_on_Blue_OnSpecial"]
+[connection signal="OnValueChanged" from="Containers/ColorContainer/Blue" to="Containers/ColorContainer" method="_on_Blue_OnValueChanged"]
+[connection signal="timeout" from="Containers/ColorContainer/Blue/DecreaseTimer" to="Containers/ColorContainer/Blue" method="_on_DecreaseTimer_timeout"]
+[connection signal="timeout" from="Containers/ColorContainer/Blue/HoldTimer" to="Containers/ColorContainer/Blue" method="_on_HoldTimer_timeout"]
+[connection signal="timeout" from="Containers/ColorContainer/Blue/CooldownTimer" to="Containers/ColorContainer/Blue" method="_on_CooldownTimer_timeout"]
+[connection signal="OnSpecial" from="Containers/ColorContainer/Red" to="Containers/ColorContainer" method="_on_Red_OnSpecial"]
+[connection signal="OnValueChanged" from="Containers/ColorContainer/Red" to="Containers/ColorContainer" method="_on_Red_OnValueChanged"]
+[connection signal="timeout" from="Containers/ColorContainer/Red/DecreaseTimer" to="Containers/ColorContainer/Red" method="_on_DecreaseTimer_timeout"]
+[connection signal="timeout" from="Containers/ColorContainer/Red/HoldTimer" to="Containers/ColorContainer/Red" method="_on_HoldTimer_timeout"]
+[connection signal="timeout" from="Containers/ColorContainer/Red/CooldownTimer" to="Containers/ColorContainer/Red" method="_on_CooldownTimer_timeout"]
+[connection signal="SwitchColor" from="Containers/ControlContainer" to="." method="SwitchColor"]
+[connection signal="TryFire" from="Containers/ControlContainer" to="." method="TryFire"]

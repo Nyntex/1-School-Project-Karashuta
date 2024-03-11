@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Scripts/SearchingMovement.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/SpriteHolder and WallChecker/Sc_MovingEnemy_WallChecker.tscn" type="PackedScene" id=2]
+
+[node name="SearchingMovement" type="Node2D"]
+script = ExtResource( 1 )
+maxDistanceFromOrigin = 100.0
+
+[node name="WallChecker" parent="." instance=ExtResource( 2 )]
+wallCheckRange = 20.0

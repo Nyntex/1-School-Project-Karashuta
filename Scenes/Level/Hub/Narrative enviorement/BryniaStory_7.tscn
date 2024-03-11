@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/TemplateEnviorement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/HubRoom/Teddy/YellowTeddy.png" type="Texture" id=2]
+
+[node name="Mortenbear" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label" parent="CanvasLayer/TextBackground" index="0"]
+margin_left = 35.0
+margin_right = 496.0
+margin_bottom = 379.0
+text = ">>Mortenbear, who to me always seemed a little stoned - which of course I never told Bryn.<<"

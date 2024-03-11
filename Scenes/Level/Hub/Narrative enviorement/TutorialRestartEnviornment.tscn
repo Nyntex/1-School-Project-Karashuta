@@ -1,0 +1,256 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=1]
+[ext_resource path="res://Assets/HubRoom/Teddy/tut_teddy.png" type="Texture" id=2]
+[ext_resource path="res://Placeholders/UI/e-key.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/TutorialRestartEnviornment.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Fonts/good timing bd.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/UI/SMALL PANALS/Small panal 1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/HORIZONTAL TAB BAR/Tab button default.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/HORIZONTAL TAB BAR/Tab button active.png" type="Texture" id=8]
+[ext_resource path="res://Audio/cinematic-cello-115667.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Audio/SwooshMenu.tres" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/Game/ImprovedSound.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/TutorialEnviornmentCanvasLayer.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/UI/ControllerSelected.tscn" type="PackedScene" id=13]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 78.0256
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="RestartTutorial" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 18 )
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+visible = false
+script = ExtResource( 12 )
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+modulate = Color( 0, 0, 0, 0.54902 )
+margin_left = -316.0
+margin_top = -151.0
+margin_right = 1230.0
+margin_bottom = 786.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="TextBackground" type="TextureRect" parent="CanvasLayer"]
+margin_left = 144.0
+margin_top = 29.0
+margin_right = 867.0
+margin_bottom = 514.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="CanvasLayer/TextBackground"]
+margin_left = 17.0
+margin_top = -26.0
+margin_right = 709.0
+margin_bottom = 361.0
+custom_fonts/font = SubResource( 2 )
+text = "Do you want to redo the tutorial?"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Yes" type="TextureButton" parent="CanvasLayer"]
+margin_left = 216.0
+margin_top = 352.0
+margin_right = 472.0
+margin_bottom = 441.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Yes"]
+margin_left = 29.0
+margin_top = 21.0
+margin_right = 229.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 3 )
+text = "Yes"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="CanvasLayer/Yes" instance=ExtResource( 13 )]
+margin_left = -36.0
+margin_top = -5.999
+margin_right = 128.0
+margin_bottom = 112.001
+
+[node name="No" type="TextureButton" parent="CanvasLayer"]
+margin_left = 542.0
+margin_top = 353.0
+margin_right = 798.0
+margin_bottom = 442.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="CanvasLayer/No"]
+margin_left = 29.0
+margin_top = 21.0
+margin_right = 229.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 3 )
+text = "No"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="CanvasLayer/No" instance=ExtResource( 13 )]
+margin_left = -29.0
+margin_top = -3.999
+margin_right = 135.0
+margin_bottom = 114.001
+
+[node name="Notification" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -124 )
+scale = Vector2( 0.170573, 0.166667 )
+texture = ExtResource( 3 )
+
+[node name="ControllerSelected" parent="." instance=ExtResource( 13 )]
+visible = false
+margin_top = -160.0
+margin_bottom = -42.0
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Effects"
+script = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HoverSound"]
+anims/FadeIn = SubResource( 4 )
+anims/FadeOut = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+bus = "Effects"
+script = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonClickSound"]
+anims/FadeIn = SubResource( 7 )
+anims/FadeOut = SubResource( 8 )
+anims/RESET = SubResource( 9 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Yes" to="." method="_on_Yes_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Yes" to="." method="_on_Yes_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/No" to="." method="_on_No_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/No" to="." method="_on_No_pressed"]

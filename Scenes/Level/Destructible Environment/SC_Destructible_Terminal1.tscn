@@ -1,0 +1,79 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Level/Destructible Environment/Template/Sc_DestructibleEnvironment.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_6.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_6_kaputt.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_7.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_2_kaputt.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_3_kaputt.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_4_kaputt.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_5_kaputt.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_1_kaputt.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_5.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_7_kaputt.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_8_kaputt.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Level/DestructibleEnvironment/Terminal_1/Terminal_1_8.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+resource_local_to_scene = true
+extents = Vector2( 8, 12.5 )
+
+[node name="DestructibleObject" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
+maxHealth = 150.0
+
+[node name="Sprite" parent="." index="0"]
+frames = SubResource( 1 )
+animation = "3"
+
+[node name="CompleteCollision" parent="." index="1"]
+position = Vector2( 0, -4.5 )
+shape = SubResource( 2 )

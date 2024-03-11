@@ -1,0 +1,59 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://Scenes/Items/Item_HPCanister/Item_HpCanister.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0020.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0019.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0007.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0014.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0025.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0016.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0012.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0018.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0015.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0010.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0011.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0006.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0013.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0027.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0028.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0009.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0022.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0008.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0017.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0021.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0023.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0029.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0024.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0026.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0001.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0003.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0004.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0005.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0000.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Items/Potion/HP_UP_Anim0002.png" type="Texture" id=31]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 30 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 20 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 6 ), ExtResource( 25 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[node name="Item_HpCanister" type="Area2D"]
+collision_layer = 0
+script = ExtResource( 1 )
+health = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.03, 0.03 )
+frames = SubResource( 2 )
+frame = 13
+playing = true
+
+[connection signal="body_entered" from="." to="." method="_on_TemplateItem_body_entered"]

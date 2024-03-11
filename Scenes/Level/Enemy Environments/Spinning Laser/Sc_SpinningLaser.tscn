@@ -1,0 +1,80 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Scenes/Level/Enemy Environments/Spinning Laser/SpinningLaser.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Level/Enemy Environments/Sc_LaserCaster.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0024.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0022.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0017.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0013.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0023.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0020.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0021.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0019.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0012.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0009.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0008.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0018.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0006.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0003.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0010.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0002.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0015.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0001.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0016.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0011.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0007.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0005.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0004.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0000.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0014.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0027.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0026.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0025.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0029.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0028.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Level/LaserGenerators/LaserGenerator_Dreh/Drei_Laser/0030.png" type="Texture" id=33]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.1245
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 27 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 23 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "SpinningLaser",
+"speed": 5.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=5]
+blend_mode = 1
+
+[node name="SpinningLaser" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+rotationSpeed = 180.0
+currentColor = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
+shape = SubResource( 1 )
+
+[node name="LaserGenerator" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 4 )
+animation = "SpinningLaser"
+
+[node name="RotationNode" type="Position2D" parent="."]
+
+[node name="LaserCaster" parent="RotationNode" instance=ExtResource( 2 )]
+material = SubResource( 5 )
+position = Vector2( 17, -11 )
+rotation = -0.523599
+
+[node name="LaserCaster2" parent="RotationNode" instance=ExtResource( 2 )]
+position = Vector2( 0, 11.5 )
+rotation = 1.5708
+
+[node name="LaserCaster3" parent="RotationNode" instance=ExtResource( 2 )]
+position = Vector2( -17, -11 )
+rotation = 3.66519

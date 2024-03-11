@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/Hexagon1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/Hexagon2.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+interpolation_mode = 1
+offsets = PoolRealArray( 0, 0.112069, 0.232759, 0.375, 0.50431, 0.655172, 0.775862, 0.896552 )
+colors = PoolColorArray( 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = -0.25
+max_value = 0.25
+_data = [ Vector2( 0, -0.0828221 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0920245 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.17223, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+lifetime_randomness = 0.52
+emission_shape = 5
+emission_ring_radius = 15.0
+emission_ring_inner_radius = 15.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 99.34
+angular_velocity = 320.92
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+orbit_velocity_curve = SubResource( 4 )
+damping = 68.87
+angle = 720.0
+angle_random = 1.0
+scale_curve = SubResource( 6 )
+color = Color( 2, 2, 2, 1 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="AnimatedTexture" id=8]
+flags = 4
+frames = 2
+fps = 20.0
+frame_0/texture = ExtResource( 3 )
+frame_1/texture = ExtResource( 2 )
+frame_1/delay_sec = 0.0
+
+[node name="Particles2D" type="Particles2D"]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.69
+visibility_rect = Rect2( -500, -500, 1000, 1000 )
+process_material = SubResource( 7 )
+texture = SubResource( 8 )

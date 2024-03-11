@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=1]
+
+[node name="HealthMarker" type="Control"]
+
+[node name="HealthMarker" type="TextureRect" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -1.0
+margin_top = 14.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )
+expand = true

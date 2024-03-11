@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/TemplateEnviorement.tscn" type="PackedScene" id=1]
+
+[node name="EnemyTrophy_8" instance=ExtResource( 1 )]

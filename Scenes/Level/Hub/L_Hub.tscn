@@ -1,0 +1,1659 @@
+[gd_scene load_steps=383 format=2]
+
+[ext_resource path="res://TileMaps/TileMapTutorial_Boden.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/UI/ControllerSelected.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0003.png" type="Texture" id=3]
+[ext_resource path="res://TileMaps/TileMapTutorial.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/Level/Hub/L_Hub.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Fonts/good timing bd.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scenes/Level/Tutorial/TutorialV2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TileMaps/HubRoom_tileset.tres" type="TileSet" id=9]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/TutorialRestartEnviornment.tscn" type="PackedScene" id=10]
+[ext_resource path="res://TileMaps/Shadow_tileset.tres" type="TileSet" id=11]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Level/Hub/HubDoor.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Level/Hub/HubLevel.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Level/Hub/Easy.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Level/Hub/Mid.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Level/Hub/Hard.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Level/Hub/EasyUnlocks.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Level/Hub/MidUnlocks.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Level/Hub/HardUnlocks.gd" type="Script" id=20]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0005.png" type="Texture" id=21]
+[ext_resource path="res://Assets/UI/Locks/Lock_locked.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Level/Hub/Lock.gd" type="Script" id=23]
+[ext_resource path="res://Assets/UI/Locks/Lock_open.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Level/Hub/EasyCanvas.gd" type="Script" id=26]
+[ext_resource path="res://Scenes/Level/Hub/MidCanvas.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/Level/Hub/HardCanvas.gd" type="Script" id=28]
+[ext_resource path="res://Scenes/Level/Hub/Boss.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/Level/Hub/BossCanvas.gd" type="Script" id=30]
+[ext_resource path="res://Scenes/Level/Difficulties/Boss/Trigger Twins Clone.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_3.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_4.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0004.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0022.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0009.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0006.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0002.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0000.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0007.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0011.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0001.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0003.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0024.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0018.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0012.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0015.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0014.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0025.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0023.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0005.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0020.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0021.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0016.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0008.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0017.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0010.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0019.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Level/Lock/Door/Door_Left/Door_Left0013.png" type="Texture" id=59]
+[ext_resource path="res://Scenes/Level/SluiceDoor.gd" type="Script" id=60]
+[ext_resource path="res://Placeholders/UI/e-key.png" type="Texture" id=61]
+[ext_resource path="res://Assets/UI/RECTANGULAR BUTTONS 2/Rb_2_3.png" type="Texture" id=62]
+[ext_resource path="res://Scenes/Level/Hub/Notification.gd" type="Script" id=63]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_5.tscn" type="PackedScene" id=64]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_6.tscn" type="PackedScene" id=65]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_1.tscn" type="PackedScene" id=66]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_2.tscn" type="PackedScene" id=67]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_6.tscn" type="PackedScene" id=68]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_7.tscn" type="PackedScene" id=69]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_3.tscn" type="PackedScene" id=70]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_5.tscn" type="PackedScene" id=71]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0008.png" type="Texture" id=72]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0073.png" type="Texture" id=73]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0002.png" type="Texture" id=74]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0006.png" type="Texture" id=75]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0004.png" type="Texture" id=76]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0007.png" type="Texture" id=77]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0029.png" type="Texture" id=78]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0001.png" type="Texture" id=79]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0059.png" type="Texture" id=80]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0087.png" type="Texture" id=81]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0010.png" type="Texture" id=82]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0011.png" type="Texture" id=83]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0009.png" type="Texture" id=84]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0026.png" type="Texture" id=85]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0053.png" type="Texture" id=86]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0055.png" type="Texture" id=87]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0023.png" type="Texture" id=88]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0046.png" type="Texture" id=89]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0047.png" type="Texture" id=90]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0056.png" type="Texture" id=91]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0061.png" type="Texture" id=92]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0012.png" type="Texture" id=93]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0064.png" type="Texture" id=94]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0018.png" type="Texture" id=95]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0066.png" type="Texture" id=96]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0058.png" type="Texture" id=97]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0038.png" type="Texture" id=98]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0027.png" type="Texture" id=99]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0034.png" type="Texture" id=100]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0068.png" type="Texture" id=101]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0074.png" type="Texture" id=102]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0017.png" type="Texture" id=103]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0076.png" type="Texture" id=104]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0077.png" type="Texture" id=105]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0078.png" type="Texture" id=106]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0036.png" type="Texture" id=107]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0014.png" type="Texture" id=108]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0020.png" type="Texture" id=109]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0021.png" type="Texture" id=110]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0030.png" type="Texture" id=111]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0048.png" type="Texture" id=112]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0051.png" type="Texture" id=113]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0035.png" type="Texture" id=114]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0063.png" type="Texture" id=115]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0019.png" type="Texture" id=116]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0022.png" type="Texture" id=117]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0041.png" type="Texture" id=118]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0060.png" type="Texture" id=119]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0062.png" type="Texture" id=120]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0069.png" type="Texture" id=121]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0071.png" type="Texture" id=122]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0032.png" type="Texture" id=123]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0013.png" type="Texture" id=124]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0031.png" type="Texture" id=125]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0042.png" type="Texture" id=126]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0015.png" type="Texture" id=127]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0065.png" type="Texture" id=128]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0043.png" type="Texture" id=129]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0067.png" type="Texture" id=130]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0016.png" type="Texture" id=131]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0070.png" type="Texture" id=132]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0072.png" type="Texture" id=133]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0075.png" type="Texture" id=134]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0039.png" type="Texture" id=135]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0025.png" type="Texture" id=136]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0028.png" type="Texture" id=137]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0037.png" type="Texture" id=138]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0040.png" type="Texture" id=139]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0044.png" type="Texture" id=140]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0054.png" type="Texture" id=141]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0057.png" type="Texture" id=142]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0024.png" type="Texture" id=143]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0033.png" type="Texture" id=144]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0049.png" type="Texture" id=145]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0050.png" type="Texture" id=146]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0045.png" type="Texture" id=147]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0052.png" type="Texture" id=148]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0084.png" type="Texture" id=149]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0116.png" type="Texture" id=150]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0139.png" type="Texture" id=151]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0141.png" type="Texture" id=152]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0140.png" type="Texture" id=153]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0142.png" type="Texture" id=154]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0143.png" type="Texture" id=155]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0097.png" type="Texture" id=156]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0100.png" type="Texture" id=157]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0104.png" type="Texture" id=158]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0120.png" type="Texture" id=159]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0096.png" type="Texture" id=160]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0123.png" type="Texture" id=161]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0090.png" type="Texture" id=162]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0125.png" type="Texture" id=163]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0130.png" type="Texture" id=164]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0088.png" type="Texture" id=165]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0099.png" type="Texture" id=166]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0105.png" type="Texture" id=167]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0126.png" type="Texture" id=168]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0119.png" type="Texture" id=169]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0083.png" type="Texture" id=170]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0079.png" type="Texture" id=171]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0092.png" type="Texture" id=172]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0115.png" type="Texture" id=173]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0080.png" type="Texture" id=174]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0094.png" type="Texture" id=175]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0112.png" type="Texture" id=176]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0093.png" type="Texture" id=177]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0086.png" type="Texture" id=178]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0113.png" type="Texture" id=179]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0114.png" type="Texture" id=180]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0118.png" type="Texture" id=181]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0107.png" type="Texture" id=182]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0128.png" type="Texture" id=183]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0101.png" type="Texture" id=184]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0129.png" type="Texture" id=185]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0131.png" type="Texture" id=186]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0132.png" type="Texture" id=187]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0089.png" type="Texture" id=188]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0109.png" type="Texture" id=189]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0098.png" type="Texture" id=190]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0106.png" type="Texture" id=191]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0110.png" type="Texture" id=192]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0082.png" type="Texture" id=193]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0134.png" type="Texture" id=194]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0135.png" type="Texture" id=195]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0102.png" type="Texture" id=196]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0136.png" type="Texture" id=197]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0108.png" type="Texture" id=198]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0085.png" type="Texture" id=199]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0103.png" type="Texture" id=200]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0122.png" type="Texture" id=201]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0124.png" type="Texture" id=202]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0137.png" type="Texture" id=203]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0117.png" type="Texture" id=204]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0081.png" type="Texture" id=205]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0121.png" type="Texture" id=206]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0133.png" type="Texture" id=207]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0111.png" type="Texture" id=208]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0138.png" type="Texture" id=209]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0127.png" type="Texture" id=210]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0095.png" type="Texture" id=211]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0091.png" type="Texture" id=212]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0166.png" type="Texture" id=213]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0183.png" type="Texture" id=214]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0184.png" type="Texture" id=215]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0189.png" type="Texture" id=216]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0201.png" type="Texture" id=217]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0193.png" type="Texture" id=218]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0172.png" type="Texture" id=219]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0178.png" type="Texture" id=220]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0182.png" type="Texture" id=221]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0145.png" type="Texture" id=222]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0144.png" type="Texture" id=223]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0150.png" type="Texture" id=224]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0203.png" type="Texture" id=225]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0204.png" type="Texture" id=226]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0205.png" type="Texture" id=227]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0179.png" type="Texture" id=228]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0149.png" type="Texture" id=229]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0152.png" type="Texture" id=230]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0153.png" type="Texture" id=231]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0154.png" type="Texture" id=232]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0155.png" type="Texture" id=233]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0158.png" type="Texture" id=234]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0162.png" type="Texture" id=235]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0165.png" type="Texture" id=236]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0159.png" type="Texture" id=237]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0180.png" type="Texture" id=238]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0160.png" type="Texture" id=239]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0185.png" type="Texture" id=240]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0151.png" type="Texture" id=241]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0197.png" type="Texture" id=242]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0167.png" type="Texture" id=243]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0196.png" type="Texture" id=244]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0199.png" type="Texture" id=245]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0206.png" type="Texture" id=246]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0195.png" type="Texture" id=247]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0207.png" type="Texture" id=248]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0186.png" type="Texture" id=249]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0190.png" type="Texture" id=250]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0202.png" type="Texture" id=251]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0168.png" type="Texture" id=252]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0147.png" type="Texture" id=253]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0156.png" type="Texture" id=254]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0174.png" type="Texture" id=255]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0175.png" type="Texture" id=256]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0181.png" type="Texture" id=257]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0188.png" type="Texture" id=258]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0146.png" type="Texture" id=259]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0148.png" type="Texture" id=260]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0163.png" type="Texture" id=261]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0170.png" type="Texture" id=262]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0176.png" type="Texture" id=263]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0191.png" type="Texture" id=264]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0157.png" type="Texture" id=265]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0194.png" type="Texture" id=266]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0200.png" type="Texture" id=267]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0177.png" type="Texture" id=268]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0161.png" type="Texture" id=269]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0187.png" type="Texture" id=270]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0173.png" type="Texture" id=271]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0171.png" type="Texture" id=272]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0192.png" type="Texture" id=273]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0198.png" type="Texture" id=274]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0164.png" type="Texture" id=275]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0169.png" type="Texture" id=276]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0212.png" type="Texture" id=277]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0224.png" type="Texture" id=278]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0216.png" type="Texture" id=279]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0218.png" type="Texture" id=280]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0230.png" type="Texture" id=281]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0225.png" type="Texture" id=282]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0213.png" type="Texture" id=283]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0236.png" type="Texture" id=284]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0231.png" type="Texture" id=285]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0239.png" type="Texture" id=286]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0219.png" type="Texture" id=287]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0217.png" type="Texture" id=288]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0232.png" type="Texture" id=289]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0211.png" type="Texture" id=290]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0221.png" type="Texture" id=291]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0223.png" type="Texture" id=292]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0227.png" type="Texture" id=293]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0229.png" type="Texture" id=294]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0237.png" type="Texture" id=295]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0226.png" type="Texture" id=296]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0234.png" type="Texture" id=297]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0233.png" type="Texture" id=298]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0241.png" type="Texture" id=299]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0220.png" type="Texture" id=300]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0214.png" type="Texture" id=301]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0215.png" type="Texture" id=302]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0235.png" type="Texture" id=303]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0209.png" type="Texture" id=304]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0222.png" type="Texture" id=305]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0208.png" type="Texture" id=306]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0238.png" type="Texture" id=307]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0240.png" type="Texture" id=308]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0210.png" type="Texture" id=309]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoorSmall/0228.png" type="Texture" id=310]
+[ext_resource path="res://TileMaps/Walls_Stage_I.tres" type="TileSet" id=311]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_11.tscn" type="PackedScene" id=312]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_2.tscn" type="PackedScene" id=313]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_4.tscn" type="PackedScene" id=314]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_8.tscn" type="PackedScene" id=315]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_9.tscn" type="PackedScene" id=316]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_10.tscn" type="PackedScene" id=317]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_1.tscn" type="PackedScene" id=318]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/MainStory_7.tscn" type="PackedScene" id=319]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/EnemyTrophy_1.tscn" type="PackedScene" id=320]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/EnemyTrophy_6.tscn" type="PackedScene" id=321]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/EnemyTrophy_5.tscn" type="PackedScene" id=322]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/EnemyTrophy_2.tscn" type="PackedScene" id=323]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/EnemyTrophy_7.tscn" type="PackedScene" id=324]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/EnemyTrophy_3.tscn" type="PackedScene" id=325]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/EnemyTrophy_4.tscn" type="PackedScene" id=326]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_8.tscn" type="PackedScene" id=327]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_4.tscn" type="PackedScene" id=328]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_3.tscn" type="PackedScene" id=329]
+[ext_resource path="res://TileMaps/Easy_Walls.tres" type="TileSet" id=330]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_5.tscn" type="PackedScene" id=331]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_6.tscn" type="PackedScene" id=332]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_8.tscn" type="PackedScene" id=333]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_7.tscn" type="PackedScene" id=334]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_9.tscn" type="PackedScene" id=335]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_10.tscn" type="PackedScene" id=336]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_11.tscn" type="PackedScene" id=337]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_12.tscn" type="PackedScene" id=338]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_13.tscn" type="PackedScene" id=339]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_14.tscn" type="PackedScene" id=340]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/BryniaStory_15.tscn" type="PackedScene" id=341]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_9.tscn" type="PackedScene" id=342]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/ProfStory_10.tscn" type="PackedScene" id=343]
+[ext_resource path="res://General Scripts/AudioStreamEnhancer.gd" type="Script" id=344]
+[ext_resource path="res://Audio/BossDoor.mp3" type="AudioStream" id=345]
+[ext_resource path="res://Assets/HubRoom/BossDoor/BossDoor_Anim0330.png" type="Texture" id=386]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0001.png" type="Texture" id=401]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0030.png" type="Texture" id=402]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0007.png" type="Texture" id=403]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0004.png" type="Texture" id=404]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0010.png" type="Texture" id=405]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0013.png" type="Texture" id=406]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0016.png" type="Texture" id=407]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0019.png" type="Texture" id=408]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0022.png" type="Texture" id=409]
+[ext_resource path="res://Assets/Level/Door/DoorHorizontal0025.png" type="Texture" id=410]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/Trophy.tscn" type="PackedScene" id=412]
+
+[sub_resource type="DynamicFont" id=5]
+size = 15
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=17]
+resource_name = "Appear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureProgress:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1229, 18 ), Vector2( 765, 17 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1317, 2 ), Vector2( 853, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Level:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1198, 11 ), Vector2( 734, 10 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureProgress:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 765, 17 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 853, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Level:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 734, 10 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 318, 161.5 )
+
+[sub_resource type="Animation" id=19]
+resource_name = "Appear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Level:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1199, 12 ), Vector2( 734, 10 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1318, 3 ), Vector2( 858, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TextureProgress:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1230, 19 ), Vector2( 765, 17 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Level:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 734, 51 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 853, 42 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TextureProgress:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 765, 58 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 39 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 34 ), ExtResource( 51 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 55 ), ExtResource( 36 ), ExtResource( 57 ), ExtResource( 41 ), ExtResource( 46 ), ExtResource( 59 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 54 ), ExtResource( 56 ), ExtResource( 45 ), ExtResource( 58 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 35 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "Close",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 49 ) ],
+"loop": true,
+"name": "Closed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 44 ), ExtResource( 50 ), ExtResource( 35 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 45 ), ExtResource( 56 ), ExtResource( 54 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 59 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 57 ), ExtResource( 36 ), ExtResource( 55 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 51 ), ExtResource( 34 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "Open",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 39 ) ],
+"loop": true,
+"name": "Opened",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 23.1465, 585.061 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 25
+font_data = ExtResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 57.8661, 433.155 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 211.5, 196.5 )
+
+[sub_resource type="Animation" id=23]
+resource_name = "Appear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureProgress:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1229, 18 ), Vector2( 765, 17 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1317, 2 ), Vector2( 850, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Level:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1198, 11 ), Vector2( 734, 10 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureProgress:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 765, 99 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 853, 83 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Level:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 734, 92 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 297.5, 235.25 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ ExtResource( 402 ), ExtResource( 409 ), ExtResource( 410 ), ExtResource( 408 ), ExtResource( 407 ), ExtResource( 406 ), ExtResource( 405 ), ExtResource( 403 ), ExtResource( 404 ), ExtResource( 401 ) ],
+"loop": true,
+"name": "Close",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 401 ) ],
+"loop": true,
+"name": "Closed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 401 ), ExtResource( 404 ), ExtResource( 403 ), ExtResource( 405 ), ExtResource( 406 ), ExtResource( 407 ), ExtResource( 408 ), ExtResource( 409 ), ExtResource( 410 ), ExtResource( 402 ) ],
+"loop": true,
+"name": "Open",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 402 ) ],
+"loop": true,
+"name": "Opened",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 462.767, 78.3584 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 467.69, 84.4444 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "Appear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Locks:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 400, -2 ), Vector2( -29, -2 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Locks:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -29, -2 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 79 ) ],
+"loop": true,
+"name": "Close",
+"speed": 100.0
+}, {
+"frames": [ ExtResource( 79 ) ],
+"loop": true,
+"name": "Closed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 79 ), ExtResource( 74 ), ExtResource( 3 ), ExtResource( 76 ), ExtResource( 21 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 72 ), ExtResource( 84 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 93 ), ExtResource( 124 ), ExtResource( 108 ), ExtResource( 127 ), ExtResource( 131 ), ExtResource( 103 ), ExtResource( 95 ), ExtResource( 116 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 117 ), ExtResource( 88 ), ExtResource( 143 ), ExtResource( 136 ), ExtResource( 85 ), ExtResource( 99 ), ExtResource( 137 ), ExtResource( 78 ), ExtResource( 111 ), ExtResource( 125 ), ExtResource( 123 ), ExtResource( 144 ), ExtResource( 100 ), ExtResource( 114 ), ExtResource( 107 ), ExtResource( 138 ), ExtResource( 98 ), ExtResource( 135 ), ExtResource( 139 ), ExtResource( 118 ), ExtResource( 126 ), ExtResource( 129 ), ExtResource( 140 ), ExtResource( 147 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 112 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 113 ), ExtResource( 148 ), ExtResource( 86 ), ExtResource( 141 ), ExtResource( 87 ), ExtResource( 91 ), ExtResource( 142 ), ExtResource( 97 ), ExtResource( 80 ), ExtResource( 119 ), ExtResource( 92 ), ExtResource( 120 ), ExtResource( 115 ), ExtResource( 94 ), ExtResource( 128 ), ExtResource( 96 ), ExtResource( 130 ), ExtResource( 101 ), ExtResource( 121 ), ExtResource( 132 ), ExtResource( 122 ), ExtResource( 133 ), ExtResource( 73 ), ExtResource( 102 ), ExtResource( 134 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 171 ), ExtResource( 174 ), ExtResource( 205 ), ExtResource( 193 ), ExtResource( 170 ), ExtResource( 149 ), ExtResource( 199 ), ExtResource( 178 ), ExtResource( 81 ), ExtResource( 165 ), ExtResource( 188 ), ExtResource( 162 ), ExtResource( 212 ), ExtResource( 172 ), ExtResource( 177 ), ExtResource( 175 ), ExtResource( 211 ), ExtResource( 160 ), ExtResource( 156 ), ExtResource( 190 ), ExtResource( 166 ), ExtResource( 157 ), ExtResource( 184 ), ExtResource( 196 ), ExtResource( 200 ), ExtResource( 158 ), ExtResource( 167 ), ExtResource( 191 ), ExtResource( 182 ), ExtResource( 198 ), ExtResource( 189 ), ExtResource( 192 ), ExtResource( 208 ), ExtResource( 176 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 173 ), ExtResource( 150 ), ExtResource( 204 ), ExtResource( 181 ), ExtResource( 169 ), ExtResource( 159 ), ExtResource( 206 ), ExtResource( 201 ), ExtResource( 161 ), ExtResource( 202 ), ExtResource( 163 ), ExtResource( 168 ), ExtResource( 210 ), ExtResource( 183 ), ExtResource( 185 ), ExtResource( 164 ), ExtResource( 186 ), ExtResource( 187 ), ExtResource( 207 ), ExtResource( 194 ), ExtResource( 195 ), ExtResource( 197 ), ExtResource( 203 ), ExtResource( 209 ), ExtResource( 151 ), ExtResource( 153 ), ExtResource( 152 ), ExtResource( 154 ), ExtResource( 155 ), ExtResource( 223 ), ExtResource( 222 ), ExtResource( 259 ), ExtResource( 253 ), ExtResource( 260 ), ExtResource( 229 ), ExtResource( 224 ), ExtResource( 241 ), ExtResource( 230 ), ExtResource( 231 ), ExtResource( 232 ), ExtResource( 233 ), ExtResource( 254 ), ExtResource( 265 ), ExtResource( 234 ), ExtResource( 237 ), ExtResource( 239 ), ExtResource( 269 ), ExtResource( 235 ), ExtResource( 261 ), ExtResource( 275 ), ExtResource( 236 ), ExtResource( 213 ), ExtResource( 243 ), ExtResource( 252 ), ExtResource( 276 ), ExtResource( 262 ), ExtResource( 272 ), ExtResource( 219 ), ExtResource( 271 ), ExtResource( 255 ), ExtResource( 256 ), ExtResource( 263 ), ExtResource( 268 ), ExtResource( 220 ), ExtResource( 228 ), ExtResource( 238 ), ExtResource( 257 ), ExtResource( 221 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 240 ), ExtResource( 249 ), ExtResource( 270 ), ExtResource( 258 ), ExtResource( 216 ), ExtResource( 250 ), ExtResource( 264 ), ExtResource( 273 ), ExtResource( 218 ), ExtResource( 266 ), ExtResource( 247 ), ExtResource( 244 ), ExtResource( 242 ), ExtResource( 274 ), ExtResource( 245 ), ExtResource( 267 ), ExtResource( 217 ), ExtResource( 251 ), ExtResource( 225 ), ExtResource( 226 ), ExtResource( 227 ), ExtResource( 246 ), ExtResource( 248 ), ExtResource( 306 ), ExtResource( 304 ), ExtResource( 309 ), ExtResource( 290 ), ExtResource( 277 ), ExtResource( 283 ), ExtResource( 301 ), ExtResource( 302 ), ExtResource( 279 ), ExtResource( 288 ), ExtResource( 280 ), ExtResource( 287 ), ExtResource( 300 ), ExtResource( 291 ), ExtResource( 305 ), ExtResource( 292 ), ExtResource( 278 ), ExtResource( 282 ), ExtResource( 296 ), ExtResource( 293 ), ExtResource( 310 ), ExtResource( 294 ), ExtResource( 281 ), ExtResource( 285 ), ExtResource( 289 ), ExtResource( 298 ), ExtResource( 297 ), ExtResource( 303 ), ExtResource( 284 ), ExtResource( 295 ), ExtResource( 307 ), ExtResource( 286 ), ExtResource( 308 ), ExtResource( 299 ) ],
+"loop": true,
+"name": "Open",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 299 ) ],
+"loop": true,
+"name": "Opened",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 684.308, 8.6401 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 433.229, 34.6768 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 62, 14 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1, 155.5 )
+
+[node name="Hub" type="Node2D"]
+script = ExtResource( 5 )
+TutorialScene = ExtResource( 8 )
+
+[node name="StartSluicePosition" type="Position2D" parent="."]
+position = Vector2( 704, 0 )
+
+[node name="TutorialSpawnPoint" type="Position2D" parent="."]
+position = Vector2( 16, -4 )
+
+[node name="Tilemaps" type="Node2D" parent="."]
+
+[node name="Boden" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.05, 0.05 )
+z_index = -5
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 1280, 896 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1900545, 0, 0, -1966080, 0, 0, -1835009, 0, 0, -1900544, 0, 0, -1769473, 0, 0, -1835008, 0, 0, -1703937, 0, 0, -1769472, 0, 0, -1638401, 0, 0, -1703936, 0, 0, -1572865, 0, 0, -1638400, 0, 0, -1507329, 0, 0, -1572864, 0, 0, -1441793, 0, 0, -1507328, 0, 0, -1376257, 0, 0, -1441792, 0, 0, -1310721, 0, 0, -1376256, 0, 0, -1245185, 0, 0, -1310720, 0, 0, -1179649, 0, 0, -1245184, 0, 0, -1114113, 0, 0, -1179648, 0, 0, -1048577, 0, 0, -1114112, 0, 0, -983041, 0, 0, -1048576, 0, 0, -917505, 0, 0, -983040, 0, 0, -851969, 0, 0, -917504, 0, 0, -786434, 0, 0, -786433, 0, 0, -851968, 0, 0, -851967, 0, 0, -720898, 0, 0, -720897, 0, 0, -786432, 0, 0, -786431, 0, 0, -655362, 0, 0, -655361, 0, 0, -720896, 0, 0, -720895, 0, 0, -589826, 0, 0, -589825, 0, 0, -655360, 0, 0, -655359, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -393218, 0, 0, -393217, 0, 0, -458752, 0, 0, -458751, 0, 0, -327682, 0, 0, -327681, 4, 0, -393215, 0, 0, -262146, 0, 0, -327679, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -131088, 0, 0, -131087, 0, 0, -131086, 0, 0, -131085, 0, 0, -131084, 0, 0, -131083, 0, 0, -131082, 0, 0, -131081, 0, 0, -131080, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -65552, 0, 0, -65551, 0, 0, -65550, 0, 0, -65549, 0, 0, -65548, 0, 0, -65547, 0, 0, -65546, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 3, 0, -65542, 3, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -16, 0, 0, -15, 0, 0, -14, 0, 0, -13, 0, 0, -12, 0, 0, -11, 0, 0, -10, 0, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, 65520, 0, 0, 65521, 0, 0, 65522, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 131056, 0, 0, 131057, 0, 0, 131058, 0, 0, 131059, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 196592, 0, 0, 196593, 0, 0, 196594, 0, 0, 196595, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 262128, 0, 0, 262129, 0, 0, 262130, 0, 0, 262131, 0, 0, 262132, 0, 0, 262133, 0, 0, 262134, 0, 0, 262135, 0, 0, 262136, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 3, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 327664, 0, 0, 327665, 0, 0, 327666, 0, 0, 327667, 0, 0, 327668, 0, 0, 327669, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 655344, 0, 0, 655345, 0, 0, 655346, 0, 0, 655347, 0, 0, 655348, 0, 0, 655349, 0, 0, 655350, 0, 0, 655351, 0, 0, 655352, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 786416, 0, 0, 786417, 0, 0, 786418, 0, 0, 786419, 0, 0, 786420, 0, 0, 786421, 0, 0, 786422, 0, 0, 786423, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786427, 0, 0, 786428, 0, 0, 786429, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 851952, 0, 0, 851953, 0, 0, 851954, 0, 0, 851955, 0, 0, 851956, 0, 0, 851957, 0, 0, 851958, 0, 0, 851959, 0, 0, 851960, 0, 0, 851961, 0, 0, 851962, 0, 0, 851963, 0, 0, 851964, 0, 0, 851965, 0, 0, 851966, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 917488, 0, 0, 917489, 0, 0, 917490, 0, 0, 917491, 0, 0, 917492, 0, 0, 917493, 0, 0, 917494, 0, 0, 917495, 0, 0, 917496, 0, 0, 917497, 0, 0, 917498, 0, 0, 917499, 0, 0, 917500, 0, 0, 917501, 0, 0, 917502, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 983024, 0, 0, 983025, 0, 0, 983026, 0, 0, 983027, 0, 0, 983028, 0, 0, 983029, 0, 0, 983030, 0, 0, 983031, 0, 0, 983032, 0, 0, 983033, 0, 0, 983034, 0, 0, 983035, 0, 0, 983036, 0, 0, 983037, 0, 0, 983038, 0, 0, 983039, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0 )
+
+[node name="Schatten1" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 320, 320 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -589829, 7, 0, -524293, 7, 0, -458757, 7, 0, -393221, 7, 0, -327685, 7, 0, -262176, 1, 0, -262175, 1, 0, -262174, 1, 0, -262173, 1, 0, -262172, 1, 0, -262171, 1, 0, -262170, 1, 0, -262169, 1, 0, -262168, 1, 0, -262167, 1, 0, -262166, 1, 0, -262165, 1, 0, -262164, 1, 0, -262163, 1, 0, -262162, 1, 0, -262161, 1, 0, -262160, 1, 0, -262154, 1, 0, -262153, 1, 0, -262149, 3, 0, -327677, 2, 0, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -327672, 1, 0, -327671, 1, 0, -196640, 7, 0, -262136, 0, 0, -131104, 7, 0, -131088, 2, 0, -131086, 1, 0, -131085, 1, 0, -131084, 1, 0, -131083, 1, 0, -131082, 3, 0, -196600, 2, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 1, 0, -196594, 1, 0, -196593, 1, 0, -65568, 7, 0, -32, 7, 0, -31, 4, 0, -30, 4, 0, -29, 4, 0, -28, 4, 0, -27, 4, 0, -26, 4, 0, -25, 4, 0, -24, 4, 0, -23, 4, 0, -22, 4, 0, -21, 4, 0, -20, 4, 0, -19, 6, 0, 65504, 7, 0, 131040, 1, 0, 131041, 1, 0, 131042, 1, 0, 131043, 1, 0, 131044, 1, 0, 131045, 1, 0, 131046, 1, 0, 131047, 1, 0, 131048, 1, 0, 131049, 1, 0, 131050, 1, 0, 131051, 1, 0, 131052, 1, 0, 131053, 3, 0, 131056, 5, 0, 131058, 4, 0, 131059, 4, 0, 131060, 4, 0, 131061, 4, 0, 131062, 6, 0, 65544, 5, 0, 65546, 4, 0, 65547, 4, 0, 65548, 4, 0, 65549, 4, 0, 65550, 4, 0, 65551, 4, 0, 196576, 7, 0, 262112, 7, 0, 196616, 0, 0, 327648, 7, 0, 262152, 0, 0, 393200, 0, 0, 393201, 4, 0, 393206, 4, 0, 393207, 4, 0, 393208, 4, 0, 393209, 4, 0, 393210, 4, 0, 393211, 4, 0, 393212, 4, 0, 393213, 4, 0, 393214, 6, 0, 327680, 5, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 0, 0, 524286, 7, 0, 458752, 0, 0, 589822, 7, 0, 524288, 0, 0, 655358, 7, 0, 589824, 0, 0, 720894, 7, 0, 655360, 0, 0, 786430, 7, 0, 720896, 0, 0, 851966, 7, 0, 786432, 0, 0, 917472, 1, 0, 917473, 1, 0, 917474, 1, 0, 917475, 1, 0, 917476, 1, 0, 917477, 1, 0, 917478, 1, 0, 917479, 1, 0, 917480, 1, 0, 917481, 1, 0, 917482, 1, 0, 917483, 1, 0, 917484, 1, 0, 917485, 1, 0, 917486, 1, 0, 917487, 1, 0, 917488, 1, 0, 917489, 1, 0, 917494, 1, 0, 917495, 1, 0, 917502, 3, 0, 851968, 2, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 983008, 7, 0, 983024, 0, 0, 983030, 7, 0, 917510, 0, 0, 1048544, 7, 0, 1048560, 2, 0, 1048562, 1, 0, 1048563, 1, 0, 1048564, 1, 0, 1048565, 1, 0, 1048566, 3, 0, 983046, 0, 0, 1114080, 7, 0, 1048582, 0, 0, 1179616, 7, 0, 1114118, 0, 0, 1245152, 7, 0, 1179654, 0, 0, 1310688, 7, 0, 1310704, 536870916, 0, 1310705, 536870916, 0, 1310712, 4, 0, 1310713, 4, 0, 1310714, 4, 0, 1310715, 4, 0, 1310716, 4, 0, 1310717, 4, 0, 1310718, 4, 0, 1310719, 4, 0, 1245184, 4, 0, 1245185, 4, 0, 1245190, 0, 0, 1376224, 7, 0 )
+
+[node name="Schatten2" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 320, 320 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -2686978, 7, 0, -2752512, 0, 0, -2621442, 7, 0, -2686976, 0, 0, -2555906, 7, 0, -2621440, 0, 0, -2490370, 7, 0, -2555904, 0, 0, -2424834, 7, 0, -2490368, 0, 0, -2359298, 7, 0, -2424832, 0, 0, -2293762, 7, 0, -2359296, 0, 0, -2228226, 7, 0, -2293760, 0, 0, -2162690, 7, 0, -2228224, 0, 0, -2097154, 7, 0, -2162688, 0, 0, -2031618, 7, 0, -2097152, 0, 0, -1966082, 7, 0, -2031616, 0, 0, -1900546, 7, 0, -1966080, 0, 0, -1835010, 7, 0, -1900544, 0, 0, -1769474, 7, 0, -1835008, 0, 0, -1703938, 7, 0, -1769472, 0, 0, -1638402, 7, 0, -1703936, 0, 0, -1572866, 7, 0, -1638400, 0, 0, -1507330, 7, 0, -1572864, 0, 0, -1441794, 7, 0, -1507328, 0, 0, -1376258, 7, 0, -1441792, 0, 0, -1310722, 7, 0, -1376256, 0, 0, -1245186, 7, 0, -1310720, 0, 0, -1179650, 7, 0, -1245184, 0, 0, -1114117, 536870912, 0, -1114114, 7, 0, -1179648, 0, 0, -1048581, 536870912, 0, -1048580, 1, 0, -1048579, 1, 0, -1048578, 3, 0, -1114112, 2, 0, -1114110, 1, 0, -1114109, 1, 0, -983045, 7, 0, -983044, 7, 0, -1048574, 0, 0, -1048573, 0, 0, -917509, 7, 0, -917508, 3, 0, -983038, 2, 0, -983037, 0, 0, -851973, 7, 0, -917501, 0, 0, -786437, 7, 0, -851965, 0, 0, -720901, 536870912, 0, -786429, 0, 0, -655365, 536870912, 0, -720893, 0, 0, -655357, 0, 0, -589821, 0, 0, -524285, 0, 0, -458749, 0, 0, -393213, 0, 0, -262154, 1, 0, -262153, 1, 0, -262152, 1, 0, -262151, 1, 0, -262150, 1, 0, -196624, 0, 0, -196618, 7, 0, 262128, 0, 0, 262134, 7, 0, 327664, 0, 0, 327670, 7, 0, 393184, 7, 0, 393185, 4, 0, 393186, 4, 0, 393187, 4, 0, 393188, 4, 0, 393189, 4, 0, 393190, 4, 0, 393191, 4, 0, 393192, 4, 0, 393193, 4, 0, 393194, 4, 0, 393195, 4, 0, 393196, 4, 0, 393197, 4, 0, 393198, 4, 0, 393199, 4, 0, 393200, 4, 0, 393206, 7, 0, 327688, 4, 0, 327689, 4, 0, 458731, 4, 0, 458732, 4, 0, 458733, 4, 0, 458734, 4, 0, 917496, 1, 0, 917497, 1, 0, 917498, 1, 0, 917499, 1, 0, 917500, 1, 0, 917501, 1, 0, 1179632, 536870918, 0, 1179634, 536870916, 0, 1179635, 536870916, 0, 1179636, 536870916, 0, 1179637, 536870916, 0, 1179638, 536870917, 0, 1310689, 4, 0, 1310690, 4, 0, 1310691, 4, 0, 1310692, 4, 0, 1310693, 4, 0, 1310694, 4, 0, 1310695, 4, 0, 1310696, 4, 0, 1310697, 4, 0, 1310698, 4, 0, 1310699, 4, 0, 1310700, 4, 0, 1310701, 4, 0, 1310702, 4, 0, 1310703, 4, 0, 1310704, 536870919, 0, 1310705, 4, 0, 1310706, 4, 0, 1310707, 4, 0, 1310708, 4, 0, 1310709, 4, 0, 1310710, 536870912, 0, 1310711, 4, 0, 1245186, 4, 0, 1245187, 4, 0, 1245188, 4, 0, 1245189, 4, 0, 1245190, 4, 0 )
+
+[node name="Hubwalls" type="TileMap" parent="Tilemaps"]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 640, 640 )
+show_collision = true
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -131088, 2, 0, -131087, 0, 0, -131086, 2, 0, -131085, 2, 0, -131084, 2, 0, -131083, 0, 0, -131082, 2, 0, -131081, 0, 0, -131080, 2, 0, -131077, 2, 0, -131076, 0, 0, -131075, 2, 0, -196606, 2, 0, -196605, 0, 0, -196604, 2, 0, -65543, 0, 0, -65542, 0, 0, 65520, 0, 0, 65521, 2, 0, 65522, 0, 0, 65523, 2, 0, 65524, 2, 0, 65525, 0, 0, 65526, 0, 0, 458736, 536870912, 0, 458737, 2, 0, 458738, 536870912, 0, 458739, 2, 0, 458740, 536870912, 0, 458741, 2, 0, 458742, 536870912, 0, 458743, 2, 0, 458744, 536870912, 0, 458747, 536870914, 0, 458748, 536870914, 0, 458749, 0, 0, 458750, 0, 0, 393217, 0, 0, 393218, 2, 0, 393219, 0, 0 )
+
+[node name="Normalwall" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 640, 640 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -1310722, 2, 0, -1376255, 4, 0, -1310719, 4, 0, -1179650, 2, 0, -1179647, 4, 0, -1048578, 2, 0, -1048575, 4, 0, -917506, 2, 0, -917503, 4, 0, -786434, 2, 0, -720898, 2, 0, -786431, 4, 0, -655359, 6, 0, -262139, 13, 0, -131080, 536870931, 0, -131077, 19, 0, -196604, 536870931, 0, -196603, 6, 0, -196602, 10, 0, -65552, 19, 0, -131067, 23, 0, -131066, 18, 0, -16, 19, 0, 65520, 19, 0, 131056, 19, 0, 131064, 536870931, 0, 131067, 19, 0, 65541, 8, 0, 65542, 3, 0, 196592, 19, 0, 262127, 14, 0, 262128, 3, 0, 262143, 19, 0, 196608, 536870931, 0, 327679, 19, 0, 262144, 536870931, 0, 393215, 19, 0, 327680, 536870931, 0, 458736, 19, 0, 458744, 536870931, 0, 458747, 19, 0, 393219, 536870931, 0, 524272, 19, 0, 524281, 536870930, 0, 458755, 536870931, 0, 589808, 19, 0, 524291, 536870931, 0, 655344, 19, 0, 655352, 536870931, 0, 655355, 19, 0, 589827, 536870931, 0 )
+
+[node name="Normalwallfix" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 640, 640 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -131088, 19, 0, -65552, 19, 0, -16, 19, 0, 65520, 19, 0, 131055, 2, 0, 131056, 19, 0, 196592, 19, 0, 196600, 536870931, 0, 196603, 19, 0 )
+
+[node name="Blackwalls" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 330 )
+cell_size = Vector2( 640, 640 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -524290, 0, 0, -589823, 0, 0 )
+
+[node name="Blackwallsfix" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 330 )
+cell_size = Vector2( 640, 640 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -1310721, 536870926, 0, -1376256, 14, 0, -1245185, 536870926, 0, -1310720, 14, 0, -1179649, 536870926, 0, -1245184, 14, 0, -1114113, 536870926, 0, -1179648, 14, 0, -1048577, 536870926, 0, -1114112, 14, 0, -983041, 536870926, 0, -1048576, 14, 0, -917505, 536870926, 0, -983040, 14, 0, -851969, 536870926, 0, -917504, 14, 0, -786433, 536870926, 0, -851968, 14, 0, -720897, 536870926, 0, -786432, 14, 0, -655361, 536870926, 0, -720896, 14, 0, -589825, 536870926, 0, -655360, 14, 0, -524290, 536870924, 0, -589823, 12, 0 )
+
+[node name="Fenster" type="TileMap" parent="Tilemaps"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 311 )
+cell_size = Vector2( 640, 640 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -131086, 536870927, 0 )
+
+[node name="Backwalls" type="TileMap" parent="Tilemaps"]
+position = Vector2( 0, -5.96046e-08 )
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 640, 640 )
+collision_layer = 4
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -589827, 12, 0, -589826, 5, 0, -655358, 13, 0, -524291, 2, 0, -589822, 4, 0, -458755, 2, 0, -524286, 4, 0, -327683, 2, 0, -393214, 4, 0, -196625, 12, 0, -196624, 10, 0, -196623, 10, 0, -196622, 10, 0, -196621, 10, 0, -196620, 10, 0, -196619, 10, 0, -196618, 10, 0, -196617, 10, 0, -196615, 13, 0, -196614, 12, 0, -196613, 10, 0, -196611, 5, 0, -262142, 6, 0, -262141, 10, 0, -262139, 13, 0, -131089, 2, 0, -131079, 6, 0, -131078, 536870918, 0, -196603, 6, 0, -17, 2, 0, 65519, 2, 0, 131055, 2, 0, 131065, 8, 0, 131066, 7, 0, 65540, 536870931, 0, 65541, 8, 0, 196591, 2, 0, 196601, 536870914, 0, 196602, 2, 0, 131076, 536870931, 0, 131077, 4, 0, 262127, 14, 0, 262128, 3, 0, 262129, 3, 0, 262131, 3, 0, 262133, 3, 0, 262135, 3, 0, 262137, 536870926, 0, 262138, 14, 0, 262139, 3, 0, 262140, 3, 0, 262142, 7, 0, 196609, 8, 0, 196610, 3, 0, 196611, 3, 0, 196613, 15, 0, 327678, 2, 0, 262145, 4, 0, 393199, 12, 0, 393200, 10, 0, 393201, 10, 0, 393203, 10, 0, 393205, 10, 0, 393207, 10, 0, 393209, 13, 0, 393210, 12, 0, 393211, 10, 0, 393212, 10, 0, 393214, 5, 0, 327681, 6, 0, 327682, 10, 0, 327684, 13, 0, 458735, 2, 0, 458745, 6, 0, 458746, 5, 0, 393220, 4, 0, 589807, 2, 0, 524292, 4, 0, 655353, 8, 0, 655354, 7, 0, 720879, 14, 0, 720880, 3, 0, 720882, 3, 0, 720884, 3, 0, 720886, 3, 0, 720887, 3, 0, 720889, 15, 0, 720890, 14, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655363, 3, 0, 655364, 15, 0 )
+
+[node name="HubLevel" type="Node2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="RestartTutorial" parent="HubLevel" instance=ExtResource( 10 )]
+position = Vector2( 87, -196 )
+
+[node name="Trophy" parent="HubLevel" instance=ExtResource( 412 )]
+position = Vector2( -95, -199 )
+
+[node name="Easy" type="Node2D" parent="HubLevel"]
+script = ExtResource( 15 )
+barColor = Color( 0, 1, 0.0862745, 1 )
+
+[node name="EasyCanvas" type="CanvasLayer" parent="HubLevel/Easy"]
+visible = false
+script = ExtResource( 26 )
+
+[node name="TextureProgress" type="TextureProgress" parent="HubLevel/Easy/EasyCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -259.0
+margin_top = 17.0
+margin_right = -13.0
+margin_bottom = 31.0
+value = 50.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 12 )
+tint_progress = Color( 0.0313726, 1, 0, 1 )
+nine_patch_stretch = true
+
+[node name="Label" type="Label" parent="HubLevel/Easy/EasyCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -171.0
+margin_top = 1.0
+margin_right = -97.999
+margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Hub level"
+align = 1
+valign = 1
+
+[node name="Level" type="TextureRect" parent="HubLevel/Easy/EasyCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -290.0
+margin_top = 10.0
+margin_right = -262.0
+margin_bottom = 38.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label" type="Label" parent="HubLevel/Easy/EasyCanvas/Level"]
+margin_right = 28.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HubLevel/Easy/EasyCanvas"]
+anims/Appear = SubResource( 17 )
+anims/RESET = SubResource( 18 )
+
+[node name="EasyUnlocks" type="Node2D" parent="HubLevel/Easy"]
+script = ExtResource( 18 )
+
+[node name="ProfStory_10" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 343 )]
+position = Vector2( 156, -1 )
+
+[node name="Fireball" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 67 )]
+position = Vector2( -204, -112 )
+
+[node name="Sunflowers" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 337 )]
+position = Vector2( -705, 575 )
+
+[node name="Poster of Brevity of Gravity" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 342 )]
+position = Vector2( 427, -88 )
+
+[node name="Crystalgram 1" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 6 )]
+position = Vector2( -267, -134 )
+
+[node name="Corn Flowers" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 338 )]
+position = Vector2( 67, 151 )
+
+[node name="Crystalgram 2" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 25 )]
+position = Vector2( -141, -132 )
+
+[node name="Crystalgram 3" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 32 )]
+position = Vector2( 168, -139 )
+
+[node name="Red poppy" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 339 )]
+position = Vector2( -93, 141 )
+
+[node name="Ping-Pong" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 329 )]
+position = Vector2( 347, -46 )
+
+[node name="Crystalgram 4" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 33 )]
+position = Vector2( 275, -136 )
+
+[node name="Chalk Cat" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 340 )]
+position = Vector2( -325, 529 )
+
+[node name="Crystalgram 5" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 64 )]
+position = Vector2( -253, 90 )
+
+[node name="Chalk Family" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 341 )]
+position = Vector2( -449, 527 )
+
+[node name="Crystalgram 6" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 65 )]
+position = Vector2( 246, 99 )
+
+[node name="Bryns Bed" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 328 )]
+position = Vector2( 167, 596 )
+
+[node name="Blue Will O\'Wisp" parent="HubLevel/Easy/EasyUnlocks" instance=ExtResource( 66 )]
+position = Vector2( 220, -113 )
+
+[node name="Area2D" type="Area2D" parent="HubLevel/Easy"]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Easy/Area2D"]
+position = Vector2( 1, 30.5 )
+shape = SubResource( 16 )
+
+[node name="Mid" type="Node2D" parent="HubLevel"]
+script = ExtResource( 16 )
+barColor = Color( 1, 0.701961, 0, 1 )
+
+[node name="MidCanvas" type="CanvasLayer" parent="HubLevel/Mid"]
+visible = false
+script = ExtResource( 27 )
+
+[node name="TextureProgress" type="TextureProgress" parent="HubLevel/Mid/MidCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -259.0
+margin_top = 58.0
+margin_right = -13.0
+margin_bottom = 72.0
+value = 50.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 12 )
+tint_progress = Color( 0.0313726, 1, 0, 1 )
+nine_patch_stretch = true
+
+[node name="Label" type="Label" parent="HubLevel/Mid/MidCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -171.0
+margin_top = 42.0
+margin_right = -73.0
+margin_bottom = 61.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Library level"
+align = 1
+valign = 1
+
+[node name="Level" type="TextureRect" parent="HubLevel/Mid/MidCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -290.0
+margin_top = 51.0
+margin_right = -262.0
+margin_bottom = 79.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label" type="Label" parent="HubLevel/Mid/MidCanvas/Level"]
+margin_right = 28.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HubLevel/Mid/MidCanvas"]
+anims/Appear = SubResource( 19 )
+anims/RESET = SubResource( 20 )
+
+[node name="MidUnlocks" type="Node2D" parent="HubLevel/Mid"]
+position = Vector2( -631, -137 )
+script = ExtResource( 19 )
+
+[node name="Crystalgram 7" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 319 )]
+
+[node name="Crystalgram 8" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 315 )]
+position = Vector2( -268, -1 )
+
+[node name="Crystalgram 9" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 316 )]
+position = Vector2( -136, 0 )
+
+[node name="Crystalgram 10" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 317 )]
+position = Vector2( 177, 62 )
+
+[node name="Crystalgram 11" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 312 )]
+position = Vector2( 59, 195 )
+
+[node name="Profs Diary 1" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 318 )]
+position = Vector2( 91, -15 )
+
+[node name="Bastibear" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 331 )]
+position = Vector2( 363, 745 )
+
+[node name="Profs Diary 2" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 313 )]
+position = Vector2( -331, -15 )
+
+[node name="Mortenbear" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 334 )]
+position = Vector2( 493, 745 )
+
+[node name="Profs Diary 3" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 70 )]
+position = Vector2( -328, 185 )
+
+[node name="A real classic Poster" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 335 )]
+position = Vector2( 377, 595 )
+
+[node name="Profs Diary 4" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 314 )]
+position = Vector2( -246, 185 )
+
+[node name="Profs Diary 5" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 71 )]
+position = Vector2( -165, 185 )
+
+[node name="Gunkey Poster" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 333 )]
+position = Vector2( 701, 585 )
+
+[node name="Profs Diary 6" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 68 )]
+position = Vector2( -84, 185 )
+
+[node name="Profs Diary 7" parent="HubLevel/Mid/MidUnlocks" instance=ExtResource( 69 )]
+position = Vector2( -3, 184 )
+
+[node name="MidDoor" type="AnimatedSprite" parent="HubLevel/Mid"]
+position = Vector2( -384, -17.9688 )
+scale = Vector2( 0.216016, 0.176611 )
+frames = SubResource( 14 )
+animation = "Closed"
+script = ExtResource( 13 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="HubLevel/Mid/MidDoor"]
+position = Vector2( -944.376, 97.0346 )
+scale = Vector2( 4.62929, 5.70792 )
+collision_layer = 4
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Mid/MidDoor/KinematicBody2D"]
+position = Vector2( 204, -21.375 )
+scale = Vector2( 0.216016, 0.175195 )
+shape = SubResource( 15 )
+
+[node name="Interactable" type="TextureRect" parent="HubLevel/Mid/MidDoor"]
+visible = false
+margin_left = -87.9564
+margin_top = -113.42
+margin_right = 93.0436
+margin_bottom = 90.5801
+texture = ExtResource( 61 )
+expand = true
+
+[node name="ControllerSelected" parent="HubLevel/Mid/MidDoor" instance=ExtResource( 2 )]
+visible = false
+margin_left = -764.991
+margin_top = -363.562
+margin_right = -600.991
+margin_bottom = -245.562
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="Notification" type="CanvasLayer" parent="HubLevel/Mid/MidDoor"]
+layer = 0
+visible = false
+script = ExtResource( 63 )
+
+[node name="TextureRect" type="TextureRect" parent="HubLevel/Mid/MidDoor/Notification"]
+anchor_left = 0.54
+anchor_top = -0.002
+anchor_right = 0.54
+anchor_bottom = -0.002
+margin_left = -394.96
+margin_top = 2.2
+margin_right = 359.04
+margin_bottom = 170.2
+texture = ExtResource( 62 )
+expand = true
+
+[node name="Label" type="Label" parent="HubLevel/Mid/MidDoor/Notification/TextureRect"]
+anchor_left = 0.529
+anchor_right = 0.529
+margin_left = -288.866
+margin_top = 29.0
+margin_right = 289.134
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 29 )
+text = "Unlocked at level 1. Play Medium levels to get library XP"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Timer" type="Timer" parent="HubLevel/Mid/MidDoor/Notification"]
+wait_time = 5.0
+
+[node name="NotificationTrigger" type="Area2D" parent="HubLevel/Mid/MidDoor"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Mid/MidDoor/NotificationTrigger"]
+position = Vector2( 90.2711, 42.2896 )
+shape = SubResource( 28 )
+
+[node name="Area2D" type="Area2D" parent="HubLevel/Mid"]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Mid/Area2D"]
+position = Vector2( -562.5, 12.5 )
+shape = SubResource( 21 )
+
+[node name="Hard" type="Node2D" parent="HubLevel"]
+script = ExtResource( 17 )
+barColor = Color( 1, 0, 0, 1 )
+
+[node name="HardCanvas" type="CanvasLayer" parent="HubLevel/Hard"]
+visible = false
+script = ExtResource( 28 )
+
+[node name="TextureProgress" type="TextureProgress" parent="HubLevel/Hard/HardCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -259.0
+margin_top = 99.0
+margin_right = -13.0
+margin_bottom = 113.0
+value = 50.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 12 )
+tint_progress = Color( 0.0313726, 1, 0, 1 )
+nine_patch_stretch = true
+
+[node name="Label" type="Label" parent="HubLevel/Hard/HardCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -171.0
+margin_top = 83.0
+margin_right = -60.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Bedroom level"
+align = 1
+valign = 1
+
+[node name="Level" type="TextureRect" parent="HubLevel/Hard/HardCanvas"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -290.0
+margin_top = 92.0
+margin_right = -262.0
+margin_bottom = 120.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label" type="Label" parent="HubLevel/Hard/HardCanvas/Level"]
+margin_top = 1.0
+margin_right = 28.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HubLevel/Hard/HardCanvas"]
+anims/Appear = SubResource( 23 )
+anims/RESET = SubResource( 24 )
+
+[node name="HardUnlocks" type="Node2D" parent="HubLevel/Hard"]
+script = ExtResource( 20 )
+
+[node name="Shine a away" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 336 )]
+position = Vector2( -88, 455 )
+
+[node name="Trophy of Tincan" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 320 )]
+position = Vector2( -972, 458 )
+
+[node name="Flydbear" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 332 )]
+position = Vector2( -1, 537 )
+
+[node name="Trophy of Jalopy" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 323 )]
+position = Vector2( -907, 460 )
+
+[node name="Trophy of Rusty" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 325 )]
+position = Vector2( -853, 459 )
+
+[node name="Trophy of Borked" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 326 )]
+position = Vector2( -501, 465 )
+
+[node name="Trophy of Tuby" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 322 )]
+position = Vector2( -561, 465 )
+
+[node name="Trophy of Nub" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 321 )]
+position = Vector2( -796, 464 )
+
+[node name="Trophy of Suk" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 324 )]
+position = Vector2( -616, 464 )
+
+[node name="ProfStory_8" parent="HubLevel/Hard/HardUnlocks" instance=ExtResource( 327 )]
+position = Vector2( -707, 433 )
+
+[node name="Area2D" type="Area2D" parent="HubLevel/Hard"]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Hard/Area2D"]
+position = Vector2( -27, 469.25 )
+shape = SubResource( 22 )
+
+[node name="HardDoor" type="AnimatedSprite" parent="HubLevel/Hard"]
+position = Vector2( 2, 285 )
+scale = Vector2( 0.101563, 0.1125 )
+frames = SubResource( 32 )
+animation = "Close"
+script = ExtResource( 13 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="HubLevel/Hard/HardDoor"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Hard/HardDoor/KinematicBody2D"]
+position = Vector2( -19.6922, -119.191 )
+shape = SubResource( 9 )
+
+[node name="Interactable" type="TextureRect" parent="HubLevel/Hard/HardDoor"]
+visible = false
+margin_left = -216.614
+margin_top = -44.4446
+margin_right = 190.386
+margin_bottom = 328.556
+texture = ExtResource( 61 )
+expand = true
+
+[node name="ControllerSelected" parent="HubLevel/Hard/HardDoor" instance=ExtResource( 2 )]
+visible = false
+margin_left = -1545.84
+margin_top = -202.24
+margin_right = -1381.84
+margin_bottom = -84.24
+rect_scale = Vector2( 3, 3 )
+
+[node name="Notification" type="CanvasLayer" parent="HubLevel/Hard/HardDoor"]
+layer = 0
+visible = false
+script = ExtResource( 63 )
+
+[node name="TextureRect" type="TextureRect" parent="HubLevel/Hard/HardDoor/Notification"]
+anchor_left = 0.54
+anchor_top = -0.002
+anchor_right = 0.54
+anchor_bottom = -0.002
+margin_left = -394.96
+margin_top = 2.2
+margin_right = 359.04
+margin_bottom = 170.2
+texture = ExtResource( 62 )
+expand = true
+
+[node name="Label" type="Label" parent="HubLevel/Hard/HardDoor/Notification/TextureRect"]
+anchor_left = 0.529
+anchor_right = 0.529
+margin_left = -288.866
+margin_top = 29.0
+margin_right = 289.134
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 29 )
+text = "Unlocked at level 1. Play Hard  levels to get Bedroom XP"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Timer" type="Timer" parent="HubLevel/Hard/HardDoor/Notification"]
+wait_time = 5.0
+
+[node name="NotificationTrigger" type="Area2D" parent="HubLevel/Hard/HardDoor"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Hard/HardDoor/NotificationTrigger"]
+position = Vector2( -24.6153, -395.556 )
+shape = SubResource( 30 )
+
+[node name="Boss" type="Node2D" parent="HubLevel"]
+script = ExtResource( 29 )
+bossArena = ExtResource( 31 )
+
+[node name="BossCanvas" type="CanvasLayer" parent="HubLevel/Boss"]
+visible = false
+script = ExtResource( 30 )
+
+[node name="Locks" type="Control" parent="HubLevel/Boss/BossCanvas"]
+margin_left = -29.0
+margin_top = -2.0
+margin_right = 11.0
+margin_bottom = 38.0
+
+[node name="Lock1" type="TextureRect" parent="HubLevel/Boss/BossCanvas/Locks"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 792.0
+margin_top = 24.0
+margin_right = 832.0
+margin_bottom = 64.0
+texture = ExtResource( 22 )
+expand = true
+script = ExtResource( 23 )
+normalLock = ExtResource( 22 )
+unlockedLock = ExtResource( 24 )
+
+[node name="Lock2" type="TextureRect" parent="HubLevel/Boss/BossCanvas/Locks"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 838.0
+margin_top = 23.0
+margin_right = 878.0
+margin_bottom = 63.0
+texture = ExtResource( 22 )
+expand = true
+script = ExtResource( 23 )
+normalLock = ExtResource( 22 )
+unlockedLock = ExtResource( 24 )
+
+[node name="Lock3" type="TextureRect" parent="HubLevel/Boss/BossCanvas/Locks"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 885.0
+margin_top = 23.0
+margin_right = 925.0
+margin_bottom = 63.0
+texture = ExtResource( 22 )
+expand = true
+script = ExtResource( 23 )
+normalLock = ExtResource( 22 )
+unlockedLock = ExtResource( 24 )
+
+[node name="Lock4" type="TextureRect" parent="HubLevel/Boss/BossCanvas/Locks"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 932.0
+margin_top = 23.0
+margin_right = 972.0
+margin_bottom = 63.0
+texture = ExtResource( 22 )
+expand = true
+script = ExtResource( 23 )
+normalLock = ExtResource( 22 )
+unlockedLock = ExtResource( 24 )
+
+[node name="Label" type="Label" parent="HubLevel/Boss/BossCanvas/Locks"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 840.0
+margin_top = 1.0
+margin_right = 930.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Infirmary Locks"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HubLevel/Boss/BossCanvas"]
+anims/Appear = SubResource( 25 )
+anims/RESET = SubResource( 26 )
+
+[node name="BossDoor" type="AnimatedSprite" parent="HubLevel/Boss"]
+position = Vector2( 1, -352.008 )
+scale = Vector2( 0.307, 0.307 )
+frames = SubResource( 8 )
+animation = "Open"
+script = ExtResource( 13 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="HubLevel/Boss/BossDoor"]
+visible = false
+position = Vector2( 2.96085, 31.7166 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Boss/BossDoor/KinematicBody2D"]
+position = Vector2( 3.71428, -67.1643 )
+shape = SubResource( 9 )
+
+[node name="BossTransition" type="Area2D" parent="HubLevel/Boss/BossDoor"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Boss/BossDoor/BossTransition"]
+position = Vector2( 5.92171, -166.045 )
+shape = SubResource( 10 )
+
+[node name="NotificationTrigger" type="Area2D" parent="HubLevel/Boss/BossDoor"]
+position = Vector2( 271.143, -115.837 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Boss/BossDoor/NotificationTrigger"]
+position = Vector2( -268.182, 212.852 )
+shape = SubResource( 31 )
+
+[node name="Notification" type="CanvasLayer" parent="HubLevel/Boss/BossDoor"]
+layer = 0
+visible = false
+script = ExtResource( 63 )
+
+[node name="TextureRect" type="TextureRect" parent="HubLevel/Boss/BossDoor/Notification"]
+anchor_left = 0.54
+anchor_top = -0.002
+anchor_right = 0.54
+anchor_bottom = -0.002
+margin_left = -394.96
+margin_top = 2.2
+margin_right = 359.04
+margin_bottom = 170.2
+texture = ExtResource( 62 )
+expand = true
+
+[node name="Label" type="Label" parent="HubLevel/Boss/BossDoor/Notification/TextureRect"]
+anchor_left = 0.529
+anchor_right = 0.529
+margin_left = -288.866
+margin_top = 29.0
+margin_right = 289.134
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 29 )
+text = "Unlocked after opening all 4 locks. Complete a whole run to open 1."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Timer" type="Timer" parent="HubLevel/Boss/BossDoor/Notification"]
+wait_time = 5.0
+
+[node name="Interactable" type="TextureRect" parent="HubLevel/Boss/BossDoor"]
+visible = false
+margin_left = -81.4333
+margin_top = -241.016
+margin_right = 58.5667
+margin_bottom = -94.0162
+texture = ExtResource( 61 )
+expand = true
+
+[node name="ControllerSelected" parent="HubLevel/Boss/BossDoor" instance=ExtResource( 2 )]
+visible = false
+margin_left = -917.205
+margin_top = -285.509
+margin_right = -753.205
+margin_bottom = -167.509
+rect_scale = Vector2( 1, 1 )
+
+[node name="BossDoorOpenSound" type="AudioStreamPlayer2D" parent="HubLevel/Boss/BossDoor"]
+stream = ExtResource( 345 )
+volume_db = 12.0
+bus = "Effects"
+script = ExtResource( 344 )
+
+[node name="BossArenaSpawnPoint" type="Position2D" parent="HubLevel/Boss"]
+position = Vector2( 640, -1881 )
+scale = Vector2( 0.101563, 0.1125 )
+
+[node name="UITrigger" type="Area2D" parent="HubLevel/Boss"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubLevel/Boss/UITrigger"]
+position = Vector2( 0, -300 )
+shape = SubResource( 27 )
+
+[node name="HubTransition" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubTransition"]
+position = Vector2( 589, -32 )
+shape = SubResource( 4 )
+
+[node name="HubDoor" type="AnimatedSprite" parent="."]
+position = Vector2( 499, -17 )
+scale = Vector2( 0.216016, 0.175195 )
+frames = SubResource( 14 )
+animation = "Closed"
+script = ExtResource( 60 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="HubDoor"]
+position = Vector2( -944.376, 97.0346 )
+scale = Vector2( 4.62929, 5.70792 )
+collision_layer = 4
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HubDoor/KinematicBody2D"]
+position = Vector2( 204, -21.375 )
+scale = Vector2( 0.216016, 0.175195 )
+shape = SubResource( 15 )
+
+[node name="BossDoorFrame" type="Sprite" parent="."]
+position = Vector2( -7.45058e-09, -352 )
+scale = Vector2( 0.307, 0.3 )
+z_index = 1
+texture = ExtResource( 386 )
+
+[node name="BedroomDoorFrame" type="Sprite" parent="."]
+position = Vector2( 1, 281 )
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+texture = ExtResource( 402 )
+
+[connection signal="RestartTutorial" from="HubLevel/RestartTutorial" to="." method="_on_TemplateEnviorement_RestartTutorial"]
+[connection signal="body_shape_entered" from="HubLevel/Easy/Area2D" to="HubLevel/Easy" method="_on_Area2D_body_shape_entered"]
+[connection signal="body_shape_exited" from="HubLevel/Easy/Area2D" to="HubLevel/Easy" method="_on_Area2D_body_shape_exited"]
+[connection signal="animation_finished" from="HubLevel/Mid/MidDoor" to="HubLevel/Mid/MidDoor" method="OnAnimationFinished"]
+[connection signal="timeout" from="HubLevel/Mid/MidDoor/Notification/Timer" to="HubLevel/Mid/MidDoor/Notification" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="HubLevel/Mid/MidDoor/NotificationTrigger" to="HubLevel/Mid/MidDoor" method="_on_NotificationTrigger_body_entered"]
+[connection signal="body_exited" from="HubLevel/Mid/MidDoor/NotificationTrigger" to="HubLevel/Mid/MidDoor" method="_on_NotificationTrigger_body_exited"]
+[connection signal="body_shape_entered" from="HubLevel/Mid/Area2D" to="HubLevel/Mid" method="_on_Area2D_body_shape_entered"]
+[connection signal="body_shape_exited" from="HubLevel/Mid/Area2D" to="HubLevel/Mid" method="_on_Area2D_body_shape_exited"]
+[connection signal="body_shape_entered" from="HubLevel/Hard/Area2D" to="HubLevel/Hard" method="_on_Area2D_body_shape_entered"]
+[connection signal="body_shape_exited" from="HubLevel/Hard/Area2D" to="HubLevel/Hard" method="_on_Area2D_body_shape_exited"]
+[connection signal="animation_finished" from="HubLevel/Hard/HardDoor" to="HubLevel/Hard/HardDoor" method="OnAnimationFinished"]
+[connection signal="timeout" from="HubLevel/Hard/HardDoor/Notification/Timer" to="HubLevel/Hard/HardDoor/Notification" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="HubLevel/Hard/HardDoor/NotificationTrigger" to="HubLevel/Hard/HardDoor" method="_on_NotificationTrigger_body_entered"]
+[connection signal="body_exited" from="HubLevel/Hard/HardDoor/NotificationTrigger" to="HubLevel/Hard/HardDoor" method="_on_NotificationTrigger_body_exited"]
+[connection signal="Open" from="HubLevel/Boss/BossDoor" to="HubLevel/Boss/BossDoor/BossDoorOpenSound" method="ImprovedPlay"]
+[connection signal="animation_finished" from="HubLevel/Boss/BossDoor" to="HubLevel/Boss/BossDoor" method="OnAnimationFinished"]
+[connection signal="body_entered" from="HubLevel/Boss/BossDoor/BossTransition" to="." method="_on_BossTransition_body_entered"]
+[connection signal="body_entered" from="HubLevel/Boss/BossDoor/BossTransition" to="HubLevel/Boss" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="HubLevel/Boss/BossDoor/NotificationTrigger" to="HubLevel/Boss" method="_on_NotificationTrigger_body_entered"]
+[connection signal="body_entered" from="HubLevel/Boss/BossDoor/NotificationTrigger" to="HubLevel/Boss/BossDoor" method="_on_NotificationTrigger_body_entered"]
+[connection signal="body_exited" from="HubLevel/Boss/BossDoor/NotificationTrigger" to="HubLevel/Boss/BossDoor" method="_on_NotificationTrigger_body_exited"]
+[connection signal="timeout" from="HubLevel/Boss/BossDoor/Notification/Timer" to="HubLevel/Boss/BossDoor/Notification" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="HubLevel/Boss/UITrigger" to="HubLevel/Boss" method="_on_UITrigger_body_entered"]
+[connection signal="body_exited" from="HubLevel/Boss/UITrigger" to="HubLevel/Boss" method="_on_UITrigger_body_exited"]
+[connection signal="body_entered" from="HubTransition" to="." method="_on_HubTransition_body_entered"]
+[connection signal="animation_finished" from="HubDoor" to="HubDoor" method="OnAnimationFinished"]

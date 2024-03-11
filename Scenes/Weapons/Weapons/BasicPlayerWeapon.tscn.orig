@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Weapons 2.0/Scripts/PatternWeapon.gd" type="Script" id=1]
+[ext_resource path="res://Temp Sprites/Circle-image.svg.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/AK 47 Single Shot 1-Sound Effect (HD) (mp3cut.net).tres" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/AudioStreamEnhancer.gd" type="Script" id=4]
+[ext_resource path="res://Weapons 2.0/Patterns/TestPattern.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Weapons 2.0/Bullets/BasicPlayerBullet.tscn" type="PackedScene" id=6]
+
+[node name="PatternWeapon" type="Node2D"]
+script = ExtResource( 1 )
+bulletSpawnPoint = NodePath("Position2D")
+bulletPattern = ExtResource( 5 )
+bullet = ExtResource( 6 )
+<<<<<<< working copy
+fireCooldown = 0.6
+=======
+fireRate = 5.0
+>>>>>>> destination
+bulletDamage = 1.0
+bulletSpeed = 200.0
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Position2D"]
+scale = Vector2( 0.001, 0.001 )
+texture = ExtResource( 2 )
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 1.5
+script = ExtResource( 4 )
+pitchVariance = 0.4
+volumeVariance = 0.15

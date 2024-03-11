@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Sp_VFX_ShieldHit_Blue.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/VFX/WorldEnvironment.tres" type="Environment" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=9]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0.490323, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 10 )
+
+[sub_resource type="Curve" id=11]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 11 )
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 12 )
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 7.79424, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+lifetime_randomness = 0.5
+trail_divisor = 2
+trail_size_modifier = SubResource( 8 )
+emission_shape = 1
+emission_sphere_radius = 7.5
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+radial_accel_curve = SubResource( 4 )
+damping = 425.0
+scale = 0.03
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EplsosionBlue" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 5.78, 1 )
+material = SubResource( 9 )
+scale = Vector2( 3.37494, 3.37494 )
+amount = 66
+lifetime = 0.5
+explosiveness = 1.0
+process_material = SubResource( 14 )
+texture = ExtResource( 1 )
+<<<<<<< working copy
+=======
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+>>>>>>> destination

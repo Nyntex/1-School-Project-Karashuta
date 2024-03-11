@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Level/Destructible Environment/Template/Sc_ItemDroppingObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Level/Destructible Environment/Template/ExplosiveBarrel.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/VFX/BarrelExplosion.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=92]
+resource_local_to_scene = true
+extents = Vector2( 12, 10.5 )
+
+[sub_resource type="CircleShape2D" id=91]
+resource_local_to_scene = true
+radius = 51.0
+
+[node name="ExplosiveBarrel" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+explosionDamage = 1000.0
+
+[node name="CompleteCollision" parent="." index="1"]
+shape = SubResource( 92 )
+
+[node name="WallChecker" parent="." index="3"]
+visible = false
+
+[node name="BarrelExplosion" parent="." index="4" instance=ExtResource( 3 )]
+scale = Vector2( 100, 100 )
+
+[node name="ExplosionArea" type="Area2D" parent="." index="5"]
+scale = Vector2( 100, 100 )
+collision_layer = 0
+collision_mask = 3
+
+[node name="ExplosionCollision" type="CollisionShape2D" parent="ExplosionArea" index="0"]
+shape = SubResource( 91 )

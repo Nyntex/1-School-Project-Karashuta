@@ -1,0 +1,282 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Scripts/PatternWave.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Scripts/BulletPattern.gd" type="Script" id=2]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_Circle.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Weapons/Bullets/Sc_Bullet_Template.tscn" type="PackedScene" id=6]
+
+[node name="BulletPattern" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Waves" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="Waves"]
+script = ExtResource( 1 )
+
+[node name="PatternBullet6" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 0, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet7" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 13, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet8" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 24, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet9" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 37, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet10" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 46, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet11" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 59, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet12" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 70, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet13" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 83, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet14" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 93, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet15" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 106, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet16" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 117, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet17" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 130, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet18" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 139, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet19" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 152, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet20" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 163, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet21" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 176, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet22" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 185, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet23" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 198, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet24" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 209, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet25" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 222, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet26" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 231, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet27" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 244, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet28" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 255, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet29" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 268, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet30" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 278, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet31" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 291, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet32" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 302, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet33" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 315, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet34" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 324, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet35" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 337, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet36" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 348, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet37" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 361, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet38" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -371, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet39" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -358, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet40" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -347, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet41" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -334, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet42" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -325, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet43" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -312, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet44" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -301, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet45" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -288, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet46" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -278, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet47" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -265, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet48" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -254, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet49" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -241, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet50" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -232, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet51" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -219, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet52" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -208, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet53" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -195, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet54" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -186, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet55" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -173, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet56" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -162, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet57" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -149, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet58" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -140, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet59" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -127, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet60" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -116, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet61" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -103, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet62" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -93, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet63" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -80, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet64" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -69, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet65" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -56, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet66" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -47, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet67" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -34, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet68" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -23, 19 )
+rotation = 1.5708
+
+[node name="PatternBullet69" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( -10, 19 )
+rotation = 1.5708
+
+[node name="WaveTimer" type="Timer" parent="Waves/1"]
+
+[node name="WavesTimer" type="Timer" parent="."]
+
+[node name="Dummy" type="Sprite" parent="."]
+position = Vector2( 0.239998, 0 )
+scale = Vector2( 0.01, 0.01 )
+texture = ExtResource( 4 )
+
+[connection signal="timeout" from="Waves/1/WaveTimer" to="Waves/1" method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="WavesTimer" to="." method="_on_WavesTimer_timeout"]

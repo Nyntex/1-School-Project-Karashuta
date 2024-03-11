@@ -1,0 +1,26 @@
+extends Camera2D
+
+export (float) var shakeDuration = 0.1;
+export (float) var shakeImpact = 0.05;
+var shakeStartTime = INF;
+var shakeDirection = Vector2();
+
+func Shake(var direction):
+	shakeDirection = direction * shakeImpact;
+	shakeStartTime = 0;
+
+func _process(delta):
+	shakeStartTime += delta;
+	if shakeStartTime <= shakeDuration * 0.5:
+		offset_v = lerp(0,shakeDirection.y, shakeStartTime / (shakeDuration * 0.5));
+		offset_h = lerp(0,shakeDirection.x, shakeStartTime / (shakeDuration * 0.5));
+	elif shakeStartTime <= shakeDuration:
+		offset_v = lerp(shakeDirection.y, 0, (shakeStartTime - shakeDuration *0.5) / (shakeDuration * 0.5));
+		offset_h = lerp(shakeDirection.x, 0, (shakeStartTime - shakeDuration *0.5) / (shakeDuration * 0.5));
+<<<<<<< working copy
+		
+=======
+	else:
+		offset_v = 0;
+		offset_h = 0;
+>>>>>>> destination

@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/Sp_VFX_Flame.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=20]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=21]
+offsets = PoolRealArray( 0, 0.103226, 0.651613, 0.767742, 0.858065, 0.941935 )
+colors = PoolColorArray( 0.435294, 0.454902, 0.0588235, 0, 0.951935, 1, 0.015625, 1, 0.917796, 0.397957, 0.0534258, 1, 0.899414, 0.0737801, 0.0737801, 1, 0.100098, 0.00391006, 0.00391006, 1, 0.0941176, 0.00784314, 0.00784314, 0.666667 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 21 )
+width = 100
+
+[sub_resource type="Curve" id=22]
+_data = [ Vector2( 0, 0.390909 ), 0.0, 0.0, 0, 0, Vector2( 0.359551, 0.536364 ), 0.251717, 0.251717, 0, 0, Vector2( 1, 1 ), 0.397448, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 22 )
+
+[sub_resource type="ParticlesMaterial" id=23]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 32.52
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 250.0
+initial_velocity_random = 0.33
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 100.0
+damping_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale = 1.5
+scale_random = 1.0
+scale_curve = SubResource( 19 )
+color_ramp = SubResource( 13 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Flames" type="Particles2D" parent="."]
+material = SubResource( 20 )
+scale = Vector2( 0.50666, 0.50666 )
+amount = 60
+explosiveness = 0.1
+randomness = 0.25
+process_material = SubResource( 23 )
+texture = ExtResource( 1 )

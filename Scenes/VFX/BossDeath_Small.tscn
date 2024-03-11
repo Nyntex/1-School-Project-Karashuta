@@ -1,0 +1,71 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/BossDeath/Flames/FlameFrame_V.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_Textures/BossDeath/Flames/FlameFrame_I.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/VFX_Textures/BossDeath/Flames/FlameFrame_III.png" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/VFX_Textures/BossDeath/Flames/FlameFrame_IV.png" type="Texture" id=5]
+[ext_resource path="res://Assets/VFX/VFX_Textures/BossDeath/Flames/FlameFrame_VI.png" type="Texture" id=6]
+[ext_resource path="res://Assets/VFX/VFX_Textures/BossDeath/Flames/FlameFrame_II.png" type="Texture" id=7]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.141935, 0.290323, 0.587097, 0.825806, 0.980645 )
+colors = PoolColorArray( 0.431732, 0.75264, 0.986816, 1, 0.768555, 0.626421, 0.0480347, 1, 0.768555, 0.500564, 0.072052, 1, 0.834961, 0.250561, 0.185909, 1, 1, 0.0996094, 0, 1, 1, 0.0980392, 0, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 1.54463, 0, 0, Vector2( 0.814607, 1 ), -0.170335, -0.170335, 0, 0, Vector2( 1, 0 ), -16.1818, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 130.0
+angular_velocity = 720.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.5
+orbit_velocity_random = 1.0
+damping = 69.69
+damping_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.92
+scale_curve = SubResource( 7 )
+color = Color( 2, 1, 2, 1 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="AnimatedTexture" id=5]
+flags = 4
+frames = 6
+fps = 24.0
+frame_0/texture = ExtResource( 3 )
+frame_1/texture = ExtResource( 7 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 4 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 5 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 2 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 6 )
+frame_5/delay_sec = 0.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 1 )
+amount = 120
+explosiveness = 0.69
+process_material = SubResource( 4 )
+texture = SubResource( 5 )

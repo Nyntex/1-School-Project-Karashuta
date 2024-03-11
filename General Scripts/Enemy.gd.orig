@@ -1,0 +1,164 @@
+extends KinematicBody2D
+
+var direction = Vector2.ZERO
+var player = null
+
+export (ColorEnum.colors) var currentColor
+export (NodePath) var spriteHolder
+onready var navigationAgent = $NavigationAgent2D
+onready var rotationNode = $RotationNode
+onready var rayCaster = $RayCast2D
+onready var walkingDirection = $WalkingDirection
+
+#movement settings
+export (float) var safeDistance
+export (float) var minDistanceToPlayer
+var target = Vector2.ZERO
+
+#current Weapon of the Enemy changeable in inspector
+export (PackedScene) var weaponScene
+var weapon
+
+#Stats of the Enemy
+<<<<<<< working copy
+export (float) var maxHealth
+var health
+export (float) var baseMovementSpeed
+var movementSpeed
+=======
+export (float) var health
+export (float) var movementSpeed
+var baseMovementSpeed;
+var stunDuration = 0;
+>>>>>>> destination
+
+enum States{
+	IDLE, #They go random paths NOT looking around if they see an enemy, but go into engage if they see him
+	SEARCHING, #They go to the last position the Player was heard and start looking around, searching for the Player
+	ENGAGING, #They know where the Player is and try to kill him with all they've got
+}
+
+export (float) var searchDuration = 15.0
+export (bool) var canFlee = true
+
+func Stun(var duration):
+	stunDuration = duration;
+
+func _process(delta):
+	stunDuration -= delta;
+
+
+func _ready():
+<<<<<<< working copy
+=======
+	baseMovementSpeed = movementSpeed;
+	
+	#Fix up NodePaths
+	navigationAgent = get_node(navigationAgent)
+	rotationNode = get_node(rotationNode)
+	rayCaster = get_node(rayCaster)
+	walkingDirection = get_node(walkingDirection)
+	
+>>>>>>> destination
+	#Add the weapon to the Enemy
+	weapon = weaponScene.instance()
+	weapon.currentColor = currentColor
+	add_child(weapon)
+	
+	get_node(spriteHolder).change_Color(currentColor)
+	
+	movementSpeed = baseMovementSpeed
+	health = maxHealth
+
+
+func _physics_process(delta):
+<<<<<<< working copy
+	if player != null: #Nur wenn der Spieler existiert soll der Gegner sich Bewegen etc.
+		if baseMovementSpeed > 0:
+			MoveToPlayer()
+=======
+	if player != null && stunDuration <= 0: #Nur wenn der Spieler existiert soll der Gegner sich Bewegen etc.
+		MoveToPlayer()
+>>>>>>> destination
+		LookInWalkingDirection()
+		ShootWeapon()
+
+
+func IdleMoving():
+	pass
+
+
+func SearchMoving():
+	pass
+
+
+#Bewege den Gegner zum Spieler, halte aber einen bestimmten Abstand ein
+func MoveToPlayer():
+	direction = global_position.direction_to(navigationAgent.get_next_location()) 
+	if global_position.distance_to(player.global_position) >= safeDistance: #Wenn er weiter weg ist als die safeDistance
+		move_and_slide(direction.normalized() * movementSpeed, Vector2.UP) #Soll er normal auf den Spieler zulaufen
+	
+	#if Player is close enough he stand still
+	elif global_position.distance_to(player.global_position) >= minDistanceToPlayer && global_position.distance_to(player.global_position) <= safeDistance:
+		return #wenn er nah genug an ihm dran ist bleibt er stehen
+	
+	#if player is too close he will flee
+	elif canFlee:
+		Flee() 
+	
+	#Debug Zeugs
+#	print("Enemy moves to: ", navigationAgent.get_final_location())
+#	print("Player is at: ", player.global_position)
+
+
+#Zielt auf Gegner
+func LookInWalkingDirection():
+	rotationNode.look_at(player.global_position)
+	walkingDirection.look_at(direction) # Lässt die Rotation Node auf den Spieler schauen
+
+func TakeDamage(color,takenDamage):
+	#Schaden nur wenn Farbe korrekt
+	if color != currentColor: # Sollte er von einer anderen Farbe getroffen werden als der die er hat bekommt er schaden
+		health -= takenDamage
+		if health <= 0: #Bei 0 HP verschwindet er
+			queue_free()
+
+
+func ShootWeapon():
+	#first set the position where the raycast should shoot at IN LOCAL SPACE
+	rayCaster.set_cast_to(player.global_position - rayCaster.global_position)
+	#shoot the ray
+	rayCaster.cast_to
+	#check if the enemy can see the player through the raycast
+	if rayCaster.get_collider() != null && rayCaster.get_collider().has_method("GetMovementDirection"):
+		weapon.TryFire((player.global_position - global_position).normalized(), self)
+
+
+func FindDirectionToTarget():
+	# nav Agent bekommt das Ziel und macht einen Weg dahin
+	navigationAgent.set_target_location(player.global_position)
+	# mach einen Richtungsvektor für den Path wo sich der Gegner hinbewegen soll
+	#aus der Documentation: Sends the passed in velocity to the collision avoidance algorithm. 
+	#It will adjust the velocity to avoid collisions.
+	navigationAgent.set_velocity(direction.normalized() * movementSpeed)
+
+
+func Flee():
+	target = global_position - player.global_position
+	
+	# Hier wird der Richtungsvektor in die entgegengesetzte Richtung verwendet, damit der Gegner wegläuft
+	target = player.global_position + (target * 2.0)
+	navigationAgent.set_target_location(target) 
+	direction = global_position.direction_to(navigationAgent.get_next_location()) 
+	navigationAgent.set_velocity(direction.normalized() * movementSpeed) 
+	move_and_slide(direction.normalized() * movementSpeed, Vector2.UP)
+
+
+func _on_Timer_timeout():
+	$Timer.wait_time = rand_range(1.0,1.5)
+	if baseMovementSpeed > 0:
+		FindDirectionToTarget()
+
+
+func GetAlerted(direction):
+	pass

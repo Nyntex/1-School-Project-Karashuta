@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/TemplateEnviorement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/HubRoom/Poster/PosterGunkey.png" type="Texture" id=2]
+
+[node name="Gunkey Poster" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -116 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label" parent="CanvasLayer/TextBackground" index="0"]
+margin_left = 64.0
+margin_top = -19.0
+margin_right = 485.0
+margin_bottom = 363.0
+text = ">>Gunkey, Bryn loved this game. It was about a monkey with a gun, so funny.<<"

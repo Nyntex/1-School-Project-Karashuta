@@ -1,0 +1,76 @@
+class_name Saver
+extends Reference
+
+const SAVE_GAME_PATH = "user://saveTest.json"
+
+var playerSavingStats = PlayerSavingStats.new()
+var settingsSave = SettingsSave.new()
+
+var file = File.new()
+
+func SaveExists():
+	return file.file_exists(SAVE_GAME_PATH)
+
+func WriteSave():
+	var error = file.open(SAVE_GAME_PATH, File.WRITE)
+	if error != OK:
+		printerr("Could not Load Save File %s. Error Code %s" %
+		[SAVE_GAME_PATH, error])
+		return
+	
+	var data = {
+		"playerSavingStats":
+			{
+				"totalBulletsHit": playerSavingStats.totalBulletsHit,
+				"totalBulletsShot": playerSavingStats.totalBulletsShot,
+				"totalEnemysKilled": playerSavingStats.totalEnemysKilled,
+				"survivedRuns": playerSavingStats.survivedRuns,
+				"totalDeaths": playerSavingStats.totalDeaths,
+				"totalBossesKilled": playerSavingStats.totalBossesKilled,
+				"tutorialFinished": playerSavingStats.tutorialFinished,
+				
+				"bossDoorProgression": playerSavingStats.bossDoorProgression,
+				"rankPoints": playerSavingStats.rankPoints
+			},
+		"settingsSave":
+			{
+				"musicVolume": settingsSave.musicVolume,
+				"sfxVolume": settingsSave.sfxVolume,
+				"controlType": settingsSave.controlType
+			}
+	}
+	var json_string = JSON.print(data)
+	file.store_string(json_string)
+	file.close()
+	#print("Successfully Saved!")
+
+func LoadSave():
+	var error = file.open(SAVE_GAME_PATH, File.READ)
+	if error != OK:
+		printerr("Could not Load Save File %s. Error Code %s" %
+		[SAVE_GAME_PATH, error])
+		return
+	
+	var content = file.get_as_text()
+	file.close()
+	
+	var data = JSON.parse(content).result
+	
+	playerSavingStats = PlayerSavingStats.new()
+	playerSavingStats.totalBulletsShot = data.playerSavingStats.totalBulletsShot
+	playerSavingStats.totalBulletsHit = data.playerSavingStats.totalBulletsHit
+	playerSavingStats.totalEnemysKilled = data.playerSavingStats.totalEnemysKilled
+	playerSavingStats.survivedRuns = data.playerSavingStats.survivedRuns
+	playerSavingStats.totalDeaths = data.playerSavingStats.totalDeaths
+	playerSavingStats.totalBossesKilled = data.playerSavingStats.totalBossesKilled
+	playerSavingStats.tutorialFinished = data.playerSavingStats.tutorialFinished
+	
+	playerSavingStats.bossDoorProgression = data.playerSavingStats.bossDoorProgression
+	playerSavingStats.rankPoints = data.playerSavingStats.rankPoints
+	
+	settingsSave = SettingsSave.new()
+	settingsSave.musicVolume = data.settingsSave.musicVolume
+	settingsSave.sfxVolume = data.settingsSave.sfxVolume
+	settingsSave.controlType = data.settingsSave.controlType
+	
+	#print("loading successful")

@@ -1,0 +1,95 @@
+extends KinematicBody2D
+
+export (PackedScene) var weaponScene;
+export (NodePath) var colorSpriteHolder;
+export (NodePath) var colorContainer;
+export (NodePath) var items;
+var weapon
+export (ColorEnum.colors) var currentColor;
+export (float) var movementSpeed;
+var health;
+export (float) var maxHealth;
+signal onFire;
+signal healthChanged;
+signal dead
+signal UpdateColors;
+
+func _ready():
+	health = maxHealth;
+	items = get_node(items)
+	weapon = weaponScene.instance()
+	weapon.currentColor = currentColor;
+	add_child(weapon)
+	get_node(colorSpriteHolder).change_Color(currentColor);
+
+func _process(delta):
+	if health > 0:
+		if Input.is_action_pressed("FIRE"):
+			weapon.TryFire(get_global_mouse_position() - global_position);
+		if Input.is_action_just_pressed("CHANGE_COLOR"):
+			SwitchColor();
+
+func _physics_process(delta):
+	if health > 0:
+		move_and_slide(GetMovementDirection() * movementSpeed);
+
+func GetMovementDirection():
+	var velocity = Vector2();
+	
+	if Input.is_action_pressed("LEFT"):
+		velocity.x = -1;
+	elif Input.is_action_pressed("RIGHT"):
+		velocity.x = +1;
+	if Input.is_action_pressed("UP"):
+		velocity.y = -1;
+	elif Input.is_action_pressed("DOWN"):
+		velocity.y = 1;
+	
+	return velocity.normalized();
+
+func SwitchColor():
+	currentColor+= 1;
+	if currentColor == ColorEnum.colors.NEUTRAL:
+		currentColor = 0;
+	get_node(colorSpriteHolder).change_Color(currentColor);
+	weapon.currentColor = currentColor;
+	TriggerItems("ColorChanged")
+
+func TakeDamage(var color, var damage):
+	if color == currentColor:
+		get_node(colorContainer).Absorb(color);
+		pass
+	else:
+		health = clamp(health - damage, 0, maxHealth);
+		emit_signal("healthChanged")
+		if health == 0:
+			Die();
+	TriggerItems("TakenDamage")
+
+func Die():
+	visible = false;
+	emit_signal("dead")
+
+func Weapon_onFire():
+	print("test")
+	emit_signal("onFire");
+
+func TriggerItems(effectString):
+	for item in items.get_children():
+		if item.has_method(effectString):
+			match effectString:
+				"ColorChanged":
+					item.ColorChanged()
+				"Shot":
+					item.Shot()
+				"TakenDamage":
+					item.TakenDamage()
+				
+		pass
+	pass
+<<<<<<< working copy
+	
+func _on_ColorContainer_UpdateBars():
+	emit_signal("UpdateColors");
+=======
+>>>>>>> destination

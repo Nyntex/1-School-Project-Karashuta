@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Game/PreGame/TextBoxTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Game/PreGame/TextBoxes/BossArenaStart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Game/PreGame/TextBoxesTemplate.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/UI/ControllerSelected.tscn" type="PackedScene" id=4]
+[ext_resource path="res://BossArenaText2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Game/PreGame/TextBoxes/BossArenaText3_FIXED.tscn" type="PackedScene" id=6]
+
+[node name="BossStoryTelling" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="BossArenaStart" parent="TextBoxes" index="0" instance=ExtResource( 2 )]
+visible = false
+
+[node name="BossArenaText2" parent="TextBoxes" index="1" instance=ExtResource( 5 )]
+visible = false
+
+[node name="Text2" parent="TextBoxes" index="2" instance=ExtResource( 6 )]
+visible = false
+
+[node name="ControllerSelected" parent="." index="3" instance=ExtResource( 4 )]
+visible = false
+margin_left = 447.0
+margin_top = 495.0
+margin_right = 611.0
+margin_bottom = 613.0

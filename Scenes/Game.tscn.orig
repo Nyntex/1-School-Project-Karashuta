@@ -1,0 +1,171 @@
+<<<<<<< working copy
+[gd_scene load_steps=10 format=2]
+=======
+[gd_scene load_steps=15 format=2]
+>>>>>>> destination
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level/Elevel/Elevel4.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/LevelLoader.gd" type="Script" id=4]
+<<<<<<< working copy
+[ext_resource path="res://Assets/Walls/Wall_I/mauer_1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Walls/Wall_I/Wall_I_V_Links.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Walls/Wall_I/Wall_I_H.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Walls/Wall_I/mauer_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Walls/Wall_I/Wall_I_V_Rechts.png" type="Texture" id=9]
+=======
+[ext_resource path="res://Level/Elevel/Elevel1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level/Elevel/Elevel2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level/Elevel/Elevel3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Level/Elevel/Elevel5.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level/Tutorial.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Fonts/ARIAL.TTF" type="DynamicFontData" id=10]
+[ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=11]
+[ext_resource path="res://Temp Sprites/mockup_3.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 10 )
+>>>>>>> destination
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+playerScene = ExtResource( 2 )
+
+[node name="StartScreen" type="Control" parent="."]
+margin_left = 486.0
+margin_top = 323.0
+margin_right = 526.0
+margin_bottom = 363.0
+script = ExtResource( 11 )
+
+[node name="TextureRect" type="TextureRect" parent="StartScreen"]
+modulate = Color( 0.231373, 0.231373, 0.231373, 1 )
+margin_left = -584.0
+margin_top = -370.0
+margin_right = 665.0
+margin_bottom = 410.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Title" type="Label" parent="StartScreen"]
+margin_left = -225.0
+margin_top = -245.0
+margin_right = 295.0
+margin_bottom = -188.0
+custom_fonts/font = SubResource( 1 )
+text = "Karashuta"
+align = 1
+uppercase = true
+
+[node name="Main" type="Control" parent="StartScreen"]
+margin_left = -467.0
+margin_top = -285.0
+margin_right = -427.0
+margin_bottom = -245.0
+
+[node name="Start" type="Button" parent="StartScreen/Main"]
+margin_left = 372.0
+margin_top = 357.0
+margin_right = 455.0
+margin_bottom = 377.0
+rect_scale = Vector2( 3, 3 )
+text = "Start Game"
+
+[node name="Credits" type="Button" parent="StartScreen/Main"]
+margin_left = 375.0
+margin_top = 476.0
+margin_right = 458.0
+margin_bottom = 496.0
+rect_scale = Vector2( 3, 3 )
+text = "Credits"
+
+[node name="Credits" type="Control" parent="StartScreen"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Title" type="Label" parent="StartScreen/Credits"]
+margin_left = -225.0
+margin_top = -169.0
+margin_right = 295.0
+margin_bottom = 188.0
+custom_fonts/font = SubResource( 2 )
+text = "Credit name
+Credit name
+Credit name
+Ben O. Wildenhayn
+Credit name
+Credit name"
+align = 1
+valign = 1
+
+[node name="CloseCredits" type="Button" parent="StartScreen/Credits"]
+margin_left = -102.0
+margin_top = 191.0
+margin_right = -7.0
+margin_bottom = 211.0
+rect_scale = Vector2( 3, 3 )
+text = "Close credits"
+
+[node name="LevelLoader" type="Node2D" parent="."]
+position = Vector2( 483, 319 )
+script = ExtResource( 4 )
+<<<<<<< working copy
+easyLevels = [ ExtResource( 3 ) ]
+midLevels = [ ExtResource( 3 ) ]
+hardLevels = [ ExtResource( 3 ) ]
+
+[node name="WallIH" type="Sprite" parent="."]
+position = Vector2( 179, 366 )
+texture = ExtResource( 7 )
+
+[node name="Mauer1" type="Sprite" parent="."]
+position = Vector2( 246, 166 )
+texture = ExtResource( 5 )
+
+[node name="Mauer2" type="Sprite" parent="."]
+position = Vector2( 438, 166 )
+texture = ExtResource( 8 )
+
+[node name="WallIHRechts" type="Sprite" parent="."]
+position = Vector2( 268, 424 )
+texture = ExtResource( 9 )
+
+[node name="WallIHLinks" type="Sprite" parent="WallIHRechts"]
+position = Vector2( -179, -3 )
+texture = ExtResource( 6 )
+
+[node name="WallIH" type="Sprite" parent="WallIHRechts"]
+position = Vector2( 129, -58 )
+texture = ExtResource( 7 )
+
+[node name="WallIHLinks2" type="Sprite" parent="WallIHRechts"]
+position = Vector2( 246, -1 )
+texture = ExtResource( 6 )
+
+[node name="WallIH2" type="Sprite" parent="WallIHRechts"]
+position = Vector2( 337, -58 )
+texture = ExtResource( 7 )
+
+[node name="WallIHRechts" type="Sprite" parent="WallIHRechts"]
+position = Vector2( 428, -1 )
+texture = ExtResource( 9 )
+=======
+tutorialLevel = ExtResource( 9 )
+easyLevels = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ) ]
+midLevels = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ) ]
+hardLevels = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ) ]
+midLevelThreshhold = 10.0
+hardLevelThreshold = 20.0
+
+[connection signal="start" from="StartScreen" to="." method="_on_StartScreen_start"]
+[connection signal="pressed" from="StartScreen/Main/Start" to="StartScreen" method="_on_Button_pressed"]
+[connection signal="pressed" from="StartScreen/Main/Credits" to="StartScreen" method="_on_Credits_pressed"]
+[connection signal="pressed" from="StartScreen/Credits/CloseCredits" to="StartScreen" method="_on_CloseCredits_pressed"]
+>>>>>>> destination

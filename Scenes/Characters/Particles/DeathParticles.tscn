@@ -1,0 +1,151 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Characters/Particles/DeathParticles.gd" type="Script" id=1]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/ExplosionHits.png" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=22]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=34]
+colors = PoolColorArray( 0.78, 0.78, 20, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=35]
+gradient = SubResource( 34 )
+
+[sub_resource type="Curve" id=25]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=26]
+curve = SubResource( 25 )
+
+[sub_resource type="Curve" id=27]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 7.79424, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=28]
+curve = SubResource( 27 )
+
+[sub_resource type="ParticlesMaterial" id=32]
+lifetime_randomness = 0.5
+trail_divisor = 2
+trail_size_modifier = SubResource( 28 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.75
+angular_velocity = 57.03
+angular_velocity_random = 1.0
+orbit_velocity = -0.02
+orbit_velocity_random = 1.0
+damping = 200.0
+damping_random = 0.54
+scale = 0.1
+scale_random = 0.04
+scale_curve = SubResource( 26 )
+color = Color( 0.78, 0.78, 20, 1 )
+color_ramp = SubResource( 35 )
+
+[sub_resource type="Gradient" id=23]
+colors = PoolColorArray( 5, 0, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=36]
+gradient = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=33]
+lifetime_randomness = 0.5
+trail_divisor = 2
+trail_size_modifier = SubResource( 28 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.75
+angular_velocity = 57.03
+angular_velocity_random = 1.0
+orbit_velocity = -0.02
+orbit_velocity_random = 1.0
+damping = 200.0
+damping_random = 0.54
+scale = 0.1
+scale_random = 0.04
+scale_curve = SubResource( 26 )
+color = Color( 20, 0.2, 0.2, 1 )
+color_ramp = SubResource( 36 )
+
+[sub_resource type="Gradient" id=37]
+offsets = PoolRealArray( 0.00645161, 1 )
+colors = PoolColorArray( 20, 20, 0.78, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=38]
+gradient = SubResource( 37 )
+
+[sub_resource type="ParticlesMaterial" id=31]
+lifetime_randomness = 0.5
+trail_divisor = 2
+trail_size_modifier = SubResource( 28 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.75
+angular_velocity = 57.03
+angular_velocity_random = 1.0
+orbit_velocity = -0.02
+orbit_velocity_random = 1.0
+damping = 200.0
+damping_random = 0.54
+scale = 0.1
+scale_random = 0.04
+scale_curve = SubResource( 26 )
+color = Color( 20, 20, 0.78, 1 )
+color_ramp = SubResource( 38 )
+
+[node name="DeathParticles" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Blue" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 5.78, 1 )
+material = SubResource( 22 )
+scale = Vector2( 3.37494, 3.37494 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 32 )
+texture = ExtResource( 3 )
+
+[node name="Red" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 5.78, 1 )
+material = SubResource( 22 )
+scale = Vector2( 3.37494, 3.37494 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 33 )
+texture = ExtResource( 3 )
+
+[node name="Yellow" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 5.78, 1 )
+material = SubResource( 22 )
+scale = Vector2( 3.37494, 3.37494 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 31 )
+texture = ExtResource( 3 )
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

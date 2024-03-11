@@ -1,0 +1,100 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/HealthBarrelExplosion/Asset 1HealthBarrelExplosion.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_Textures/HealthBarrelExplosion/Asset 5HealthBarrelExplosion.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/VFX_Textures/HealthBarrelExplosion/Asset 3HealthBarrelExplosion.png" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/VFX_Textures/HealthBarrelExplosion/Asset 4HealthBarrelExplosion.png" type="Texture" id=5]
+[ext_resource path="res://Assets/VFX/VFX_Textures/HealthBarrelExplosion/Asset 2HealthBarrelExplosion.png" type="Texture" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 5
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.177966, 0.580508, 0.694915, 0.817797, 1 )
+colors = PoolColorArray( 0.492188, 0.492188, 0.492188, 1, 0.244904, 0.835938, 0.3234, 1, 0.34145, 0.347656, 0.286545, 1, 0.323321, 0.435338, 0.253657, 0.98539, 0.570723, 0.574769, 0.534933, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+max_value = 100.0
+_data = [ Vector2( 0, 100 ), 0.0, 0.0, 0, 0, Vector2( 0.177606, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.509653, 0 ), 0.0, 203.937, 0, 1, Vector2( 1, 100 ), 203.937, 0.0, 1, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+min_value = -0.25
+max_value = 0.25
+_data = [ Vector2( 0, -0.105114 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.108523 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 5.0
+_data = [ Vector2( 0.00772201, 5 ), 0.0, -14.2348, 0, 0, Vector2( 0.749035, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -1.99231, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+trail_divisor = 2
+emission_shape = 1
+emission_sphere_radius = 4.63
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 75.0
+initial_velocity_random = 0.43
+angular_velocity = 180.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+orbit_velocity_curve = SubResource( 7 )
+linear_accel = 100.0
+linear_accel_random = 1.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+tangential_accel = 100.0
+tangential_accel_random = 0.7
+damping = 75.0
+damping_random = 0.3
+damping_curve = SubResource( 5 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.1
+scale_random = 0.3
+scale_curve = SubResource( 9 )
+color = Color( 2, 2, 2, 1 )
+color_ramp = SubResource( 3 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="AnimatedTexture" id=11]
+flags = 4
+frames = 5
+fps = 0.1
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 6 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 4 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 5 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 3 )
+frame_4/delay_sec = 0.0
+
+[node name="Particles2D" type="Particles2D"]
+material = SubResource( 1 )
+emitting = false
+amount = 140
+lifetime = 0.69
+one_shot = true
+explosiveness = 1.0
+visibility_rect = Rect2( -5000, -5000, 10000, 10000 )
+process_material = SubResource( 10 )
+texture = SubResource( 11 )

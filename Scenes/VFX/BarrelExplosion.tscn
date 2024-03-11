@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/Sp_VFX_Flame.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.0967742, 0.129032, 0.193548, 0.23871, 0.322581, 0.432258, 0.851613, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.792103, 0.851563, 0.375885, 1, 0.855546, 0.859375, 0.369263, 1, 0.707031, 0.5643, 0.185043, 1, 0.898438, 0.527991, 0.0947571, 1, 1, 0.542664, 0.0078125, 1, 0.8125, 0.203918, 0.0634766, 1, 1, 0, 0, 1, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -0.5
+max_value = 0.5
+_data = [ Vector2( 0, 0.0079546 ), 0.0, 0.463636, 0, 0, Vector2( 1, -0.00113636 ), 0.403162, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 2.34636, 0, 0, Vector2( 0.578652, 1 ), -1.28986, -1.28986, 0, 0, Vector2( 1, 0 ), -0.180981, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 99.01
+angular_velocity = 720.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+orbit_velocity_curve = SubResource( 5 )
+damping = 50.5
+damping_random = 0.55
+angle = 720.0
+angle_random = 1.0
+scale = 0.15
+scale_random = 0.22
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 3 )
+hue_variation = 0.05
+hue_variation_random = 1.0
+
+[node name="BarrelExplosion" type="Particles2D"]
+material = SubResource( 1 )
+emitting = false
+amount = 200
+one_shot = true
+explosiveness = 0.69
+process_material = SubResource( 8 )
+texture = ExtResource( 1 )

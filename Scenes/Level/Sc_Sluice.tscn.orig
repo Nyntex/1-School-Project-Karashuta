@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Level/Sluice.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Level/Walls/Wall V3/Wall_III_Horizontal.png" type="Texture" id=2]
+<<<<<<< working copy
+[ext_resource path="res://Assets/Level/Walls/Wall V2/Wall_II_Horizontal.png" type="Texture" id=3]
+=======
+[ext_resource path="res://Assets/Level/Walls/Wall V2/Wall_II_Vertikal.png" type="Texture" id=3]
+>>>>>>> destination
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/Font_ARIAL.TTF" type="DynamicFontData" id=5]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 226.5, 56 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.25, 115 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 22.9358, 671.421 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 47
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Sluice" type="Node2D"]
+position = Vector2( 0, -3 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( -12.625, 3.5 )
+scale = Vector2( 0.21228, 0.112793 )
+texture = ExtResource( 4 )
+
+[node name="LevelDoneIndicator" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 0.392157 )
+position = Vector2( -9, -1 )
+scale = Vector2( 0.0625, 0.0634766 )
+texture = ExtResource( 4 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Top" type="KinematicBody2D" parent="Walls"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top"]
+position = Vector2( -9.5, -162 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Top"]
+position = Vector2( -9, -198.312 )
+scale = Vector2( 0.35625, 0.292773 )
+texture = ExtResource( 2 )
+
+[node name="Bottom" type="KinematicBody2D" parent="Walls"]
+position = Vector2( 2, 267 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom"]
+position = Vector2( -9.5, -162 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Walls/Bottom"]
+position = Vector2( -11, -126 )
+scale = Vector2( 0.380273, 0.306836 )
+texture = ExtResource( 2 )
+
+[node name="LevelStart" type="Position2D" parent="."]
+position = Vector2( 179, 2.99994 )
+
+[node name="LevelStartArea" type="Area2D" parent="LevelStart"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStart/LevelStartArea"]
+position = Vector2( -189, -1.99994 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="LevelStart/LevelStartArea"]
+visible = false
+modulate = Color( 0.219608, 1, 0, 0.478431 )
+position = Vector2( -57, 6.67572e-05 )
+scale = Vector2( 0.0175781, 0.112305 )
+texture = ExtResource( 4 )
+
+[node name="Door" type="Sprite" parent="LevelStart"]
+position = Vector2( -2.00003, -32.9999 )
+rotation = 3.14159
+scale = Vector2( 0.240693, -0.272556 )
+texture = ExtResource( 3 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="LevelStart/Door"]
+collision_layer = 11
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelStart/Door/KinematicBody2D"]
+position = Vector2( -145.413, -18.3445 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 3 )
+
+[node name="LevelEnd" type="Position2D" parent="."]
+position = Vector2( -204, 2.99994 )
+
+[node name="LevelEndArea" type="Area2D" parent="LevelEnd"]
+position = Vector2( 73, 6.00815e-05 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd/LevelEndArea"]
+position = Vector2( 120, -1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="LevelEnd/LevelEndArea"]
+visible = false
+modulate = Color( 0.407843, 1, 0, 0.392157 )
+position = Vector2( -2.25, 0.250063 )
+scale = Vector2( 0.0197754, 0.112549 )
+texture = ExtResource( 4 )
+
+[node name="Door" type="Sprite" parent="LevelEnd"]
+position = Vector2( -46, -20.9999 )
+scale = Vector2( 0.224834, 0.274719 )
+texture = ExtResource( 3 )
+offset = Vector2( 195.63, 13.1281 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="LevelEnd/Door"]
+position = Vector2( 192.573, 10.9402 )
+collision_layer = 13
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd/Door/KinematicBody2D"]
+position = Vector2( -152.543, -24.2995 )
+shape = SubResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+margin_top = -3.0
+margin_right = 40.0
+margin_bottom = 37.0
+
+[node name="EnemyCounter" type="Label" parent="Control"]
+margin_left = -83.0
+margin_top = -54.0
+margin_right = 66.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 2 )
+text = "1/100"
+align = 1
+valign = 1
+
+[node name="Title" type="Label" parent="Control/EnemyCounter"]
+margin_left = -84.0
+margin_top = -45.0
+margin_right = 245.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 2 )
+text = "Enemies left"
+align = 1
+valign = 1
+
+[connection signal="body_entered" from="LevelStart/LevelStartArea" to="." method="_on_LevelStartArea_body_entered"]
+[connection signal="body_entered" from="LevelEnd/LevelEndArea" to="." method="_on_LevelEndArea_body_entered"]

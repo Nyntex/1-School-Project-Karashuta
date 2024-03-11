@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Characters/Player/Scripts/PowerMeter.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/VFX/VFX_PowerMeter_Red.tscn" type="PackedScene" id=2]
+
+[node name="PowerMeter_Red" type="Node2D"]
+script = ExtResource( 1 )
+maxParticles = 30.0
+
+[node name="Particle_1" parent="." instance=ExtResource( 2 )]
+modulate = Color( 3, 1, 1, 1 )
+
+[node name="Particle_2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 1 )
+emitting = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="UpdateParticleAmount"]

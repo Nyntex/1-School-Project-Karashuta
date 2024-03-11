@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/Sp_VFX_Flame.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/VFX/ExplosionFlames.gd" type="Script" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=79]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=80]
+offsets = PoolRealArray( 0, 0.103226, 0.651613, 0.767742, 0.858065, 0.941935 )
+colors = PoolColorArray( 0.435294, 0.454902, 0.0588235, 0, 0.951935, 1, 0.015625, 1, 0.917796, 0.397957, 0.0534258, 1, 0.899414, 0.0737801, 0.0737801, 1, 0.100098, 0.00391006, 0.00391006, 1, 0.0941176, 0.00784314, 0.00784314, 0.666667 )
+
+[sub_resource type="GradientTexture" id=81]
+gradient = SubResource( 80 )
+width = 100
+
+[sub_resource type="Curve" id=82]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, -0.0682741, 0, 0, Vector2( 1, 100 ), 345.703, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=83]
+curve = SubResource( 82 )
+
+[sub_resource type="Curve" id=84]
+_data = [ Vector2( 0, 0.390909 ), 0.0, 0.0, 0, 0, Vector2( 0.359551, 0.536364 ), 0.251717, 0.251717, 0, 0, Vector2( 1, 1 ), 0.397448, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=85]
+curve = SubResource( 84 )
+
+[sub_resource type="ParticlesMaterial" id=86]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.33
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 200.0
+damping_random = 1.0
+damping_curve = SubResource( 83 )
+angle = 720.0
+angle_random = 1.0
+scale = 7.5
+scale_random = 1.0
+scale_curve = SubResource( 85 )
+color_ramp = SubResource( 81 )
+
+[node name="ExplosionParticles" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ExplosionBarrel_VFX" type="Particles2D" parent="."]
+material = SubResource( 79 )
+emitting = false
+amount = 200
+lifetime = 0.25
+one_shot = true
+explosiveness = 0.75
+randomness = 0.25
+fract_delta = false
+visibility_rect = Rect2( -6400, -6400, 12800, 12800 )
+process_material = SubResource( 86 )
+texture = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

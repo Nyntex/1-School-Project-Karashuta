@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Level/Difficulties/Arena/Spawner/Template/Sc_SpawnerTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/Sc_Moving_Borked.tscn" type="PackedScene" id=2]
+
+[node name="Borked_Spawner" instance=ExtResource( 1 )]
+enemyType = ExtResource( 2 )

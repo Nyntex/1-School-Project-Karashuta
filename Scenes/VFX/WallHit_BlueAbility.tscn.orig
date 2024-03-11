@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=2]
+
+<<<<<<< working copy
+[ext_resource path="res://Scenes/VFX/VFX_EmittingAndDeletion.gd" type="Script" id=1]
+=======
+>>>>>>> destination
+[ext_resource path="res://Assets/VFX/VFX_Textures/Blue_stun/Blue_Stun_Frame_II.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Blue_stun/Blue_Stun_Frame_V.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Blue_stun/Blue_Stun_Frame_VI.png" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Blue_stun/Blue_Stun_Frame_IV.png" type="Texture" id=5]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Blue_stun/Blue_Stun_Frame_I.png" type="Texture" id=6]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Blue_stun/Blue_Stun_Frame_III.png" type="Texture" id=7]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.01364, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+lifetime_randomness = 0.34
+flag_disable_z = true
+spread = 30.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 140.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 88.6
+damping_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.5
+scale_curve = SubResource( 5 )
+color = Color( 1, 1, 3, 1 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="AnimatedTexture" id=7]
+flags = 4
+frames = 6
+fps = 24.0
+frame_0/texture = ExtResource( 6 )
+frame_1/texture = ExtResource( 2 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 7 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 5 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 3 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 4 )
+frame_5/delay_sec = 0.0
+
+<<<<<<< working copy
+[node name="WallHit_BlueAbility" type="Particles2D"]
+=======
+[node name="Node2D" type="Node2D"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+>>>>>>> destination
+material = SubResource( 1 )
+scale = Vector2( 0.283542, 0.283542 )
+emitting = false
+amount = 35
+lifetime = 0.66
+one_shot = true
+explosiveness = 0.51
+visibility_rect = Rect2( -500, -500, 1000, 1000 )
+process_material = SubResource( 6 )
+texture = SubResource( 7 )
+script = ExtResource( 1 )

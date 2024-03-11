@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Scripts/WallChecker.gd" type="Script" id=1]
+
+[node name="WallChecker" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TopChecker" type="RayCast2D" parent="."]
+light_mask = 0
+enabled = true
+cast_to = Vector2( 0, -50 )
+collision_mask = 4
+
+[node name="RightChecker" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 50, 0 )
+collision_mask = 4
+
+[node name="DownChecker" type="RayCast2D" parent="."]
+enabled = true
+collision_mask = 4
+
+[node name="LeftChecker" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -50, 0 )
+collision_mask = 4

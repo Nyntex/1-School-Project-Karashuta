@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/VFX/WorldEnvironment.tres" type="Environment" id=1]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Textures/Simple Circle.png" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.226316, 0.710526, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = -0.5
+max_value = 0.5
+_data = [ Vector2( 0, 0.240909 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.231818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+max_value = 2.0
+_data = [ Vector2( 0, 1.96818 ), 0.0, 0.0, 0, 0, Vector2( 0.159624, 1.00455 ), -2.5373, -2.5373, 0, 0, Vector2( 0.746479, 1 ), 0.0322719, 0.0322719, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 50.0
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+orbit_velocity_curve = SubResource( 4 )
+radial_accel = -100.0
+scale = 0.05
+scale_random = 0.08
+scale_curve = SubResource( 6 )
+color = Color( 2, 1, 1, 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D"]
+amount = 50
+lifetime = 0.75
+explosiveness = 0.5
+process_material = SubResource( 7 )
+texture = ExtResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://General Scripts/AudioStreamEnhancer.gd" type="Script" id=1]
+
+[node name="AbsorbSound" type="AudioStreamPlayer2D"]
+pitch_scale = 0.5
+bus = "Effects"
+script = ExtResource( 1 )
+pitchVariance = 0.2

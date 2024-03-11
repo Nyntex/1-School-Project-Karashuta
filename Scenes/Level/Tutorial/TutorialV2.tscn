@@ -1,0 +1,870 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Scenes/Level/Enemy Environments/Static Laser/Sc_StaticLaser.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Fonts/good timing bd.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Red/shield.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/Enemies/StaticEnemies/Blue/shield.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Level/Tutorial/Finish.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Level/Tutorial/ColorBars3.gd" type="Script" id=6]
+[ext_resource path="res://Assets/UI/HORIZONTAL TAB BAR/Tab button default.png" type="Texture" id=7]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Level/Tutorial/TutorialV2.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Level/Tutorial/Movement.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Level/Tutorial/ColorSwaping.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Level/Tutorial/RedShields.gd" type="Script" id=12]
+[ext_resource path="res://Assets/UI/PANELS/Big panel 1.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Level/Tutorial/Shooting.gd" type="Script" id=14]
+[ext_resource path="res://Assets/UI/HORIZONTAL TAB BAR/Tab button active.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Level/Tutorial/Enemy shields.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Level/Tutorial/Rage Mode.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Characters/Enemy/Static/General/Base_StaticEnemy.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Level/Tutorial/BulletCombat.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Level/Tutorial/ColorBars1.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Characters/Enemy/HealingEnemy/Sc_HealingEnemy.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Level/Tutorial/ColorBars2.gd" type="Script" id=22]
+[ext_resource path="res://Assets/Tutorial Pictograms/TutorialMarker/TutorialMarker.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Level/Difficulties/Barrels.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/Level/Destructible Environment/SC_Destructible_HPBarrel.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Level/Destructible Environment/Sc_Destructible_ExplosiveBarrelSmall.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Level/Tutorial/TutorialSpriteSwitcher.gd" type="Script" id=27]
+[ext_resource path="res://Assets/Tutorial Pictograms/Strg2/Strg2_Blue.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Tutorial Pictograms/StrgBunkus/StrgBunkus.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Tutorial Pictograms/Strg2/Strg2_Red.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Tutorial Pictograms/Strg1/Strg_I.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/UI/ControllerSelected.tscn" type="PackedScene" id=39]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 111.416
+height = 83.0049
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 165.123, 110.254 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 29
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 33
+font_data = ExtResource( 2 )
+
+[node name="TutorialV2" type="Node2D"]
+position = Vector2( 363, 225 )
+script = ExtResource( 9 )
+
+[node name="TutorialChapters" type="Node2D" parent="."]
+
+[node name="BlueLaser" parent="TutorialChapters" instance=ExtResource( 1 )]
+position = Vector2( 155, -125 )
+damagePerSecond = 10000.0
+
+[node name="RedLaser" parent="TutorialChapters" instance=ExtResource( 1 )]
+position = Vector2( -167, -119 )
+damagePerSecond = 10000.0
+currentColor = 0
+
+[node name="Movement" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 10 )
+
+[node name="WalkingSpots" type="Node2D" parent="TutorialChapters/Movement"]
+modulate = Color( 0.00784314, 1, 0, 1 )
+
+[node name="Checkmark" type="Sprite" parent="TutorialChapters/Movement/WalkingSpots"]
+position = Vector2( -107.077, -28.3644 )
+scale = Vector2( 0.145361, 0.171219 )
+texture = ExtResource( 23 )
+
+[node name="One" type="Area2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark/One"]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="Checkmark2" type="Sprite" parent="TutorialChapters/Movement/WalkingSpots"]
+visible = false
+position = Vector2( 45, -73 )
+scale = Vector2( 0.145361, 0.171219 )
+texture = ExtResource( 23 )
+
+[node name="Two" type="Area2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark2"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark2/Two"]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="Checkmark3" type="Sprite" parent="TutorialChapters/Movement/WalkingSpots"]
+visible = false
+position = Vector2( -130, 74 )
+scale = Vector2( 0.145361, 0.171219 )
+texture = ExtResource( 23 )
+
+[node name="Three" type="Area2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark3"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark3/Three"]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="Checkmark4" type="Sprite" parent="TutorialChapters/Movement/WalkingSpots"]
+visible = false
+position = Vector2( 66, 34 )
+scale = Vector2( 0.145361, 0.171219 )
+texture = ExtResource( 23 )
+
+[node name="Four" type="Area2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark4"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/Movement/WalkingSpots/Checkmark4/Four"]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/Movement"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/Movement/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/Movement/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/Movement/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 2 )
+text = "Welcome to the Tutorial! Start by moving (WASD) to the marked Spots (0 /4)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ColorSwaping" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/ColorSwaping"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/ColorSwaping/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/ColorSwaping/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/ColorSwaping/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 2 )
+text = "Change your shield color with"
+align = 1
+autowrap = true
+
+[node name="Scheme1" type="TextureRect" parent="TutorialChapters/ColorSwaping/CanvasLayer/Text"]
+visible = false
+margin_left = 98.0
+margin_top = 28.0
+margin_right = 171.0
+margin_bottom = 87.0
+texture = ExtResource( 31 )
+expand = true
+
+[node name="Scheme2" type="TextureRect" parent="TutorialChapters/ColorSwaping/CanvasLayer/Text"]
+visible = false
+margin_left = 102.0
+margin_top = 23.0
+margin_right = 172.0
+margin_bottom = 87.0
+texture = ExtResource( 28 )
+expand = true
+script = ExtResource( 27 )
+textures = [ ExtResource( 28 ), ExtResource( 30 ) ]
+
+[node name="Timer" type="Timer" parent="TutorialChapters/ColorSwaping/CanvasLayer/Text/Scheme2"]
+autostart = true
+
+[node name="Scheme3" type="TextureRect" parent="TutorialChapters/ColorSwaping/CanvasLayer/Text"]
+visible = false
+margin_left = 90.0
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 88.0
+texture = ExtResource( 29 )
+expand = true
+
+[node name="Shields" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 12 )
+
+[node name="WalkingSpots" type="Node2D" parent="TutorialChapters/Shields"]
+modulate = Color( 0.360784, 1, 0, 1 )
+
+[node name="Checkmark" type="Sprite" parent="TutorialChapters/Shields/WalkingSpots"]
+position = Vector2( -265, 1 )
+scale = Vector2( 0.145361, 0.171219 )
+texture = ExtResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="TutorialChapters/Shields/WalkingSpots/Checkmark"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/Shields/WalkingSpots/Checkmark/Area2D"]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="Checkmark2" type="Sprite" parent="TutorialChapters/Shields/WalkingSpots"]
+visible = false
+position = Vector2( -3, 4 )
+scale = Vector2( 0.145361, 0.171219 )
+texture = ExtResource( 23 )
+
+[node name="Area2D2" type="Area2D" parent="TutorialChapters/Shields/WalkingSpots/Checkmark2"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/Shields/WalkingSpots/Checkmark2/Area2D2"]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="Checkmark3" type="Sprite" parent="TutorialChapters/Shields/WalkingSpots"]
+visible = false
+position = Vector2( 270, 8 )
+scale = Vector2( 0.145361, 0.171219 )
+texture = ExtResource( 23 )
+
+[node name="Area2D3" type="Area2D" parent="TutorialChapters/Shields/WalkingSpots/Checkmark3"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/Shields/WalkingSpots/Checkmark3/Area2D3"]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/Shields"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/Shields/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/Shields/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/Shields/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "You can absorb damage with the same color as your shield. Go to the marked spots (0/3)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Shooting" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 14 )
+
+[node name="NeutralDummies" type="Node2D" parent="TutorialChapters/Shooting"]
+
+[node name="Neutral1" parent="TutorialChapters/Shooting/NeutralDummies" instance=ExtResource( 21 )]
+position = Vector2( 108, -101 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 2
+health = 10.0
+healingAmount = 0.0
+
+[node name="Neutral2" parent="TutorialChapters/Shooting/NeutralDummies" instance=ExtResource( 21 )]
+position = Vector2( -82, -105 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 2
+health = 10.0
+healingAmount = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/Shooting"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/Shooting/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/Shooting/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/Shooting/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "You can shoot with Left Click. Destroy these enemies (0/2)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Enemyshields" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 16 )
+
+[node name="ShieldedDummies" type="Node2D" parent="TutorialChapters/Enemyshields"]
+
+[node name="RedHitDummy" parent="TutorialChapters/Enemyshields/ShieldedDummies" instance=ExtResource( 21 )]
+position = Vector2( 100, -101 )
+collision_layer = 0
+collision_mask = 0
+health = 200.0
+healingAmount = 0.0
+
+[node name="Sprite" type="Sprite" parent="TutorialChapters/Enemyshields/ShieldedDummies/RedHitDummy"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="BlueHitdummy" parent="TutorialChapters/Enemyshields/ShieldedDummies" instance=ExtResource( 21 )]
+position = Vector2( -83, -103 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 1
+health = 200.0
+healingAmount = 0.0
+
+[node name="Sprite" type="Sprite" parent="TutorialChapters/Enemyshields/ShieldedDummies/BlueHitdummy"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/Enemyshields"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/Enemyshields/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/Enemyshields/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/Enemyshields/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "Shielded enemies can absorb shots of the same color. Destroy them (0/2)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="RageMode" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 17 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/RageMode"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/RageMode/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/RageMode/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/RageMode/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "Your damage and speed are increased if you are at 1 health. Try to defeat these enemies (0/4)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="NeutralDummies" type="Node2D" parent="TutorialChapters/RageMode"]
+
+[node name="Neutral1" parent="TutorialChapters/RageMode/NeutralDummies" instance=ExtResource( 21 )]
+position = Vector2( 275, -67 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 2
+health = 400.0
+healingAmount = 0.0
+
+[node name="Neutral2" parent="TutorialChapters/RageMode/NeutralDummies" instance=ExtResource( 21 )]
+position = Vector2( -297, -32 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 2
+health = 400.0
+healingAmount = 0.0
+
+[node name="Neutral3" parent="TutorialChapters/RageMode/NeutralDummies" instance=ExtResource( 21 )]
+position = Vector2( -64, -100 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 2
+health = 400.0
+healingAmount = 0.0
+
+[node name="Neutral4" parent="TutorialChapters/RageMode/NeutralDummies" instance=ExtResource( 21 )]
+position = Vector2( 64, -107 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 2
+health = 400.0
+healingAmount = 0.0
+
+[node name="BulletCombat" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 19 )
+
+[node name="Checkmark" type="Sprite" parent="TutorialChapters/BulletCombat"]
+modulate = Color( 0.0784314, 1, 0, 1 )
+position = Vector2( -6.07732, 88.1332 )
+scale = Vector2( 0.145361, 0.166341 )
+texture = ExtResource( 23 )
+
+[node name="One" type="Area2D" parent="TutorialChapters/BulletCombat/Checkmark"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/BulletCombat/Checkmark/One"]
+position = Vector2( 0.531982, 5.21106 )
+shape = SubResource( 1 )
+
+[node name="Enemies" type="Node2D" parent="TutorialChapters/BulletCombat"]
+
+[node name="Enemy" parent="TutorialChapters/BulletCombat/Enemies" instance=ExtResource( 18 )]
+visible = false
+position = Vector2( -257, 10 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 1
+
+[node name="Sprite" type="Sprite" parent="TutorialChapters/BulletCombat/Enemies/Enemy"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Enemy2" parent="TutorialChapters/BulletCombat/Enemies" instance=ExtResource( 18 )]
+visible = false
+position = Vector2( 257, 26 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="TutorialChapters/BulletCombat/Enemies/Enemy2"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/BulletCombat"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/BulletCombat/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/BulletCombat/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/BulletCombat/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "Go to the marked Spot to start a fight"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ColorBars1" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 20 )
+
+[node name="Dummies" type="Node2D" parent="TutorialChapters/ColorBars1"]
+
+[node name="Enemy" parent="TutorialChapters/ColorBars1/Dummies" instance=ExtResource( 21 )]
+position = Vector2( -2, -66 )
+collision_layer = 0
+collision_mask = 0
+currentColor = 2
+health = 125.0
+healingAmount = 30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/ColorBars1"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/ColorBars1/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/ColorBars1/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/ColorBars1/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "You just unlocked your color bars. Fill it by absorbing damage"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ColorBars2" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 22 )
+
+[node name="Checkmark" type="Sprite" parent="TutorialChapters/ColorBars2"]
+modulate = Color( 0, 1, 0.133333, 1 )
+position = Vector2( 5.42782, 131.64 )
+scale = Vector2( 0.15567, 0.180976 )
+texture = ExtResource( 23 )
+
+[node name="One" type="Area2D" parent="TutorialChapters/ColorBars2/Checkmark"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialChapters/ColorBars2/Checkmark/One"]
+position = Vector2( -3.72529e-09, -20 )
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/ColorBars2"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/ColorBars2/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/ColorBars2/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/ColorBars2/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "Go to the marked Spot to unlock your color bars full potential"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ColorBars3" type="Node2D" parent="TutorialChapters"]
+visible = false
+script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/ColorBars3"]
+visible = false
+
+[node name="Text" type="Control" parent="TutorialChapters/ColorBars3/CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -130.0
+margin_top = 44.0
+margin_right = 107.0
+margin_bottom = 93.0
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/ColorBars3/CanvasLayer/Text"]
+modulate = Color( 0, 0, 0, 0.482353 )
+anchor_left = 0.559
+anchor_top = 0.571
+anchor_right = 0.559
+anchor_bottom = 0.571
+margin_left = -167.483
+margin_top = -60.979
+margin_right = 167.517
+margin_bottom = 61.021
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/ColorBars3/CanvasLayer/Text"]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 300.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 2 )
+text = "Completely filling your color bar now causes you to use a special ability. Try out both! (0/2)"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Finish" type="Node2D" parent="TutorialChapters"]
+pause_mode = 2
+visible = false
+script = ExtResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialChapters/Finish"]
+visible = false
+
+[node name="Background" type="TextureRect" parent="TutorialChapters/Finish/CanvasLayer"]
+modulate = Color( 0, 0, 0, 0.901961 )
+margin_left = -78.0
+margin_top = -51.0
+margin_right = 1086.0
+margin_bottom = 635.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="TutorialChapters/Finish/CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.439
+anchor_right = 0.5
+anchor_bottom = 0.439
+margin_left = -312.0
+margin_top = -163.4
+margin_right = 347.0
+margin_bottom = 205.6
+texture = ExtResource( 13 )
+expand = true
+
+[node name="Label" type="Label" parent="TutorialChapters/Finish/CanvasLayer/TextureRect"]
+margin_left = 95.0
+margin_top = 25.0
+margin_right = 523.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 7 )
+text = "Tutorial finished"
+
+[node name="Label2" type="Label" parent="TutorialChapters/Finish/CanvasLayer/TextureRect"]
+anchor_left = 0.48
+anchor_right = 0.48
+margin_left = -259.32
+margin_top = 80.0
+margin_right = 250.68
+margin_bottom = 287.0
+custom_fonts/font = SubResource( 8 )
+text = "Congratulations, you finished the tutorial. Now start your adventure by going through the open door on the right side."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureButton" type="TextureButton" parent="TutorialChapters/Finish/CanvasLayer/TextureRect"]
+margin_left = 175.0
+margin_top = 300.0
+margin_right = 431.0
+margin_bottom = 389.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="TutorialChapters/Finish/CanvasLayer/TextureRect/TextureButton"]
+anchor_left = 0.5
+anchor_top = -2.951
+anchor_right = 0.5
+anchor_bottom = -2.951
+margin_left = -111.0
+margin_top = 282.639
+margin_right = 102.0
+margin_bottom = 330.639
+custom_fonts/font = SubResource( 9 )
+text = "Got it"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="TutorialChapters/Finish/CanvasLayer/TextureRect/TextureButton" instance=ExtResource( 39 )]
+visible = false
+margin_left = -38.0
+margin_top = -0.999001
+margin_right = 126.0
+margin_bottom = 117.001
+
+[node name="SpawnPoint" type="Position2D" parent="."]
+
+[node name="Barrels" type="Node2D" parent="."]
+script = ExtResource( 24 )
+
+[node name="ItemHolder" type="Node2D" parent="Barrels"]
+
+[node name="ExplosiveBarrel" parent="Barrels" instance=ExtResource( 26 )]
+position = Vector2( -331, 47 )
+
+[node name="HP_Barrel" parent="Barrels" instance=ExtResource( 25 )]
+position = Vector2( -331, -57 )
+itemDropChance = 100.0
+
+[connection signal="finished" from="TutorialChapters/Movement" to="." method="_on_Movement_finished"]
+[connection signal="body_entered" from="TutorialChapters/Movement/WalkingSpots/Checkmark/One" to="TutorialChapters/Movement" method="_on_One_body_entered"]
+[connection signal="body_entered" from="TutorialChapters/Movement/WalkingSpots/Checkmark2/Two" to="TutorialChapters/Movement" method="_on_Two_body_entered"]
+[connection signal="body_entered" from="TutorialChapters/Movement/WalkingSpots/Checkmark3/Three" to="TutorialChapters/Movement" method="_on_Three_body_entered"]
+[connection signal="body_entered" from="TutorialChapters/Movement/WalkingSpots/Checkmark4/Four" to="TutorialChapters/Movement" method="_on_Four_body_entered"]
+[connection signal="finished" from="TutorialChapters/ColorSwaping" to="." method="_on_ColorSwaping_finished"]
+[connection signal="timeout" from="TutorialChapters/ColorSwaping/CanvasLayer/Text/Scheme2/Timer" to="TutorialChapters/ColorSwaping/CanvasLayer/Text/Scheme2" method="_on_Timer_timeout"]
+[connection signal="Finished" from="TutorialChapters/Shields" to="." method="_on_Shields_Finished"]
+[connection signal="body_entered" from="TutorialChapters/Shields/WalkingSpots/Checkmark/Area2D" to="TutorialChapters/Shields" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="TutorialChapters/Shields/WalkingSpots/Checkmark2/Area2D2" to="TutorialChapters/Shields" method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="TutorialChapters/Shields/WalkingSpots/Checkmark3/Area2D3" to="TutorialChapters/Shields" method="_on_Area2D3_body_entered"]
+[connection signal="finished" from="TutorialChapters/Shooting" to="." method="_on_Shooting_finished"]
+[connection signal="child_exiting_tree" from="TutorialChapters/Shooting/NeutralDummies" to="TutorialChapters/Shooting" method="_on_NeutralDummies_child_exiting_tree"]
+[connection signal="finished" from="TutorialChapters/Enemyshields" to="." method="_on_Enemyshields_finished"]
+[connection signal="child_exiting_tree" from="TutorialChapters/Enemyshields/ShieldedDummies" to="TutorialChapters/Enemyshields" method="_on_Shielded_Dummies_child_exiting_tree"]
+[connection signal="finished" from="TutorialChapters/RageMode" to="." method="_on_RageMode_finished"]
+[connection signal="child_exiting_tree" from="TutorialChapters/RageMode/NeutralDummies" to="TutorialChapters/RageMode" method="_on_NeutralDummies_child_exiting_tree"]
+[connection signal="finished" from="TutorialChapters/BulletCombat" to="." method="_on_BulletCombat_finished"]
+[connection signal="body_entered" from="TutorialChapters/BulletCombat/Checkmark/One" to="TutorialChapters/BulletCombat" method="_on_One_body_entered"]
+[connection signal="child_exiting_tree" from="TutorialChapters/BulletCombat/Enemies" to="TutorialChapters/BulletCombat" method="_on_Enemies_child_exiting_tree"]
+[connection signal="finished" from="TutorialChapters/ColorBars1" to="." method="_on_ColorBars1_finished"]
+[connection signal="child_exiting_tree" from="TutorialChapters/ColorBars1/Dummies" to="TutorialChapters/ColorBars1" method="_on_Dummies_child_exiting_tree"]
+[connection signal="finished" from="TutorialChapters/ColorBars2" to="." method="_on_ColorBars2_finished"]
+[connection signal="body_entered" from="TutorialChapters/ColorBars2/Checkmark/One" to="TutorialChapters/ColorBars2" method="_on_One_body_entered"]
+[connection signal="finished" from="TutorialChapters/ColorBars3" to="." method="_on_ColorBars3_finished"]
+[connection signal="finished" from="TutorialChapters/Finish" to="." method="_on_Finish_finished"]
+[connection signal="pressed" from="TutorialChapters/Finish/CanvasLayer/TextureRect/TextureButton" to="TutorialChapters/Finish" method="_on_TextureButton_pressed"]

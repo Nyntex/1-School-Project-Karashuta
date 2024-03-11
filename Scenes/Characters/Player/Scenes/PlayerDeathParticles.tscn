@@ -1,0 +1,162 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Scenes/Characters/Player/Scripts/PlayerDeathParticles.gd" type="Script" id=1]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_VI.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_III.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_II.png" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_IV.png" type="Texture" id=5]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_V.png" type="Texture" id=6]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_I.png" type="Texture" id=7]
+
+[sub_resource type="CanvasItemMaterial" id=20]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id=21]
+min_value = -10.0
+max_value = 10.0
+_data = [ Vector2( 0.0111821, -10 ), 0.0, 0.0, 0, 0, Vector2( 1, 10 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 21 )
+
+[sub_resource type="Curve" id=22]
+min_value = -10.0
+max_value = 10.0
+_data = [ Vector2( 0, 10 ), 0.0, 0.0, 0, 0, Vector2( 1, -10 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 22 )
+
+[sub_resource type="Gradient" id=23]
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 23 )
+
+[sub_resource type="Curve" id=24]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.413738, 60.1994 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 2.86889, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 24 )
+
+[sub_resource type="Curve" id=25]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.413738, 0.16181 ), 0.796697, 4.57201, 0, 0, Vector2( 0.822684, 0.873466 ), -2.46889, -2.46889, 0, 0, Vector2( 1, 0 ), -7.5064, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 25 )
+
+[sub_resource type="ParticlesMaterial" id=26]
+lifetime_randomness = 0.25
+emission_shape = 2
+emission_box_extents = Vector3( 50, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, -100, 0 )
+angular_velocity_curve = SubResource( 5 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping_curve = SubResource( 9 )
+angle = 90.0
+angle_random = 0.2
+angle_curve = SubResource( 3 )
+scale = 0.1
+scale_random = 0.2
+scale_curve = SubResource( 11 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="AnimatedTexture" id=27]
+flags = 4
+frames = 6
+fps = 12.0
+frame_0/texture = ExtResource( 7 )
+frame_1/texture = ExtResource( 4 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 3 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 5 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 6 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 2 )
+frame_5/delay_sec = 0.0
+
+[sub_resource type="Gradient" id=28]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 28 )
+
+[sub_resource type="ParticlesMaterial" id=29]
+emission_shape = 5
+emission_ring_radius = 50.0
+emission_ring_inner_radius = 0.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 51.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 0, 0, 2, 1 )
+color_ramp = SubResource( 19 )
+
+[sub_resource type="Gradient" id=30]
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 30 )
+
+[sub_resource type="ParticlesMaterial" id=31]
+emission_shape = 5
+emission_ring_radius = 50.0
+emission_ring_inner_radius = 0.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 50.99
+scale = 2.0
+scale_random = 1.0
+color = Color( 2, 0, 0, 1 )
+color_ramp = SubResource( 15 )
+
+[node name="PlayerDeathParticles" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Black" type="Particles2D" parent="."]
+material = SubResource( 20 )
+emitting = false
+amount = 16
+lifetime = 1.25
+one_shot = true
+process_material = SubResource( 26 )
+texture = SubResource( 27 )
+
+[node name="Blue" type="Particles2D" parent="."]
+position = Vector2( 0, 20 )
+emitting = false
+amount = 25
+one_shot = true
+process_material = SubResource( 29 )
+
+[node name="Red" type="Particles2D" parent="."]
+position = Vector2( 0, 10 )
+emitting = false
+amount = 25
+one_shot = true
+process_material = SubResource( 31 )
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

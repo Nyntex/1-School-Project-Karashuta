@@ -1,0 +1,2998 @@
+[gd_scene load_steps=181 format=2]
+
+[ext_resource path="res://Scenes/UI/StartScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/titlescreen/Hintergrund.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Level/Scripts/LevelLoader.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Game/Game.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/Death.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/UI/Control Scheme.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Level/Difficulties/Arena/BaseArenaLevel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI/Settings.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_9.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/Player/Sc_Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Level/Difficulties/Easy/L_Easy_3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_8.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Fonts/Font_ARIAL.TTF" type="DynamicFontData" id=13]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Game/PauseScreen.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Level/Hub/L_Hub.tscn" type="PackedScene" id=16]
+[ext_resource path="res://General Scripts/AudioStreamEnhancer.gd" type="Script" id=17]
+[ext_resource path="res://Audio/Aud_Background_Level.tres" type="AudioStream" id=18]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_3.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_7.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/UI/SMALL PANALS/Small panal 1.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/VFX/WorldEnvironment.tres" type="Environment" id=22]
+[ext_resource path="res://Scenes/UI/QuitConfirmation.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_5.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Game/Music.gd" type="Script" id=25]
+[ext_resource path="res://Scenes/Level/Difficulties/Easy/L_Easy_2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_2.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Level/Difficulties/Easy/L_Easy_1.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_1.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Level/Difficulties/Hard/L_Hard_3.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Assets/Fonts/good timing bd.otf" type="DynamicFontData" id=31]
+[ext_resource path="res://Scenes/Level/Difficulties/Hard/L_Hard_2.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Level/Difficulties/Hard/L_Hard_1.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/Game/GameCanvas.gd" type="Script" id=34]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_4.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Placeholders/KS Logo.png" type="Texture" id=36]
+[ext_resource path="res://Scenes/UI/CustomRun.gd" type="Script" id=37]
+[ext_resource path="res://Assets/Fonts/neuropol.otf" type="DynamicFontData" id=38]
+[ext_resource path="res://Audio/Aud_Background_Boss.mp3" type="AudioStream" id=39]
+[ext_resource path="res://Assets/UI/SMALL PANALS/Small panal 2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/UI/VERTICAL TAB BAR/tab button default.png" type="Texture" id=41]
+[ext_resource path="res://Assets/UI/PANELS/Big panel 1.png" type="Texture" id=42]
+[ext_resource path="res://Assets/UI/RECTANGULAR BUTTONS 2/Rb_2_1.png" type="Texture" id=43]
+[ext_resource path="res://Assets/UI/HORIZONTAL TAB BAR/Tab button active.png" type="Texture" id=44]
+[ext_resource path="res://Assets/UI/HORIZONTAL TAB BAR/Tab button default.png" type="Texture" id=45]
+[ext_resource path="res://Assets/UI/SQUAER SLOTS/Square slot 3.png" type="Texture" id=46]
+[ext_resource path="res://Assets/UI/SQUAER SLOTS/Square slot 5.png" type="Texture" id=47]
+[ext_resource path="res://Assets/UI/RECTANGULAR BUTTONS 2/Rb_2_3.png" type="Texture" id=48]
+[ext_resource path="res://Assets/UI/PROGRESS BARS/Progress bar 1/base.png" type="Texture" id=49]
+[ext_resource path="res://Assets/UI/PROGRESS BARS/Progress bar 1/progress.png" type="Texture" id=50]
+[ext_resource path="res://Scenes/Game/SoundSettings.gd" type="Script" id=51]
+[ext_resource path="res://Scenes/Game/MusicSlider.gd" type="Script" id=52]
+[ext_resource path="res://Scenes/Game/EffectSlider.gd" type="Script" id=53]
+[ext_resource path="res://Scenes/Game/PreGame/PreGameStoryTelling.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Scenes/UI/Settings/fullscreen.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Scenes/UI/Settings/Borderless.tscn" type="PackedScene" id=56]
+[ext_resource path="res://Scenes/UI/Settings/SmallColorBar.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Scenes/Level/Tutorial/TutorialSpriteSwitcher.gd" type="Script" id=58]
+[ext_resource path="res://Assets/Tutorial Pictograms/Strg2/Strg2_Blue.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Tutorial Pictograms/StrgBunkus/StrgBunkus.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Tutorial Pictograms/Strg2/Strg2_Red.png" type="Texture" id=61]
+[ext_resource path="res://Scenes/Level/Difficulties/Easy/L_Easy_4.tscn" type="PackedScene" id=62]
+[ext_resource path="res://Assets/Tutorial Pictograms/Strg1/Strg_I.png" type="Texture" id=63]
+[ext_resource path="res://Audio/cinematic-cello-115667.mp3" type="AudioStream" id=64]
+[ext_resource path="res://Scenes/Game/ImprovedSound.gd" type="Script" id=65]
+[ext_resource path="res://Audio/SwooshMenu.tres" type="AudioStream" id=66]
+[ext_resource path="res://Audio/MenuButton.mp3" type="AudioStream" id=67]
+[ext_resource path="res://Assets/titlescreen/player/0068.png" type="Texture" id=68]
+[ext_resource path="res://Assets/titlescreen/player/0055.png" type="Texture" id=69]
+[ext_resource path="res://Assets/titlescreen/player/0064.png" type="Texture" id=70]
+[ext_resource path="res://Assets/titlescreen/player/0074.png" type="Texture" id=71]
+[ext_resource path="res://Assets/titlescreen/player/0066.png" type="Texture" id=72]
+[ext_resource path="res://Assets/titlescreen/player/0070.png" type="Texture" id=73]
+[ext_resource path="res://Assets/titlescreen/player/0075.png" type="Texture" id=74]
+[ext_resource path="res://Assets/titlescreen/player/0050.png" type="Texture" id=75]
+[ext_resource path="res://Assets/titlescreen/player/0054.png" type="Texture" id=76]
+[ext_resource path="res://Assets/titlescreen/player/0056.png" type="Texture" id=77]
+[ext_resource path="res://Assets/titlescreen/player/0063.png" type="Texture" id=78]
+[ext_resource path="res://Assets/titlescreen/player/0071.png" type="Texture" id=79]
+[ext_resource path="res://Assets/titlescreen/player/0073.png" type="Texture" id=80]
+[ext_resource path="res://Assets/titlescreen/player/0051.png" type="Texture" id=81]
+[ext_resource path="res://Assets/titlescreen/player/0057.png" type="Texture" id=82]
+[ext_resource path="res://Assets/titlescreen/player/0069.png" type="Texture" id=83]
+[ext_resource path="res://Assets/titlescreen/player/0059.png" type="Texture" id=84]
+[ext_resource path="res://Assets/titlescreen/player/0060.png" type="Texture" id=85]
+[ext_resource path="res://Assets/titlescreen/player/0061.png" type="Texture" id=86]
+[ext_resource path="res://Assets/titlescreen/player/0065.png" type="Texture" id=87]
+[ext_resource path="res://Assets/titlescreen/player/0067.png" type="Texture" id=88]
+[ext_resource path="res://Assets/titlescreen/player/0072.png" type="Texture" id=89]
+[ext_resource path="res://Assets/titlescreen/player/0058.png" type="Texture" id=90]
+[ext_resource path="res://Assets/titlescreen/player/0062.png" type="Texture" id=91]
+[ext_resource path="res://Assets/titlescreen/player/0053.png" type="Texture" id=92]
+[ext_resource path="res://Assets/titlescreen/player/0052.png" type="Texture" id=93]
+[ext_resource path="res://Assets/titlescreen/player/0087.png" type="Texture" id=94]
+[ext_resource path="res://Assets/titlescreen/player/0089.png" type="Texture" id=95]
+[ext_resource path="res://Assets/titlescreen/player/0080.png" type="Texture" id=96]
+[ext_resource path="res://Assets/titlescreen/player/0077.png" type="Texture" id=97]
+[ext_resource path="res://Assets/titlescreen/player/0088.png" type="Texture" id=98]
+[ext_resource path="res://Assets/titlescreen/player/0076.png" type="Texture" id=99]
+[ext_resource path="res://Assets/titlescreen/player/0090.png" type="Texture" id=100]
+[ext_resource path="res://Assets/titlescreen/player/0083.png" type="Texture" id=101]
+[ext_resource path="res://Assets/titlescreen/player/0078.png" type="Texture" id=102]
+[ext_resource path="res://Assets/titlescreen/player/0081.png" type="Texture" id=103]
+[ext_resource path="res://Assets/titlescreen/player/0086.png" type="Texture" id=104]
+[ext_resource path="res://Assets/titlescreen/player/0082.png" type="Texture" id=105]
+[ext_resource path="res://Assets/titlescreen/player/0084.png" type="Texture" id=106]
+[ext_resource path="res://Assets/titlescreen/player/0085.png" type="Texture" id=107]
+[ext_resource path="res://Assets/titlescreen/player/0079.png" type="Texture" id=108]
+[ext_resource path="res://Audio/loneliness-of-the-winner-110416.mp3" type="AudioStream" id=109]
+[ext_resource path="res://Scenes/Level/Difficulties/Easy/L_Easy_5.tscn" type="PackedScene" id=110]
+[ext_resource path="res://Scenes/Level/Difficulties/Medium/L_Medium_6.tscn" type="PackedScene" id=111]
+[ext_resource path="res://Scenes/Game/CustomRunButton.gd" type="Script" id=112]
+[ext_resource path="res://Assets/UI/HORIZONTAL TAB BAR/Tab button disabled.png" type="Texture" id=113]
+[ext_resource path="res://Scenes/Game/Main.gd" type="Script" id=114]
+[ext_resource path="res://Scenes/UI/ControllerSelected.tscn" type="PackedScene" id=115]
+[ext_resource path="res://Scenes/Game/Credits.gd" type="Script" id=116]
+[ext_resource path="res://Assets/UI/SLIDERS/Slider 1/TileableProgress.png" type="Texture" id=117]
+[ext_resource path="res://Scenes/UI/ControllerSliderSelected.tscn" type="PackedScene" id=118]
+[ext_resource path="res://Assets/UI/Controls.png" type="Texture" id=119]
+[ext_resource path="res://Assets/Credits/credits.png" type="Texture" id=120]
+
+[sub_resource type="Animation" id=26]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=52]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=71]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+
+[sub_resource type="Animation" id=79]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=80]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=81]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+
+[sub_resource type="DynamicFont" id=35]
+size = 45
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 35
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=82]
+size = 28
+font_data = ExtResource( 31 )
+
+[sub_resource type="Animation" id=40]
+resource_name = "Open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.901961 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Window:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 625 ), Vector2( 80, 625 ), Vector2( 80, 30 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Window/Return:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=41]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.901961 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Window:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -160, -248 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Window/Return:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "BlendIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Main/Start:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 126 ), Vector2( -10, 126 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Main/Settings:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 281 ), Vector2( 300, 281 ), Vector2( 0, 281 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Main/CustomRun:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 365 ), Vector2( 300, 365 ), Vector2( 0, 365 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Main/Credits:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 451 ), Vector2( 300, 451 ), Vector2( 0, 451 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Main/Start:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 126 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Main/Settings:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 281 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Main/CustomRun:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 365 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Main/Credits:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 451 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 72
+font_data = ExtResource( 31 )
+
+[sub_resource type="Animation" id=49]
+resource_name = "Open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -210, 800 ), Vector2( -210, -25 ) ]
+}
+
+[sub_resource type="Animation" id=50]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -210, -25 ) ]
+}
+
+[sub_resource type="DynamicFont" id=22]
+size = 23
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=78]
+size = 43
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 30
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 54
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 33
+font_data = ExtResource( 31 )
+
+[sub_resource type="ImageTexture" id=56]
+
+[sub_resource type="ImageTexture" id=57]
+
+[sub_resource type="ImageTexture" id=58]
+
+[sub_resource type="StyleBoxTexture" id=59]
+texture = ExtResource( 49 )
+region_rect = Rect2( 0, 0, 525, 110 )
+
+[sub_resource type="StyleBoxTexture" id=65]
+texture = ExtResource( 50 )
+region_rect = Rect2( 0, 0, 525, 110 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="DynamicFont" id=54]
+size = 25
+font_data = ExtResource( 38 )
+
+[sub_resource type="ImageTexture" id=61]
+
+[sub_resource type="ImageTexture" id=62]
+
+[sub_resource type="ImageTexture" id=63]
+
+[sub_resource type="StyleBoxTexture" id=66]
+texture = ExtResource( 49 )
+region_rect = Rect2( 0, 0, 525, 110 )
+
+[sub_resource type="StyleBoxTexture" id=68]
+texture = ExtResource( 50 )
+region_rect = Rect2( 0, 0, 525, 110 )
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="DynamicFont" id=55]
+size = 25
+font_data = ExtResource( 38 )
+
+[sub_resource type="Animation" id=44]
+resource_name = "Open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Window:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1500, 40 ), Vector2( 60, 40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.901961 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Window:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Window:mouse_filter")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Background:mouse_filter")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Window:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 918, 524 ), Vector2( 918, 524 ) ]
+}
+
+[sub_resource type="Animation" id=45]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Window:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 84, 18 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Window:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Window:mouse_filter")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Background:mouse_filter")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Window:rect_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 895, 524 ) ]
+}
+
+[sub_resource type="DynamicFont" id=29]
+size = 33
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 29
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=31]
+size = 78
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 43
+font_data = ExtResource( 31 )
+
+[sub_resource type="Animation" id=42]
+resource_name = "Open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Window:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1000, -8 ), Vector2( 38, -8 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Background:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Window:mouse_filter")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Window/Buttons:mouse_filter")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=43]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Window:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 38, -8 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Background:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Window:mouse_filter")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Window/Buttons:mouse_filter")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="DynamicFont" id=24]
+size = 30
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 35
+font_data = ExtResource( 31 )
+
+[sub_resource type="Animation" id=47]
+resource_name = "Open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=48]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "BlendIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 2 ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "BlendInAndOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../StartScreen")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "DeActivate"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../../PreGameStoryTelling")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "ActivateBoxes"
+} ]
+}
+
+[sub_resource type="Animation" id=37]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=74]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="Animation" id=77]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+playerScene = ExtResource( 10 )
+
+[node name="LevelLoader" type="Node2D" parent="."]
+position = Vector2( 483, 319 )
+script = ExtResource( 3 )
+Difficulties = [ 0, 0, 1, 1, 2, 2, 3 ]
+easyLevels = [ ExtResource( 28 ), ExtResource( 26 ), ExtResource( 11 ), ExtResource( 62 ), ExtResource( 110 ) ]
+midLevels = [ ExtResource( 29 ), ExtResource( 27 ), ExtResource( 35 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 111 ) ]
+hardLevels = [ ExtResource( 33 ), ExtResource( 32 ), ExtResource( 30 ) ]
+arenaLevels = [ ExtResource( 7 ) ]
+
+[node name="Hub" parent="LevelLoader" instance=ExtResource( 16 )]
+position = Vector2( -483, -319 )
+
+[node name="Music" type="Node2D" parent="."]
+script = ExtResource( 25 )
+
+[node name="RunMusic" type="AudioStreamPlayer2D" parent="Music"]
+pause_mode = 2
+stream = ExtResource( 18 )
+volume_db = -80.0
+bus = "Music"
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Music/RunMusic"]
+anims/FadeIn = SubResource( 26 )
+anims/FadeOut = SubResource( 27 )
+anims/RESET = SubResource( 28 )
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="Music"]
+position = Vector2( 1, 0 )
+stream = ExtResource( 39 )
+volume_db = -80.0
+bus = "Music"
+script = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Music/BossMusic"]
+anims/FadeIn = SubResource( 51 )
+anims/FadeOut = SubResource( 53 )
+anims/RESET = SubResource( 52 )
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 64 )
+volume_db = -80.0
+autoplay = true
+bus = "Music"
+script = ExtResource( 65 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Music/MainMusic"]
+anims/FadeIn = SubResource( 69 )
+anims/FadeOut = SubResource( 70 )
+anims/RESET = SubResource( 71 )
+
+[node name="HubMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 109 )
+volume_db = -80.0
+bus = "Music"
+script = ExtResource( 65 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Music/HubMusic"]
+anims/FadeIn = SubResource( 79 )
+anims/FadeOut = SubResource( 80 )
+anims/RESET = SubResource( 81 )
+
+[node name="PreGameStoryTelling" parent="." instance=ExtResource( 54 )]
+
+[node name="GameCanvas" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 0
+script = ExtResource( 34 )
+
+[node name="StartScreen" type="Control" parent="GameCanvas"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 9.0
+margin_right = -2.0
+margin_bottom = -3.0
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="GameCanvas/StartScreen"]
+modulate = Color( 0.231373, 0.231373, 0.231373, 1 )
+anchor_left = -12.25
+anchor_top = -7.95
+anchor_right = 15.25
+anchor_bottom = 8.825
+margin_left = 12425.8
+margin_top = 4636.6
+margin_right = -14459.8
+margin_bottom = -4506.1
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Title" type="TextureRect" parent="GameCanvas/StartScreen"]
+anchor_top = -0.01
+anchor_bottom = -0.01
+margin_left = 51.0
+margin_top = -0.119999
+margin_right = 976.0
+margin_bottom = 114.88
+texture = ExtResource( 36 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="GameCanvas/StartScreen"]
+anchor_left = 0.478
+anchor_right = 0.478
+margin_left = -0.332001
+margin_top = 116.6
+margin_right = 1023.67
+margin_bottom = 1140.6
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 75 )
+script = ExtResource( 58 )
+textures = [ ExtResource( 75 ), ExtResource( 81 ), ExtResource( 93 ), ExtResource( 92 ), ExtResource( 76 ), ExtResource( 69 ), ExtResource( 77 ), ExtResource( 82 ), ExtResource( 90 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 91 ), ExtResource( 78 ), ExtResource( 70 ), ExtResource( 87 ), ExtResource( 72 ), ExtResource( 88 ), ExtResource( 68 ), ExtResource( 83 ), ExtResource( 73 ), ExtResource( 79 ), ExtResource( 89 ), ExtResource( 80 ), ExtResource( 71 ), ExtResource( 74 ), ExtResource( 99 ), ExtResource( 97 ), ExtResource( 102 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 101 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 104 ), ExtResource( 94 ), ExtResource( 98 ), ExtResource( 95 ), ExtResource( 100 ) ]
+loop = true
+
+[node name="Timer" type="Timer" parent="GameCanvas/StartScreen/TextureRect"]
+wait_time = 0.075
+autostart = true
+
+[node name="Main" type="Control" parent="GameCanvas/StartScreen"]
+anchor_right = 0.998
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 7.03796
+margin_bottom = 6.0
+script = ExtResource( 114 )
+
+[node name="Start" type="TextureButton" parent="GameCanvas/StartScreen/Main"]
+margin_top = 126.0
+margin_right = 497.0
+margin_bottom = 278.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+flip_h = true
+
+[node name="Text" type="Label" parent="GameCanvas/StartScreen/Main/Start"]
+margin_left = 30.0
+margin_top = 34.0
+margin_right = 388.0
+margin_bottom = 127.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Start Game "
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/StartScreen/Main/Start" instance=ExtResource( 115 )]
+visible = false
+
+[node name="Settings" type="TextureButton" parent="GameCanvas/StartScreen/Main"]
+margin_top = 281.0
+margin_right = 371.002
+margin_bottom = 368.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+flip_h = true
+
+[node name="Text" type="Label" parent="GameCanvas/StartScreen/Main/Settings"]
+margin_left = 37.0
+margin_top = 13.0
+margin_right = 332.0
+margin_bottom = 85.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/StartScreen/Main/Settings" instance=ExtResource( 115 )]
+visible = false
+margin_left = -36.001
+margin_top = -4.617
+margin_right = 127.999
+margin_bottom = 113.383
+
+[node name="CustomRun" type="TextureButton" parent="GameCanvas/StartScreen/Main"]
+margin_top = 365.0
+margin_right = 361.0
+margin_bottom = 452.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+texture_disabled = ExtResource( 113 )
+expand = true
+flip_h = true
+script = ExtResource( 112 )
+
+[node name="Text" type="Label" parent="GameCanvas/StartScreen/Main/CustomRun"]
+margin_left = 5.0
+margin_top = 11.0
+margin_right = 356.0
+margin_bottom = 83.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Custom Run"
+align = 1
+valign = 1
+
+[node name="UnlockWindow" type="TextureRect" parent="GameCanvas/StartScreen/Main/CustomRun"]
+visible = false
+margin_left = 353.0
+margin_top = -81.0
+margin_right = 721.0
+margin_bottom = 145.0
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="GameCanvas/StartScreen/Main/CustomRun/UnlockWindow"]
+margin_right = 368.0
+margin_bottom = 226.0
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="GameCanvas/StartScreen/Main/CustomRun/UnlockWindow"]
+margin_right = 368.0
+margin_bottom = 226.0
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="Label" type="Label" parent="GameCanvas/StartScreen/Main/CustomRun/UnlockWindow"]
+margin_left = 20.0
+margin_top = 18.0
+margin_right = 329.0
+margin_bottom = 212.0
+custom_fonts/font = SubResource( 82 )
+text = "Custom Runs are unlocked after you beat the final boss"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ControllerSelected" parent="GameCanvas/StartScreen/Main/CustomRun" instance=ExtResource( 115 )]
+visible = false
+margin_left = -36.001
+margin_top = -4.617
+margin_right = 127.999
+margin_bottom = 113.383
+
+[node name="Credits" type="TextureButton" parent="GameCanvas/StartScreen/Main"]
+margin_top = 451.0
+margin_right = 361.0
+margin_bottom = 538.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+flip_h = true
+
+[node name="Text" type="Label" parent="GameCanvas/StartScreen/Main/Credits"]
+margin_left = 27.0
+margin_top = 13.0
+margin_right = 322.0
+margin_bottom = 85.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Credits"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/StartScreen/Main/Credits" instance=ExtResource( 115 )]
+visible = false
+margin_left = -36.001
+margin_top = -4.617
+margin_right = 127.999
+margin_bottom = 113.383
+
+[node name="Quit" type="TextureButton" parent="GameCanvas/StartScreen/Main"]
+anchor_left = 0.999
+anchor_top = 1.0
+anchor_right = 0.999
+anchor_bottom = 1.0
+margin_left = -147.971
+margin_top = -75.0
+margin_right = 0.0289307
+margin_bottom = -1.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+flip_h = true
+
+[node name="Text" type="Label" parent="GameCanvas/StartScreen/Main/Quit"]
+margin_left = 20.0
+margin_top = 12.0
+margin_right = 132.0
+margin_bottom = 71.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Quit"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/StartScreen/Main/Quit" instance=ExtResource( 115 )]
+visible = false
+margin_left = -208.0
+margin_top = -11.1339
+margin_right = -44.0
+margin_bottom = 106.866
+
+[node name="Credits" type="Control" parent="GameCanvas/StartScreen"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.494
+anchor_right = 0.5
+anchor_bottom = 0.494
+margin_left = -511.5
+margin_top = -294.472
+margin_right = 510.5
+margin_bottom = 294.528
+script = ExtResource( 116 )
+
+[node name="Background" type="TextureRect" parent="GameCanvas/StartScreen/Credits"]
+modulate = Color( 0, 0, 0, 0.901961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -65.0
+margin_top = -71.0
+margin_right = 129.0
+margin_bottom = 49.0
+mouse_filter = 2
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Window" type="TextureRect" parent="GameCanvas/StartScreen/Credits"]
+anchor_left = 0.542
+anchor_top = 0.5
+anchor_right = 0.542
+anchor_bottom = 0.5
+margin_left = -713.924
+margin_top = -542.5
+margin_right = 154.076
+margin_bottom = 2.5
+mouse_filter = 2
+texture = ExtResource( 21 )
+expand = true
+
+[node name="Return" type="TextureButton" parent="GameCanvas/StartScreen/Credits/Window"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = 177.5
+margin_right = 147.0
+margin_bottom = 250.5
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/StartScreen/Credits/Window/Return"]
+anchor_left = 0.5
+anchor_top = 0.534
+anchor_right = 0.5
+anchor_bottom = 0.534
+margin_left = -131.0
+margin_top = -21.982
+margin_right = 128.0
+margin_bottom = 22.018
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Return"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="GameCanvas/StartScreen/Credits/Window"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -371.0
+margin_top = -213.5
+margin_right = 1549.0
+margin_bottom = 866.5
+rect_scale = Vector2( 0.375, 0.375 )
+texture = ExtResource( 120 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/StartScreen/Credits"]
+anims/Open = SubResource( 40 )
+anims/RESET = SubResource( 41 )
+
+[node name="ControllerSelected" parent="GameCanvas/StartScreen/Credits" instance=ExtResource( 115 )]
+anchor_left = 0.776
+anchor_top = 0.924
+anchor_right = 0.776
+anchor_bottom = 0.924
+margin_left = -145.072
+margin_top = -54.2361
+margin_right = 18.928
+margin_bottom = 63.7639
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/StartScreen"]
+autoplay = "BlendIn"
+anims/BlendIn = SubResource( 38 )
+anims/RESET = SubResource( 39 )
+
+[node name="PauseScreen" type="Control" parent="GameCanvas"]
+pause_mode = 2
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -210.0
+margin_top = -25.0
+margin_right = -170.0
+margin_bottom = 15.0
+script = ExtResource( 15 )
+
+[node name="Background" type="TextureRect" parent="GameCanvas/PauseScreen"]
+pause_mode = 2
+modulate = Color( 0.00784314, 0.00784314, 0.00784314, 0.921569 )
+margin_left = -1041.0
+margin_top = -1202.5
+margin_right = 2730.0
+margin_bottom = 1201.5
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Window" type="TextureRect" parent="GameCanvas/PauseScreen"]
+pause_mode = 2
+modulate = Color( 1, 1, 1, 0.941176 )
+margin_left = 437.0
+margin_top = 26.0
+margin_right = 975.0
+margin_bottom = 629.0
+texture = ExtResource( 40 )
+expand = true
+
+[node name="Label" type="Label" parent="GameCanvas/PauseScreen"]
+pause_mode = 2
+margin_left = 595.0
+margin_top = 88.0
+margin_right = 909.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 3 )
+text = "Pause"
+
+[node name="Settings" type="TextureButton" parent="GameCanvas/PauseScreen"]
+margin_left = 529.0
+margin_top = 180.0
+margin_right = 922.0
+margin_bottom = 289.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/PauseScreen/Settings"]
+anchor_left = 0.5
+anchor_top = 0.532
+anchor_right = 0.5
+anchor_bottom = 0.532
+margin_left = -171.5
+margin_top = -31.988
+margin_right = 168.5
+margin_bottom = 32.012
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/PauseScreen/Settings" instance=ExtResource( 115 )]
+visible = false
+margin_top = 3.181
+margin_bottom = 121.181
+
+[node name="ReturnToHub" type="TextureButton" parent="GameCanvas/PauseScreen"]
+margin_left = 530.0
+margin_top = 261.0
+margin_right = 923.0
+margin_bottom = 370.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/PauseScreen/ReturnToHub"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -171.5
+margin_top = 26.0
+margin_right = 168.5
+margin_bottom = 90.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Return to Hub"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/PauseScreen/ReturnToHub" instance=ExtResource( 115 )]
+visible = false
+margin_top = 0.181015
+margin_bottom = 118.181
+
+[node name="CustomRun" type="TextureButton" parent="GameCanvas/PauseScreen"]
+margin_left = 530.0
+margin_top = 340.0
+margin_right = 927.0
+margin_bottom = 449.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+texture_disabled = ExtResource( 113 )
+expand = true
+script = ExtResource( 112 )
+
+[node name="Text" type="Label" parent="GameCanvas/PauseScreen/CustomRun"]
+anchor_left = 0.5
+anchor_top = 0.239
+anchor_right = 0.5
+anchor_bottom = 0.239
+margin_left = -173.5
+margin_top = -0.0510006
+margin_right = 172.5
+margin_bottom = 63.949
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Custom Run"
+align = 1
+valign = 1
+
+[node name="UnlockWindow" type="TextureRect" parent="GameCanvas/PauseScreen/CustomRun"]
+visible = false
+margin_left = 353.0
+margin_top = -81.0
+margin_right = 721.0
+margin_bottom = 145.0
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="GameCanvas/PauseScreen/CustomRun/UnlockWindow"]
+margin_right = 368.0
+margin_bottom = 226.0
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="GameCanvas/PauseScreen/CustomRun/UnlockWindow"]
+margin_right = 368.0
+margin_bottom = 226.0
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="Label" type="Label" parent="GameCanvas/PauseScreen/CustomRun/UnlockWindow"]
+margin_left = 21.0
+margin_top = 18.0
+margin_right = 329.0
+margin_bottom = 217.0
+custom_fonts/font = SubResource( 82 )
+text = "Custom Runs are unlocked after you beat the final boss"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ControllerSelected" parent="GameCanvas/PauseScreen/CustomRun" instance=ExtResource( 115 )]
+visible = false
+margin_left = -43.0
+margin_top = 1.181
+margin_right = 121.0
+margin_bottom = 119.181
+
+[node name="Continue" type="TextureButton" parent="GameCanvas/PauseScreen"]
+margin_left = 528.0
+margin_top = 467.0
+margin_right = 923.0
+margin_bottom = 576.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/PauseScreen/Continue"]
+anchor_left = 0.5
+anchor_top = 0.532
+anchor_right = 0.5
+anchor_bottom = 0.532
+margin_left = -172.5
+margin_top = -31.988
+margin_right = 171.5
+margin_bottom = 32.012
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Continue"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/PauseScreen/Continue" instance=ExtResource( 115 )]
+visible = false
+margin_left = -46.0
+margin_top = 3.181
+margin_right = 118.0
+margin_bottom = 121.181
+
+[node name="Quit" type="TextureButton" parent="GameCanvas/PauseScreen"]
+margin_left = 1109.0
+margin_top = 564.0
+margin_right = 1240.0
+margin_bottom = 632.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/PauseScreen/Quit"]
+anchor_left = 0.5
+anchor_top = 0.536
+anchor_right = 0.5
+anchor_bottom = 0.536
+margin_left = -56.5
+margin_top = -21.448
+margin_right = 56.5
+margin_bottom = 21.552
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Quit"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/PauseScreen/Quit" instance=ExtResource( 115 )]
+visible = false
+margin_left = -189.0
+margin_top = -13.988
+margin_right = -25.0
+margin_bottom = 104.012
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/PauseScreen"]
+anims/Open = SubResource( 49 )
+anims/RESET = SubResource( 50 )
+
+[node name="DeathScreen" type="Control" parent="GameCanvas"]
+pause_mode = 2
+visible = false
+margin_left = 10.0
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 87.0
+script = ExtResource( 5 )
+deathTexts = [ "\"You have to do better, Brynia needs you!\"", "\"Do not give up, your almost there!\"", "\"Please hurry Daddy, i dont feel so good, please help me.\"", "\"You might have failed for now, but the love to your daughter strengthens you!\"", "\"As long as there is live, there is hope!\"", "\"Try again! Brynia trusts in you!\"", "\"Gather new strength and fight for what you want!\"", "\"Mistakes only make you stronger!\"", "\"Collect all your strength, your daughter needs you!\"", "\"Pain is part of life!\"", "\"If the challenge seems to big for you then use it grow!\"" ]
+
+[node name="Background" type="TextureRect" parent="GameCanvas/DeathScreen"]
+modulate = Color( 0, 0, 0, 0.901961 )
+anchor_left = 12.625
+anchor_top = 7.237
+anchor_right = 12.625
+anchor_bottom = 7.237
+margin_left = -740.0
+margin_top = -452.48
+margin_right = 740.0
+margin_bottom = 452.52
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Window" type="TextureRect" parent="GameCanvas/DeathScreen"]
+pause_mode = 2
+anchor_left = 12.75
+anchor_top = 6.65
+anchor_right = 12.75
+anchor_bottom = 6.65
+margin_left = -305.0
+margin_top = -162.0
+margin_right = 299.0
+margin_bottom = 141.0
+texture = ExtResource( 21 )
+expand = true
+
+[node name="Title" type="Label" parent="GameCanvas/DeathScreen"]
+anchor_left = 11.162
+anchor_right = 11.162
+margin_left = -203.48
+margin_top = 194.0
+margin_right = 318.52
+margin_bottom = 311.0
+custom_fonts/font = SubResource( 22 )
+text = "TEST TEST TEST"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label" type="Label" parent="GameCanvas/DeathScreen/Title"]
+margin_left = 8.0
+margin_top = -80.0
+margin_right = 370.0
+margin_bottom = -48.0
+custom_fonts/font = SubResource( 78 )
+text = "You are dead"
+align = 1
+valign = 1
+
+[node name="ReturnToHub" type="TextureButton" parent="GameCanvas/DeathScreen"]
+anchor_left = 13.637
+anchor_top = 11.5
+anchor_right = 13.637
+anchor_bottom = 11.5
+margin_left = -220.48
+margin_top = -165.0
+margin_right = 140.52
+margin_bottom = -49.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/DeathScreen/ReturnToHub"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -156.5
+margin_top = -32.0
+margin_right = 154.5
+margin_bottom = 42.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 34 )
+text = "Return to Hub"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/DeathScreen/ReturnToHub" instance=ExtResource( 115 )]
+margin_top = 9.844
+margin_bottom = 127.844
+
+[node name="Quit" type="TextureButton" parent="GameCanvas/DeathScreen"]
+margin_left = 876.0
+margin_top = 490.0
+margin_right = 1021.0
+margin_bottom = 564.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/DeathScreen/Quit"]
+margin_left = 15.0
+margin_top = 13.0
+margin_right = 137.0
+margin_bottom = 66.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Quit"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/DeathScreen/Quit" instance=ExtResource( 115 )]
+margin_left = -181.0
+margin_top = -12.134
+margin_right = -17.0
+margin_bottom = 105.866
+
+[node name="Settings" type="Control" parent="GameCanvas"]
+pause_mode = 2
+visible = false
+anchor_right = 0.999
+anchor_bottom = 0.998
+margin_right = 0.0239258
+margin_bottom = 0.200012
+mouse_filter = 2
+script = ExtResource( 8 )
+
+[node name="Background" type="TextureRect" parent="GameCanvas/Settings"]
+modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -126.0
+margin_top = -60.0
+margin_right = 67.0
+margin_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Window" type="TextureRect" parent="GameCanvas/Settings"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.082
+anchor_top = 0.03
+anchor_right = 0.926
+anchor_bottom = 0.955
+margin_left = 0.114006
+margin_top = 0.0300007
+margin_right = 31.7021
+margin_bottom = -30.045
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="Window2" type="TextureRect" parent="GameCanvas/Settings/Window"]
+anchor_right = 0.992
+anchor_bottom = 1.0
+margin_right = -0.0961304
+margin_bottom = 2.0
+texture = ExtResource( 42 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="GameCanvas/Settings/Window/Window2"]
+margin_left = 502.0
+margin_top = 332.0
+margin_right = 607.0
+margin_bottom = 338.0
+rect_rotation = 90.0
+texture = ExtResource( 117 )
+expand = true
+
+[node name="Title" type="TextureRect" parent="GameCanvas/Settings/Window"]
+anchor_left = 0.482
+anchor_top = 0.081
+anchor_right = 0.482
+anchor_bottom = 0.081
+margin_left = -294.966
+margin_top = -24.874
+margin_right = 295.034
+margin_bottom = 88.126
+texture = ExtResource( 48 )
+expand = true
+
+[node name="Title" type="Label" parent="GameCanvas/Settings/Window/Title"]
+margin_left = 75.0
+margin_top = 14.0
+margin_right = 523.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 21 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="ControlScheme" type="Control" parent="GameCanvas/Settings/Window"]
+anchor_left = 0.472
+anchor_top = 0.179
+anchor_right = 0.472
+anchor_bottom = 0.179
+margin_left = -315.336
+margin_top = -0.166
+margin_right = 946.664
+margin_bottom = 365.834
+rect_scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 6 )
+
+[node name="Title" type="TextureRect" parent="GameCanvas/Settings/Window/ControlScheme"]
+anchor_left = 0.528
+anchor_top = 0.103
+anchor_right = 0.528
+anchor_bottom = 0.103
+margin_left = -414.336
+margin_top = -40.958
+margin_right = 465.664
+margin_bottom = 41.042
+texture = ExtResource( 43 )
+expand = true
+
+[node name="Title" type="Label" parent="GameCanvas/Settings/Window/ControlScheme/Title"]
+margin_left = 220.0
+margin_top = 18.0
+margin_right = 606.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+text = "Control Scheme"
+align = 1
+valign = 1
+
+[node name="Scheme1" type="TextureButton" parent="GameCanvas/Settings/Window/ControlScheme"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -631.0
+margin_top = -103.0
+margin_right = -214.0
+margin_bottom = 243.0
+texture_normal = ExtResource( 46 )
+texture_pressed = ExtResource( 47 )
+texture_hover = ExtResource( 47 )
+texture_disabled = ExtResource( 47 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="GameCanvas/Settings/Window/ControlScheme/Scheme1"]
+anchor_left = 0.508
+anchor_top = 0.477
+anchor_right = 0.508
+anchor_bottom = 0.477
+margin_left = -125.836
+margin_top = -104.042
+margin_right = 126.164
+margin_bottom = 103.958
+texture = ExtResource( 63 )
+expand = true
+
+[node name="Scheme2" type="TextureButton" parent="GameCanvas/Settings/Window/ControlScheme"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -206.0
+margin_top = -103.0
+margin_right = 211.0
+margin_bottom = 243.0
+texture_normal = ExtResource( 46 )
+texture_pressed = ExtResource( 47 )
+texture_hover = ExtResource( 47 )
+texture_disabled = ExtResource( 47 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="GameCanvas/Settings/Window/ControlScheme/Scheme2"]
+margin_left = 90.0
+margin_top = 63.0
+margin_right = 336.0
+margin_bottom = 273.0
+texture = ExtResource( 59 )
+expand = true
+script = ExtResource( 58 )
+textures = [ ExtResource( 59 ), ExtResource( 61 ) ]
+
+[node name="Timer" type="Timer" parent="GameCanvas/Settings/Window/ControlScheme/Scheme2/TextureRect"]
+autostart = true
+
+[node name="Scheme3" type="TextureButton" parent="GameCanvas/Settings/Window/ControlScheme"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 219.0
+margin_top = -103.0
+margin_right = 636.0
+margin_bottom = 243.0
+texture_normal = ExtResource( 46 )
+texture_pressed = ExtResource( 47 )
+texture_hover = ExtResource( 47 )
+texture_disabled = ExtResource( 47 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="GameCanvas/Settings/Window/ControlScheme/Scheme3"]
+margin_left = 82.0
+margin_top = 61.0
+margin_right = 336.0
+margin_bottom = 277.0
+texture = ExtResource( 60 )
+expand = true
+
+[node name="ControllerControls" type="Control" parent="GameCanvas/Settings/Window/ControlScheme"]
+visible = false
+anchor_left = 0.473
+anchor_top = 0.5
+anchor_right = 0.473
+anchor_bottom = 0.5
+margin_left = -626.926
+margin_top = -178.0
+margin_right = 661.074
+margin_bottom = 214.0
+
+[node name="Title" type="TextureRect" parent="GameCanvas/Settings/Window/ControlScheme/ControllerControls"]
+anchor_left = 0.513
+anchor_top = 0.123
+anchor_right = 0.513
+anchor_bottom = 0.123
+margin_left = -452.392
+margin_top = -62.376
+margin_right = 427.608
+margin_bottom = 19.624
+texture = ExtResource( 43 )
+expand = true
+
+[node name="Title" type="Label" parent="GameCanvas/Settings/Window/ControlScheme/ControllerControls/Title"]
+margin_left = 220.0
+margin_top = 18.0
+margin_right = 606.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+text = "Controls"
+align = 1
+valign = 1
+
+[node name="Background" type="TextureRect" parent="GameCanvas/Settings/Window/ControlScheme/ControllerControls"]
+margin_left = 176.0
+margin_top = -30.0
+margin_right = 1164.0
+margin_bottom = 486.0
+texture = ExtResource( 21 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="GameCanvas/Settings/Window/ControlScheme/ControllerControls"]
+margin_left = 184.352
+margin_top = -12.16
+margin_right = 1074.35
+margin_bottom = 426.84
+texture = ExtResource( 119 )
+expand = true
+
+[node name="OtherSettings" type="Control" parent="GameCanvas/Settings/Window"]
+margin_left = 45.0
+margin_top = 291.0
+margin_right = 1447.0
+margin_bottom = 601.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Title2" type="TextureRect" parent="GameCanvas/Settings/Window/OtherSettings"]
+anchor_left = 0.528
+anchor_top = 0.103
+anchor_right = 0.528
+anchor_bottom = 0.103
+margin_left = -342.336
+margin_top = -31.93
+margin_right = 537.664
+margin_bottom = 50.07
+texture = ExtResource( 43 )
+expand = true
+
+[node name="Title" type="Label" parent="GameCanvas/Settings/Window/OtherSettings/Title2"]
+margin_left = 220.0
+margin_top = 18.0
+margin_right = 606.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+text = "Control Scheme"
+align = 1
+valign = 1
+
+[node name="SoundSettings" type="Control" parent="GameCanvas/Settings/Window/OtherSettings"]
+anchor_left = 0.606
+anchor_top = 0.245
+anchor_right = 0.606
+anchor_bottom = 0.245
+margin_left = -777.612
+margin_top = 0.0499954
+margin_right = 0.388
+margin_bottom = 246.05
+script = ExtResource( 51 )
+
+[node name="MusicSetting" type="Control" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings"]
+anchor_left = 0.969
+anchor_top = 0.431
+anchor_right = 0.969
+anchor_bottom = 0.431
+margin_left = -753.882
+margin_top = -106.026
+margin_right = 8.11804
+margin_bottom = -16.026
+
+[node name="MusicSlider" type="HSlider" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings/MusicSetting"]
+anchor_left = 1.035
+anchor_right = 1.035
+margin_left = -524.67
+margin_right = 0.330017
+margin_bottom = 110.0
+custom_icons/grabber_disabled = SubResource( 56 )
+custom_icons/grabber_highlight = SubResource( 57 )
+custom_icons/grabber = SubResource( 58 )
+custom_styles/slider = SubResource( 59 )
+custom_styles/grabber_area_highlight = SubResource( 65 )
+custom_styles/grabber_area = SubResource( 65 )
+min_value = -60.0
+max_value = 6.0
+value = -60.0
+script = ExtResource( 52 )
+
+[node name="MusicLabel" type="Label" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings/MusicSetting"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -806.0
+margin_top = 34.0
+margin_right = -506.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 54 )
+text = "Music Volume"
+align = 2
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings/MusicSetting" instance=ExtResource( 118 )]
+visible = false
+anchor_left = 0.934
+anchor_top = 0.0
+anchor_right = 0.934
+anchor_bottom = 0.0
+margin_left = 0.291992
+margin_top = -2.0
+margin_right = 164.292
+margin_bottom = 116.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="EffectSetting" type="Control" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -778.0
+margin_top = 100.0
+margin_right = -50.0
+margin_bottom = 188.0
+
+[node name="EffectSlider" type="HSlider" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings/EffectSetting"]
+anchor_left = 1.018
+anchor_right = 1.018
+margin_left = -477.104
+margin_right = 47.896
+margin_bottom = 110.0
+custom_icons/grabber_disabled = SubResource( 61 )
+custom_icons/grabber_highlight = SubResource( 62 )
+custom_icons/grabber = SubResource( 63 )
+custom_styles/slider = SubResource( 66 )
+custom_styles/grabber_area_highlight = SubResource( 68 )
+custom_styles/grabber_area = SubResource( 68 )
+min_value = -60.0
+max_value = 6.0
+value = -60.0
+script = ExtResource( 53 )
+
+[node name="EffectLabel" type="Label" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings/EffectSetting"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -812.0
+margin_top = 30.0
+margin_right = -512.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 55 )
+text = "Effect Volume"
+align = 2
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/Settings/Window/OtherSettings/SoundSettings/EffectSetting" instance=ExtResource( 118 )]
+visible = false
+anchor_left = 0.92
+anchor_top = -0.114
+anchor_right = 0.92
+anchor_bottom = -0.114
+margin_left = 0.23999
+margin_top = 0.0320005
+margin_right = 164.24
+margin_bottom = 118.032
+rect_scale = Vector2( 1, 1 )
+
+[node name="fullscreen" parent="GameCanvas/Settings/Window/OtherSettings" instance=ExtResource( 55 )]
+margin_left = 1400.0
+margin_top = 110.0
+margin_right = 1400.0
+margin_bottom = 110.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="ControllerSelected" parent="GameCanvas/Settings/Window/OtherSettings/fullscreen" instance=ExtResource( 115 )]
+visible = false
+margin_left = 5.0
+margin_top = -32.0
+margin_right = 169.0
+margin_bottom = 86.0
+
+[node name="Borderless" parent="GameCanvas/Settings/Window/OtherSettings" instance=ExtResource( 56 )]
+margin_left = 1400.0
+margin_top = 170.0
+margin_right = 1400.0
+margin_bottom = 170.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="ControllerSelected" parent="GameCanvas/Settings/Window/OtherSettings/Borderless" instance=ExtResource( 115 )]
+visible = false
+margin_left = 5.0
+margin_top = -33.0
+margin_right = 169.0
+margin_bottom = 85.0
+
+[node name="SmallColorBar" parent="GameCanvas/Settings/Window/OtherSettings" instance=ExtResource( 57 )]
+margin_left = 1400.0
+margin_top = 240.0
+margin_right = 1400.0
+margin_bottom = 240.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="ControllerSelected" parent="GameCanvas/Settings/Window/OtherSettings/SmallColorBar" instance=ExtResource( 115 )]
+visible = false
+margin_left = 3.0
+margin_top = -32.0
+margin_right = 167.0
+margin_bottom = 86.0
+
+[node name="Return" type="TextureButton" parent="GameCanvas/Settings/Window"]
+margin_left = 280.0
+margin_top = 425.0
+margin_right = 599.0
+margin_bottom = 533.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/Settings/Window/Return"]
+margin_left = 7.0
+margin_top = 17.0
+margin_right = 302.0
+margin_bottom = 89.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Return"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/Settings/Window/Return" instance=ExtResource( 115 )]
+visible = false
+margin_left = -41.0
+margin_top = 3.372
+margin_right = 123.0
+margin_bottom = 121.372
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/Settings"]
+anims/Open = SubResource( 44 )
+anims/RESET = SubResource( 45 )
+
+[node name="CustomRun" type="Control" parent="GameCanvas"]
+pause_mode = 2
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.499
+anchor_right = 0.5
+anchor_bottom = 0.499
+margin_left = -512.0
+margin_top = -293.4
+margin_right = 511.0
+margin_bottom = 305.6
+mouse_filter = 2
+script = ExtResource( 37 )
+
+[node name="Background" type="TextureRect" parent="GameCanvas/CustomRun"]
+modulate = Color( 0, 0, 0, 0.921569 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -637.5
+margin_top = -359.5
+margin_right = 578.5
+margin_bottom = 349.5
+mouse_filter = 2
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Window" type="TextureRect" parent="GameCanvas/CustomRun"]
+modulate = Color( 1, 1, 1, 0.862745 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -473.5
+margin_top = -307.5
+margin_right = 487.501
+margin_bottom = 269.5
+mouse_filter = 2
+texture = ExtResource( 42 )
+expand = true
+
+[node name="Buttons" type="Control" parent="GameCanvas/CustomRun/Window"]
+margin_left = 85.0
+margin_top = 210.0
+margin_right = 857.0
+margin_bottom = 428.0
+mouse_filter = 2
+
+[node name="Level1" type="OptionButton" parent="GameCanvas/CustomRun/Window/Buttons"]
+margin_left = 40.0
+margin_top = 19.0
+margin_right = 242.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 29 )
+clip_text = true
+
+[node name="Label" type="Label" parent="GameCanvas/CustomRun/Window/Buttons/Level1"]
+margin_left = 52.0
+margin_top = -35.0
+margin_right = 145.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 30 )
+text = "Level 1"
+
+[node name="Level2" type="OptionButton" parent="GameCanvas/CustomRun/Window/Buttons"]
+margin_left = 290.0
+margin_top = 19.0
+margin_right = 492.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 29 )
+clip_text = true
+
+[node name="Label" type="Label" parent="GameCanvas/CustomRun/Window/Buttons/Level2"]
+margin_left = 52.0
+margin_top = -35.0
+margin_right = 145.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 30 )
+text = "Level 2"
+
+[node name="Level3" type="OptionButton" parent="GameCanvas/CustomRun/Window/Buttons"]
+margin_left = 531.0
+margin_top = 21.0
+margin_right = 733.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 29 )
+clip_text = true
+
+[node name="Label" type="Label" parent="GameCanvas/CustomRun/Window/Buttons/Level3"]
+margin_left = 52.0
+margin_top = -35.0
+margin_right = 145.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 30 )
+text = "Level 3"
+
+[node name="Level4" type="OptionButton" parent="GameCanvas/CustomRun/Window/Buttons"]
+margin_left = 33.0
+margin_top = 135.0
+margin_right = 235.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 29 )
+clip_text = true
+
+[node name="Label" type="Label" parent="GameCanvas/CustomRun/Window/Buttons/Level4"]
+margin_left = 52.0
+margin_top = -35.0
+margin_right = 145.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 30 )
+text = "Level 4"
+
+[node name="Level5" type="OptionButton" parent="GameCanvas/CustomRun/Window/Buttons"]
+margin_left = 292.0
+margin_top = 138.0
+margin_right = 494.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 29 )
+clip_text = true
+
+[node name="Label" type="Label" parent="GameCanvas/CustomRun/Window/Buttons/Level5"]
+margin_left = 52.0
+margin_top = -35.0
+margin_right = 145.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 30 )
+text = "Level 5"
+
+[node name="Level6" type="OptionButton" parent="GameCanvas/CustomRun/Window/Buttons"]
+margin_left = 533.0
+margin_top = 141.0
+margin_right = 735.0
+margin_bottom = 202.0
+custom_fonts/font = SubResource( 29 )
+clip_text = true
+
+[node name="Label" type="Label" parent="GameCanvas/CustomRun/Window/Buttons/Level6"]
+margin_left = 52.0
+margin_top = -35.0
+margin_right = 145.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 30 )
+text = "Level 6"
+
+[node name="Title" type="TextureRect" parent="GameCanvas/CustomRun/Window"]
+anchor_left = 0.446
+anchor_top = 0.122
+anchor_right = 0.446
+anchor_bottom = 0.122
+margin_left = -393.606
+margin_top = -10.394
+margin_right = 472.394
+margin_bottom = 115.606
+texture = ExtResource( 41 )
+expand = true
+
+[node name="Title" type="Label" parent="GameCanvas/CustomRun/Window/Title"]
+margin_left = 45.0
+margin_top = 11.0
+margin_right = 777.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 31 )
+text = "Custom Run"
+align = 1
+valign = 1
+
+[node name="Return" type="TextureButton" parent="GameCanvas/CustomRun/Window"]
+margin_left = 292.0
+margin_top = 449.0
+margin_right = 600.0
+margin_bottom = 556.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/CustomRun/Window/Return"]
+margin_left = 21.0
+margin_top = 25.0
+margin_right = 288.0
+margin_bottom = 89.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 32 )
+text = "Confirm"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/CustomRun"]
+anims/Open = SubResource( 42 )
+anims/RESET = SubResource( 43 )
+
+[node name="QuitConfirmation" type="Control" parent="GameCanvas"]
+pause_mode = 2
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1020.0
+margin_bottom = 604.0
+script = ExtResource( 23 )
+
+[node name="Background" type="TextureRect" parent="GameCanvas/QuitConfirmation"]
+modulate = Color( 0, 0, 0, 0.921569 )
+margin_left = -55.0
+margin_top = -30.0
+margin_right = 1082.0
+margin_bottom = 664.0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="WindowBackground" type="TextureRect" parent="GameCanvas/QuitConfirmation"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 14.225
+anchor_right = 14.225
+margin_left = -14509.5
+margin_right = -13831.5
+margin_bottom = 421.0
+texture = ExtResource( 40 )
+expand = true
+
+[node name="Window3" type="TextureRect" parent="GameCanvas/QuitConfirmation/WindowBackground"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 678.0
+margin_bottom = 421.0
+texture = ExtResource( 40 )
+expand = true
+
+[node name="Window4" type="TextureRect" parent="GameCanvas/QuitConfirmation/WindowBackground"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 678.0
+margin_bottom = 421.0
+texture = ExtResource( 40 )
+expand = true
+
+[node name="Window5" type="TextureRect" parent="GameCanvas/QuitConfirmation/WindowBackground"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 678.0
+margin_bottom = 421.0
+texture = ExtResource( 40 )
+expand = true
+
+[node name="Window" type="TextureRect" parent="GameCanvas/QuitConfirmation"]
+anchor_left = 14.225
+anchor_right = 14.225
+margin_left = -14334.5
+margin_top = 80.0
+margin_right = -13656.5
+margin_bottom = 458.0
+rect_scale = Vector2( 1, 1.2 )
+texture = ExtResource( 40 )
+expand = true
+
+[node name="Title" type="Label" parent="GameCanvas/QuitConfirmation"]
+margin_left = 265.0
+margin_top = 191.0
+margin_right = 832.0
+margin_bottom = 392.0
+custom_fonts/font = SubResource( 24 )
+text = "Are you sure that 
+you want to quit the game and return to the Desktop?"
+align = 1
+autowrap = true
+
+[node name="Yes" type="TextureButton" parent="GameCanvas/QuitConfirmation"]
+anchor_left = 14.437
+anchor_top = 8.775
+anchor_right = 14.437
+anchor_bottom = 8.775
+margin_left = -14325.7
+margin_top = -4975.1
+margin_right = -14081.7
+margin_bottom = -4893.1
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/QuitConfirmation/Yes"]
+margin_left = 14.0
+margin_top = 15.0
+margin_right = 226.0
+margin_bottom = 67.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "Yes"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/QuitConfirmation/Yes" instance=ExtResource( 115 )]
+visible = false
+margin_left = -30.0
+margin_top = -4.662
+margin_right = 134.0
+margin_bottom = 113.338
+
+[node name="No" type="TextureButton" parent="GameCanvas/QuitConfirmation"]
+anchor_left = 13.837
+anchor_top = 10.5
+anchor_right = 13.837
+anchor_bottom = 10.5
+margin_left = -13713.7
+margin_top = -5942.0
+margin_right = -13466.7
+margin_bottom = -5861.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 44 )
+texture_hover = ExtResource( 44 )
+expand = true
+
+[node name="Text" type="Label" parent="GameCanvas/QuitConfirmation/No"]
+margin_left = 15.0
+margin_top = 19.0
+margin_right = 229.0
+margin_bottom = 68.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "No"
+align = 1
+valign = 1
+
+[node name="ControllerSelected" parent="GameCanvas/QuitConfirmation/No" instance=ExtResource( 115 )]
+visible = false
+margin_left = -30.0
+margin_top = -4.662
+margin_right = 134.0
+margin_bottom = 113.338
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/QuitConfirmation"]
+anims/Open = SubResource( 47 )
+anims/RESET = SubResource( 48 )
+
+[node name="BlendIn" type="TextureRect" parent="GameCanvas"]
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 0.473
+anchor_top = 0.524
+anchor_right = 0.473
+anchor_bottom = 0.524
+margin_left = -633.352
+margin_top = -477.4
+margin_right = 851.648
+margin_bottom = 506.6
+texture = ExtResource( 14 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/BlendIn"]
+autoplay = "BlendIn"
+anims/BlendIn = SubResource( 36 )
+anims/BlendInAndOut = SubResource( 46 )
+anims/RESET = SubResource( 37 )
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="GameCanvas"]
+stream = ExtResource( 67 )
+bus = "Effects"
+script = ExtResource( 65 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/HoverSound"]
+anims/FadeIn = SubResource( 72 )
+anims/FadeOut = SubResource( 73 )
+anims/RESET = SubResource( 74 )
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="GameCanvas"]
+stream = ExtResource( 66 )
+bus = "Effects"
+script = ExtResource( 65 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCanvas/ButtonClickSound"]
+anims/FadeIn = SubResource( 75 )
+anims/FadeOut = SubResource( 76 )
+anims/RESET = SubResource( 77 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 22 )
+
+[connection signal="OnReturnToHub" from="LevelLoader" to="." method="_on_ReturnToHub_pressed"]
+[connection signal="playerEnterBossTunnel" from="LevelLoader/Hub" to="." method="_on_Hub_playerEnterBossTunnel"]
+[connection signal="playerLeftHub" from="LevelLoader/Hub" to="." method="_on_Hub_playerLeftHub"]
+[connection signal="finished" from="Music/RunMusic" to="Music/RunMusic" method="_on_Music_finished"]
+[connection signal="finished" from="Music/BossMusic" to="Music/BossMusic" method="_on_Music_finished"]
+[connection signal="Finished" from="PreGameStoryTelling" to="." method="_on_PreGameStoryTelling_Finished"]
+[connection signal="start" from="GameCanvas/StartScreen" to="." method="_on_StartScreen_start"]
+[connection signal="timeout" from="GameCanvas/StartScreen/TextureRect/Timer" to="GameCanvas/StartScreen/TextureRect" method="_on_Timer_timeout"]
+[connection signal="mouse_entered" from="GameCanvas/StartScreen/Main/Start" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Start" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Start" to="GameCanvas/StartScreen" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/StartScreen/Main/Settings" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Settings" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Settings" to="GameCanvas" method="_on_Settings_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/StartScreen/Main/CustomRun" to="GameCanvas" method="OnHover"]
+[connection signal="mouse_entered" from="GameCanvas/StartScreen/Main/CustomRun" to="GameCanvas/StartScreen/Main/CustomRun" method="_on_CustomRun_mouse_entered"]
+[connection signal="mouse_exited" from="GameCanvas/StartScreen/Main/CustomRun" to="GameCanvas/StartScreen/Main/CustomRun" method="_on_CustomRun_mouse_exited"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/CustomRun" to="GameCanvas" method="_on_CustomRun_pressed"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/CustomRun" to="GameCanvas" method="OnButtonClick"]
+[connection signal="mouse_entered" from="GameCanvas/StartScreen/Main/Credits" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Credits" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Credits" to="GameCanvas/StartScreen" method="_on_Credits_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/StartScreen/Main/Quit" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Quit" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Main/Quit" to="GameCanvas" method="_on_Quit_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/StartScreen/Credits/Window/Return" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Credits/Window/Return" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/StartScreen/Credits/Window/Return" to="GameCanvas/StartScreen" method="_on_CloseCredits_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/PauseScreen/Settings" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/Settings" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/Settings" to="GameCanvas" method="_on_Settings_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/PauseScreen/ReturnToHub" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/ReturnToHub" to="." method="_on_ReturnToHub_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/PauseScreen/CustomRun" to="GameCanvas" method="OnHover"]
+[connection signal="mouse_entered" from="GameCanvas/PauseScreen/CustomRun" to="GameCanvas/PauseScreen/CustomRun" method="_on_CustomRun_mouse_entered"]
+[connection signal="mouse_exited" from="GameCanvas/PauseScreen/CustomRun" to="GameCanvas/PauseScreen/CustomRun" method="_on_CustomRun_mouse_exited"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/CustomRun" to="GameCanvas" method="_on_CustomRun_pressed"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/CustomRun" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/Continue" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/Continue" to="GameCanvas" method="_on_Pause_Continue_pressed"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/Continue" to="GameCanvas/PauseScreen" method="_on_Continue_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/PauseScreen/Quit" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/Quit" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/PauseScreen/Quit" to="GameCanvas" method="_on_Quit_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/DeathScreen/ReturnToHub" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/DeathScreen/ReturnToHub" to="." method="_on_ReturnToHub_pressed"]
+[connection signal="pressed" from="GameCanvas/DeathScreen/ReturnToHub" to="GameCanvas/DeathScreen" method="_on_ReturnToHub_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/DeathScreen/Quit" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/DeathScreen/Quit" to="GameCanvas" method="_on_Quit_pressed"]
+[connection signal="OnControlSchemeSet" from="GameCanvas/Settings/Window/ControlScheme" to="." method="_on_ControlSchemeWindow_OnControlSchemeSet"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/ControlScheme/Scheme1" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/ControlScheme/Scheme1" to="GameCanvas/Settings/Window/ControlScheme" method="_on_Scheme1_pressed"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/ControlScheme/Scheme2" to="GameCanvas/Settings/Window/ControlScheme" method="_on_Scheme2_pressed"]
+[connection signal="timeout" from="GameCanvas/Settings/Window/ControlScheme/Scheme2/TextureRect/Timer" to="GameCanvas/Settings/Window/ControlScheme/Scheme2/TextureRect" method="_on_Timer_timeout"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/ControlScheme/Scheme3" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/ControlScheme/Scheme3" to="GameCanvas/Settings/Window/ControlScheme" method="_on_Scheme3_pressed"]
+[connection signal="value_changed" from="GameCanvas/Settings/Window/OtherSettings/SoundSettings/MusicSetting/MusicSlider" to="GameCanvas/Settings/Window/OtherSettings/SoundSettings" method="_on_AnySlider_value_changed"]
+[connection signal="value_changed" from="GameCanvas/Settings/Window/OtherSettings/SoundSettings/MusicSetting/MusicSlider" to="GameCanvas/Settings/Window/OtherSettings/SoundSettings/MusicSetting/MusicSlider" method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="GameCanvas/Settings/Window/OtherSettings/SoundSettings/EffectSetting/EffectSlider" to="GameCanvas/Settings/Window/OtherSettings/SoundSettings" method="_on_AnySlider_value_changed"]
+[connection signal="value_changed" from="GameCanvas/Settings/Window/OtherSettings/SoundSettings/EffectSetting/EffectSlider" to="GameCanvas/Settings/Window/OtherSettings/SoundSettings/EffectSetting/EffectSlider" method="_on_EffectSlider_value_changed"]
+[connection signal="mouse_entered" from="GameCanvas/Settings/Window/Return" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/Return" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/Return" to="GameCanvas" method="_on_Settings_Return_pressed"]
+[connection signal="pressed" from="GameCanvas/Settings/Window/Return" to="GameCanvas/Settings" method="_on_Return_pressed"]
+[connection signal="UpdatedRun" from="GameCanvas/CustomRun" to="LevelLoader" method="_on_CustomRun_UpdatedRun"]
+[connection signal="item_selected" from="GameCanvas/CustomRun/Window/Buttons/Level1" to="GameCanvas/CustomRun" method="CustomLevelSelected" binds= [ 0 ]]
+[connection signal="item_selected" from="GameCanvas/CustomRun/Window/Buttons/Level2" to="GameCanvas/CustomRun" method="CustomLevelSelected" binds= [ 1 ]]
+[connection signal="item_selected" from="GameCanvas/CustomRun/Window/Buttons/Level3" to="GameCanvas/CustomRun" method="CustomLevelSelected" binds= [ 2 ]]
+[connection signal="item_selected" from="GameCanvas/CustomRun/Window/Buttons/Level4" to="GameCanvas/CustomRun" method="CustomLevelSelected" binds= [ 3 ]]
+[connection signal="item_selected" from="GameCanvas/CustomRun/Window/Buttons/Level5" to="GameCanvas/CustomRun" method="CustomLevelSelected" binds= [ 4 ]]
+[connection signal="item_selected" from="GameCanvas/CustomRun/Window/Buttons/Level6" to="GameCanvas/CustomRun" method="CustomLevelSelected" binds= [ 5 ]]
+[connection signal="mouse_entered" from="GameCanvas/CustomRun/Window/Return" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/CustomRun/Window/Return" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/CustomRun/Window/Return" to="GameCanvas/CustomRun" method="_on_Return_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/QuitConfirmation/Yes" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/QuitConfirmation/Yes" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/QuitConfirmation/Yes" to="GameCanvas/QuitConfirmation" method="_on_Yes_pressed"]
+[connection signal="mouse_entered" from="GameCanvas/QuitConfirmation/No" to="GameCanvas" method="OnHover"]
+[connection signal="pressed" from="GameCanvas/QuitConfirmation/No" to="GameCanvas" method="_on_No_pressed"]
+[connection signal="pressed" from="GameCanvas/QuitConfirmation/No" to="GameCanvas" method="OnButtonClick"]
+[connection signal="pressed" from="GameCanvas/QuitConfirmation/No" to="GameCanvas/QuitConfirmation" method="_on_No_pressed"]

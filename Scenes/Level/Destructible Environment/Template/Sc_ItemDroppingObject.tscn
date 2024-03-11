@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Level/EnemyEnvironment/ExplosiveBarrel.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Level/Destructible Environment/Template/Sc_ItemDroppingObject.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Level/EnemyEnvironment/ExplosiveBarrelDestroyed.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/SpriteHolder and WallChecker/Sc_MovingEnemy_WallChecker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Items/Item_HPCanister/Sc_Item_HPBonus.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 12, 10.5 )
+
+[node name="DestructibleObject" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource( 2 )
+itemDrop = ExtResource( 5 )
+
+[node name="CompleteSprite" type="Sprite" parent="."]
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 205, 175, 100, 125 )
+
+[node name="CompleteCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -7.5 )
+shape = SubResource( 1 )
+
+[node name="DestroyedSprite" type="Sprite" parent="."]
+position = Vector2( 0, 3 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 3 )
+
+[node name="WallChecker" parent="." instance=ExtResource( 4 )]

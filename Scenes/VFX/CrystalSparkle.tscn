@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/CrystalSparks/CrystalSparks.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.489474, 1 )
+colors = PoolColorArray( 1, 0.552941, 0.552941, 0, 1.5, 1.5, 1.5, 1, 0.72549, 0.662745, 1, 0 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -0.2
+max_value = 0.2
+_data = [ Vector2( 0, 0.00227273 ), 0.0, 0.0, 0, 0, Vector2( 0.244131, -0.0959091 ), 0.0, 0.0, 0, 0, Vector2( 0.741784, 0.115 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.00590909 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.239437, 0.998864 ), 0.0, 0.0, 0, 0, Vector2( 0.751174, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 1
+emission_sphere_radius = 18.0
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+angular_velocity = 420.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+orbit_velocity_curve = SubResource( 10 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.1
+scale_random = 0.15
+scale_curve = SubResource( 11 )
+color = Color( 1.5, 1.5, 1.5, 1 )
+color_ramp = SubResource( 9 )
+hue_variation = 1.0
+hue_variation_random = 0.69
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CrystalSparkle" type="Particles2D" parent="."]
+material = SubResource( 1 )
+process_material = SubResource( 8 )
+texture = ExtResource( 1 )

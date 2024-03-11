@@ -1,0 +1,1145 @@
+<<<<<<< working copy
+[gd_scene load_steps=71 format=2]
+=======
+[gd_scene load_steps=44 format=2]
+>>>>>>> merge rev
+
+[ext_resource path="res://Temp Sprites/Circle-image.svg.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Camera_.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/ColorSpriteHolder.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/ColorContainer.gd" type="Script" id=5]
+[ext_resource path="res://Weapons 2.0/Weapons/BasicPlayerWeapon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Fonts/ARIAL.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://Temp Sprites/testtiles.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Bar.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/BlueEffect.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/RedEffect.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/YellowEffect.gd" type="Script" id=12]
+[ext_resource path="res://Temp Sprites/White-Frame-PNG-Images-HD.png" type="Texture" id=13]
+[ext_resource path="res://Temp Sprites/Solid_white.svg.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/LevelFinished UI.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/AbsorbedBullet.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/UI instances/Snowflake.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/UI instances/PowerUpArrow.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/UI instances/Clock.tscn" type="PackedScene" id=19]
+<<<<<<< working copy
+[ext_resource path="res://Scripts/AudioStreamEnhancer.gd" type="Script" id=20]
+[ext_resource path="res://Sounds/Blop Sound Effect.tres" type="AudioStream" id=21]
+[ext_resource path="res://Temp Sprites/DamageScreen.jpg" type="Texture" id=22]
+[ext_resource path="res://Sounds/Cracked Shield Sound Effect for Montages (mp3cut.net).tres" type="AudioStream" id=23]
+[ext_resource path="res://Temp Sprites/1-Key.png" type="Texture" id=24]
+[ext_resource path="res://Temp Sprites/2-Key.png" type="Texture" id=25]
+[ext_resource path="res://Temp Sprites/3-Key.png" type="Texture" id=26]
+[ext_resource path="res://Assets/PlayerShields/schild_blau.png" type="Texture" id=27]
+[ext_resource path="res://Assets/PlayerShields/schild_gelb.png" type="Texture" id=28]
+[ext_resource path="res://Assets/PlayerShields/schild_rot.png" type="Texture" id=29]
+[ext_resource path="res://Assets/PlayerSprites/1.png" type="Texture" id=30]
+[ext_resource path="res://Assets/PlayerSprites/5.png" type="Texture" id=31]
+[ext_resource path="res://Assets/PlayerSprites/2.png" type="Texture" id=32]
+[ext_resource path="res://Assets/PlayerSprites/7.png" type="Texture" id=33]
+[ext_resource path="res://Assets/PlayerSprites/3.png" type="Texture" id=34]
+[ext_resource path="res://Assets/PlayerSprites/8.png" type="Texture" id=35]
+[ext_resource path="res://Assets/PlayerSprites/4.png" type="Texture" id=36]
+[ext_resource path="res://Scripts/PlayerSpriteHolder.gd" type="Script" id=37]
+[ext_resource path="res://Assets/PlayerSprites/6.png" type="Texture" id=38]
+=======
+>>>>>>> merge rev
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.0
+
+[sub_resource type="Animation" id=6]
+resource_name = "EndGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.301961, 2, 0.411765 ), Color( 0, 0.3, 1, 0.41 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 1, 0.411765 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "StartGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.3, 1, 0.41 ), Color( 0, 0.3, 2, 0.41 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "EndGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.470588, 3, 0.392157 ), Color( 0, 0.470588, 3, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "GlowIdle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.470588, 3, 0.392157 ), Color( 0, 0.470588, 3, 0.588235 ), Color( 0, 0.470588, 3, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "StartGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.470588, 3, 0 ), Color( 0, 0.470588, 3, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "EndGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 2, 0, 0, 0.41 ), Color( 1, 0, 0, 0.411765 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0.0705882, 0.517647 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "StartGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.411765 ), Color( 2, 0, 0, 0.41 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "EndGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 3, 0, 0, 0.392157 ), Color( 0, 0.470588, 3, 0 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "GlowIdle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 3, 0, 0, 0.392157 ), Color( 3, 0, 0, 0.588235 ), Color( 3, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 3, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "StartGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.470588, 3, 0 ), Color( 3, 0, 0, 0.392157 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "EndGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 2, 0, 0.41 ), Color( 0.996078, 1, 0, 0.411765 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.96875, 1, 0, 0.41 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "StartGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.996078, 1, 0, 0.411765 ), Color( 1, 2, 0, 0.41 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "EndGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 3, 3, 0, 0.4 ), Color( 0, 0.470588, 3, 0 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "GlowIdle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 3, 3, 0, 0.4 ), Color( 2.25, 2.25, 0, 0.6 ), Color( 3, 3, 0, 0.4 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 3, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "StartGlow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.470588, 3, 0 ), Color( 3, 3, 0, 0.4 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=32]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Environment" id=5]
+background_mode = 4
+glow_enabled = true
+glow_blend_mode = 0
+glow_hdr_threshold = 1.2
+
+[sub_resource type="DynamicFont" id=2]
+size = 52
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "TakeDamage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.0784314 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "ImprovedPlay"
+} ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+weaponScene = ExtResource( 6 )
+baseMovementSpeed = 250.0
+maxHealth = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="PlayerSpriteHolder" type="Node2D" parent="."]
+scale = Vector2( 0.01, 0.01 )
+script = ExtResource( 37 )
+
+[node name="1" type="Sprite" parent="PlayerSpriteHolder"]
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 30 )
+
+[node name="2" type="Sprite" parent="PlayerSpriteHolder"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 35 )
+
+[node name="3" type="Sprite" parent="PlayerSpriteHolder"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 33 )
+
+[node name="4" type="Sprite" parent="PlayerSpriteHolder"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 38 )
+
+[node name="5" type="Sprite" parent="PlayerSpriteHolder"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 31 )
+
+[node name="6" type="Sprite" parent="PlayerSpriteHolder"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 36 )
+
+[node name="7" type="Sprite" parent="PlayerSpriteHolder"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 34 )
+
+[node name="8" type="Sprite" parent="PlayerSpriteHolder"]
+visible = false
+position = Vector2( 100, 0 )
+scale = Vector2( 45, 45 )
+texture = ExtResource( 32 )
+
+[node name="ShieldColorSpriteHolder" type="Node2D" parent="."]
+script = ExtResource( 4 )
+blue = NodePath("Blue")
+red = NodePath("Red")
+yellow = NodePath("Yellow")
+
+[node name="Blue" type="Sprite" parent="ShieldColorSpriteHolder"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 27 )
+
+[node name="Blue" type="Sprite" parent="ShieldColorSpriteHolder/Blue"]
+modulate = Color( 0, 0.984314, 0.937255, 0.0784314 )
+position = Vector2( 0, -5 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="Red" type="Sprite" parent="ShieldColorSpriteHolder"]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 29 )
+
+[node name="Red" type="Sprite" parent="ShieldColorSpriteHolder/Red"]
+modulate = Color( 0.984314, 0, 0, 0.0784314 )
+position = Vector2( 0, -5 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="Yellow" type="Sprite" parent="ShieldColorSpriteHolder"]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 28 )
+
+[node name="Yellow" type="Sprite" parent="ShieldColorSpriteHolder/Yellow"]
+modulate = Color( 0.984314, 0.921569, 0, 0.0784314 )
+position = Vector2( 0, -5 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="PatternWeapon" parent="." instance=ExtResource( 6 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.75, 0.75 )
+script = ExtResource( 3 )
+shakeDuration = 0.025
+shakeImpact = 0.025
+
+[node name="ColorContainer" type="Node2D" parent="."]
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 5 )
+absorbedBullet = ExtResource( 16 )
+travelTimeToBar = 1.0
+
+[node name="Blue" type="TextureProgress" parent="ColorContainer"]
+margin_left = -512.0
+margin_top = 193.0
+margin_right = -462.0
+margin_bottom = 299.0
+max_value = 10.0
+value = 5.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 8 )
+fill_mode = 3
+tint_progress = Color( 0, 0, 1, 0.411765 )
+nine_patch_stretch = true
+script = ExtResource( 9 )
+
+[node name="ColorHoldTimer" type="Timer" parent="ColorContainer/Blue"]
+wait_time = 5.0
+
+[node name="DecayTimer" type="Timer" parent="ColorContainer/Blue"]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Blue"]
+anims/EndGlow = SubResource( 6 )
+anims/RESET = SubResource( 3 )
+anims/StartGlow = SubResource( 4 )
+
+[node name="Effect" type="Node2D" parent="ColorContainer/Blue"]
+script = ExtResource( 10 )
+
+[node name="EffectDuration" type="Timer" parent="ColorContainer/Blue/Effect"]
+wait_time = 5.0
+
+[node name="VisualEffect" type="Control" parent="ColorContainer/Blue/Effect"]
+margin_left = -152.05
+margin_top = -78.596
+margin_right = 140.95
+margin_bottom = 94.404
+
+[node name="TextureRect" type="TextureRect" parent="ColorContainer/Blue/Effect/VisualEffect"]
+modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+margin_left = 91.0
+margin_top = -454.0
+margin_right = 1240.0
+margin_bottom = 235.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Blue/Effect/VisualEffect"]
+anims/EndGlow = SubResource( 15 )
+anims/GlowIdle = SubResource( 16 )
+anims/RESET = SubResource( 14 )
+anims/StartGlow = SubResource( 13 )
+next/StartGlow = "GlowIdle"
+
+[node name="Snowflakes" type="Node2D" parent="ColorContainer/Blue/Effect"]
+visible = false
+
+[node name="Snowflake" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( -15, -87 )
+
+[node name="Snowflake2" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 2, -256 )
+
+[node name="Snowflake3" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 2, -443 )
+
+[node name="Snowflake4" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 205, -491 )
+
+[node name="Snowflake5" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 511, -495 )
+
+[node name="Snowflake6" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 760, -496 )
+
+[node name="Snowflake7" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 1013, -475 )
+
+[node name="Snowflake8" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 1020, -294 )
+
+[node name="Snowflake9" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 1020, -116 )
+
+[node name="Snowflake10" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 978, 46 )
+
+[node name="Snowflake11" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 759, 90 )
+
+[node name="Snowflake12" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 576, 97 )
+
+[node name="Snowflake13" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 368, 98 )
+
+[node name="Snowflake14" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 205, 97 )
+
+[node name="Snowflake15" parent="ColorContainer/Blue/Effect/Snowflakes" instance=ExtResource( 17 )]
+position = Vector2( 30, 103 )
+
+[node name="AbsorbPoint" type="Position2D" parent="ColorContainer/Blue"]
+position = Vector2( 25, 0 )
+
+[node name="Key" type="Sprite" parent="ColorContainer/Blue"]
+position = Vector2( 25.3333, -19.6667 )
+texture = ExtResource( 24 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Blue/Key"]
+anims/Idle = SubResource( 27 )
+anims/RESET = SubResource( 28 )
+
+[node name="Red" type="TextureProgress" parent="ColorContainer"]
+margin_left = -454.0
+margin_top = 192.0
+margin_right = -404.0
+margin_bottom = 298.0
+max_value = 10.0
+value = 5.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 8 )
+fill_mode = 3
+tint_progress = Color( 1, 0, 0.0705882, 0.517647 )
+nine_patch_stretch = true
+script = ExtResource( 9 )
+chargePerAbsorbedShot = 5.0
+
+[node name="ColorHoldTimer" type="Timer" parent="ColorContainer/Red"]
+wait_time = 5.0
+
+[node name="DecayTimer" type="Timer" parent="ColorContainer/Red"]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Red"]
+anims/EndGlow = SubResource( 7 )
+anims/RESET = SubResource( 8 )
+anims/StartGlow = SubResource( 9 )
+
+[node name="Effect" type="Node2D" parent="ColorContainer/Red"]
+script = ExtResource( 11 )
+bonusDamagePercent = 2000.0
+
+[node name="EffectDuration" type="Timer" parent="ColorContainer/Red/Effect"]
+wait_time = 10.0
+
+[node name="VisualEffect" type="Control" parent="ColorContainer/Red/Effect"]
+margin_left = -210.0
+margin_top = -79.0
+margin_right = 83.0
+margin_bottom = 94.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorContainer/Red/Effect/VisualEffect"]
+modulate = Color( 3, 0, 0, 0 )
+margin_left = 92.0
+margin_top = -450.0
+margin_right = 1239.0
+margin_bottom = 236.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Red/Effect/VisualEffect"]
+anims/EndGlow = SubResource( 17 )
+anims/GlowIdle = SubResource( 18 )
+anims/RESET = SubResource( 19 )
+anims/StartGlow = SubResource( 20 )
+next/StartGlow = "GlowIdle"
+
+[node name="PowerUpArrows" type="Node2D" parent="ColorContainer/Red/Effect"]
+visible = false
+
+[node name="PowerUpArrow" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( -81, -180 )
+
+[node name="PowerUpArrow10" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 2.99988, -109 )
+
+[node name="PowerUpArrow11" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( -87.9999, -27 )
+
+[node name="PowerUpArrow12" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 882, -71 )
+
+[node name="PowerUpArrow2" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 13, -265 )
+
+[node name="PowerUpArrow3" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( -76.9999, -368 )
+
+[node name="PowerUpArrow4" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 924, 37 )
+
+[node name="PowerUpArrow5" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 976, -130 )
+
+[node name="PowerUpArrow6" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 880, -241 )
+
+[node name="PowerUpArrow13" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 956, -328 )
+
+[node name="PowerUpArrow14" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 897, -414 )
+
+[node name="PowerUpArrow7" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 720, 158 )
+
+[node name="PowerUpArrow8" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 436, 168 )
+
+[node name="PowerUpArrow15" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 569, 168 )
+
+[node name="PowerUpArrow16" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 825, 165 )
+
+[node name="PowerUpArrow17" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 127, 165 )
+
+[node name="PowerUpArrow18" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 40, 167 )
+
+[node name="PowerUpArrow9" parent="ColorContainer/Red/Effect/PowerUpArrows" instance=ExtResource( 18 )]
+position = Vector2( 233, 166 )
+
+[node name="AbsorbPoint" type="Position2D" parent="ColorContainer/Red"]
+position = Vector2( 25, 0 )
+
+[node name="Key" type="Sprite" parent="ColorContainer/Red"]
+position = Vector2( 25.3333, -19.6667 )
+texture = ExtResource( 25 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Red/Key"]
+anims/Idle = SubResource( 29 )
+anims/RESET = SubResource( 30 )
+
+[node name="Yellow" type="TextureProgress" parent="ColorContainer"]
+margin_left = -393.0
+margin_top = 192.0
+margin_right = -343.0
+margin_bottom = 298.0
+rect_pivot_offset = Vector2( -131, -29.3333 )
+max_value = 10.0
+value = 5.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 8 )
+fill_mode = 3
+tint_progress = Color( 0.96875, 1, 0, 0.41 )
+nine_patch_stretch = true
+script = ExtResource( 9 )
+
+[node name="ColorHoldTimer" type="Timer" parent="ColorContainer/Yellow"]
+wait_time = 5.0
+
+[node name="DecayTimer" type="Timer" parent="ColorContainer/Yellow"]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Yellow"]
+anims/EndGlow = SubResource( 10 )
+anims/RESET = SubResource( 11 )
+anims/StartGlow = SubResource( 12 )
+
+[node name="Effect" type="Node2D" parent="ColorContainer/Yellow"]
+script = ExtResource( 12 )
+
+[node name="EffectDuration" type="Timer" parent="ColorContainer/Yellow/Effect"]
+wait_time = 10.0
+
+[node name="VisualEffect" type="Control" parent="ColorContainer/Yellow/Effect"]
+margin_left = -271.0
+margin_top = -77.0
+margin_right = 22.0
+margin_bottom = 96.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorContainer/Yellow/Effect/VisualEffect"]
+modulate = Color( 3, 0, 0, 0 )
+margin_left = 92.0
+margin_top = -452.0
+margin_right = 1235.0
+margin_bottom = 236.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Yellow/Effect/VisualEffect"]
+anims/EndGlow = SubResource( 21 )
+anims/GlowIdle = SubResource( 22 )
+anims/RESET = SubResource( 23 )
+anims/StartGlow = SubResource( 24 )
+next/StartGlow = "GlowIdle"
+
+[node name="Clocks" type="Node2D" parent="ColorContainer/Yellow/Effect"]
+
+[node name="Clock" parent="ColorContainer/Yellow/Effect/Clocks" instance=ExtResource( 19 )]
+visible = false
+position = Vector2( 40, 0 )
+
+[node name="Clock2" parent="ColorContainer/Yellow/Effect/Clocks" instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -961, 0 )
+
+[node name="AbsorbPoint" type="Position2D" parent="ColorContainer/Yellow"]
+position = Vector2( 25, 0 )
+
+[node name="Key" type="Sprite" parent="ColorContainer/Yellow"]
+position = Vector2( 25.3333, -19.6667 )
+texture = ExtResource( 26 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorContainer/Yellow/Key"]
+anims/Idle = SubResource( 31 )
+anims/RESET = SubResource( 32 )
+
+[node name="Glow" type="WorldEnvironment" parent="ColorContainer"]
+environment = SubResource( 5 )
+
+[node name="AbsorbSound" type="AudioStreamPlayer2D" parent="ColorContainer"]
+stream = ExtResource( 21 )
+script = ExtResource( 20 )
+pitchVariance = 0.1
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.75, 0.75 )
+
+[node name="GameUI" type="Control" parent="UI"]
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -472.0
+margin_bottom = -260.0
+mouse_filter = 2
+
+[node name="DeathScreen" type="Label" parent="UI/GameUI"]
+visible = false
+margin_left = 357.0
+margin_top = 264.0
+margin_right = 667.0
+margin_bottom = 336.0
+custom_fonts/font = SubResource( 2 )
+text = "YOU DIED"
+align = 1
+valign = 1
+
+[node name="ColorBars" type="Control" parent="UI/GameUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+<<<<<<< working copy
+[node name="LevelFinishedUI" type="Control" parent="UI/GameUI"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+=======
+[node name="LevelFinishedUI" type="Control" parent="UI"]
+visible = false
+margin_left = -512.0
+margin_top = -300.0
+margin_right = -472.0
+margin_bottom = -260.0
+>>>>>>> merge rev
+script = ExtResource( 15 )
+
+[node name="Background" type="TextureRect" parent="UI/GameUI/LevelFinishedUI"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -506.0
+margin_top = -306.0
+margin_right = 1542.0
+margin_bottom = 1742.0
+texture = ExtResource( 14 )
+
+[node name="Title" type="Label" parent="UI/GameUI/LevelFinishedUI"]
+margin_left = 194.0
+margin_top = 3.0
+margin_right = 840.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 2 )
+text = "You finished level XXX"
+align = 1
+valign = 1
+
+[node name="Stats" type="Label" parent="UI/GameUI/LevelFinishedUI"]
+margin_left = -243.0
+margin_top = 109.0
+margin_right = 403.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 2 )
+text = "Stats"
+align = 1
+valign = 1
+
+[node name="Placeholder" type="Label" parent="UI/GameUI/LevelFinishedUI/Stats"]
+margin_left = 172.0
+margin_top = 64.0
+margin_right = 818.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 2 )
+text = "Time 00:00:00:00"
+align = 1
+valign = 1
+
+[node name="Placeholder2" type="Label" parent="UI/GameUI/LevelFinishedUI/Stats"]
+margin_left = 174.0
+margin_top = 145.0
+margin_right = 820.0
+margin_bottom = 217.0
+custom_fonts/font = SubResource( 2 )
+text = "Another cool stat"
+align = 1
+valign = 1
+
+[node name="Placeholder3" type="Label" parent="UI/GameUI/LevelFinishedUI/Stats"]
+margin_left = 169.0
+margin_top = 219.0
+margin_right = 815.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 2 )
+text = "Even more Stats"
+align = 1
+valign = 1
+
+[node name="potg" type="Label" parent="UI/GameUI/LevelFinishedUI"]
+margin_left = 463.0
+margin_top = 97.0
+margin_right = 1109.0
+margin_bottom = 169.0
+custom_fonts/font = SubResource( 2 )
+text = "Play of the game"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/GameUI/LevelFinishedUI/potg"]
+margin_left = 150.0
+margin_top = 81.0
+margin_right = 480.0
+margin_bottom = 277.0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Button" type="Button" parent="UI/GameUI/LevelFinishedUI"]
+margin_left = 298.0
+margin_top = 463.0
+margin_right = 700.0
+margin_bottom = 604.0
+
+[node name="Title" type="Label" parent="UI/GameUI/LevelFinishedUI/Button"]
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 395.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 2 )
+text = "Continue"
+align = 1
+valign = 1
+
+[node name="Healthbar" type="TextureProgress" parent="UI/GameUI"]
+modulate = Color( 0.184314, 1, 0, 1 )
+margin_left = 11.0
+margin_top = 11.0
+margin_right = 309.0
+margin_bottom = 36.0
+value = 100.0
+texture_progress = ExtResource( 14 )
+nine_patch_stretch = true
+
+[node name="TakeDamage" type="TextureRect" parent="UI"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -626.667
+margin_top = -365.333
+margin_right = 605.333
+margin_bottom = 371.667
+mouse_filter = 2
+texture = ExtResource( 22 )
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/TakeDamage"]
+anims/RESET = SubResource( 25 )
+anims/TakeDamage = SubResource( 26 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UI/TakeDamage"]
+position = Vector2( 630.667, 365.333 )
+stream = ExtResource( 23 )
+script = ExtResource( 20 )
+pitchVariance = 0.25
+volumeVariance = 0.25
+
+[node name="Items" type="Node2D" parent="."]
+
+[connection signal="timeout" from="ColorContainer/Blue/ColorHoldTimer" to="ColorContainer/Blue" method="_on_ColorHoldTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Blue/DecayTimer" to="ColorContainer/Blue" method="_on_DecayTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Blue/Effect/EffectDuration" to="ColorContainer/Blue/Effect" method="_on_EffectTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Red/ColorHoldTimer" to="ColorContainer/Red" method="_on_ColorHoldTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Red/DecayTimer" to="ColorContainer/Red" method="_on_DecayTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Red/Effect/EffectDuration" to="ColorContainer/Red/Effect" method="_on_EffectTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Yellow/ColorHoldTimer" to="ColorContainer/Yellow" method="_on_ColorHoldTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Yellow/DecayTimer" to="ColorContainer/Yellow" method="_on_DecayTimer_timeout"]
+[connection signal="timeout" from="ColorContainer/Yellow/Effect/EffectDuration" to="ColorContainer/Yellow/Effect" method="_on_EffectTimer_timeout"]
+[connection signal="pressed" from="UI/GameUI/LevelFinishedUI/Button" to="UI/GameUI/LevelFinishedUI" method="_on_Button_pressed"]

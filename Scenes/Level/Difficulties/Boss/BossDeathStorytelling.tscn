@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Game/PreGame/TextBoxTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Game/PreGame/TextBoxes/BossDeathText1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Game/PreGame/TextBoxesTemplate.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/UI/ControllerSelected.tscn" type="PackedScene" id=4]
+[ext_resource path="res://BossDeathText4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BossDeathText2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://BossDeathText3.tscn" type="PackedScene" id=7]
+
+[node name="BossDeathStorytelling" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="BossDeathText1" parent="TextBoxes" index="0" instance=ExtResource( 2 )]
+
+[node name="BossDeathText2" parent="TextBoxes" index="1" instance=ExtResource( 6 )]
+
+[node name="BossDeathText3" parent="TextBoxes" index="2" instance=ExtResource( 7 )]
+
+[node name="BossDeathText4" parent="TextBoxes" index="3" instance=ExtResource( 5 )]
+
+[node name="ControllerSelected" parent="." index="3" instance=ExtResource( 4 )]
+margin_left = 447.0
+margin_top = 496.0
+margin_right = 611.0
+margin_bottom = 614.0

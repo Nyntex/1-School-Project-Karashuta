@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Characters/Boss/Trigger Twins Clone/Trigger Twin Clone.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Boss/Trigger Twins Clone/Trigger Twins Clone Manager.gd" type="Script" id=2]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/Font_ARIAL.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/UI/Healthbar.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Characters/Player/player_shadow_player.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+font_data = ExtResource( 4 )
+
+[node name="Trigger Twins Clone Manager" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="PlayerShadowPlayer" type="Sprite" parent="."]
+position = Vector2( 983, 487 )
+texture = ExtResource( 6 )
+
+[node name="Boss1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 71, -416 )
+
+[node name="Boss2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1009, 520 )
+currentColor = 1
+
+[node name="BossUI" type="CanvasLayer" parent="."]
+
+[node name="Healthbars" type="Control" parent="BossUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Boss1" type="TextureProgress" parent="BossUI/Healthbars"]
+margin_left = 207.0
+margin_top = 577.0
+margin_right = 488.0
+margin_bottom = 588.0
+value = 50.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
+tint_progress = Color( 0.172549, 1, 0, 1 )
+nine_patch_stretch = true
+script = ExtResource( 5 )
+
+[node name="Boss2" type="TextureProgress" parent="BossUI/Healthbars"]
+margin_left = 508.0
+margin_top = 577.0
+margin_right = 789.0
+margin_bottom = 588.0
+value = 50.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
+tint_progress = Color( 0.172549, 1, 0, 1 )
+nine_patch_stretch = true
+script = ExtResource( 5 )
+
+[node name="Names" type="Control" parent="BossUI"]
+margin_top = -2.0
+margin_right = 40.0
+margin_bottom = 38.0
+
+[node name="Label" type="Label" parent="BossUI/Names"]
+margin_left = 267.0
+margin_top = 545.0
+margin_right = 430.0
+margin_bottom = 571.0
+custom_fonts/font = SubResource( 1 )
+text = " Suk 2600"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="BossUI/Names"]
+margin_left = 572.0
+margin_top = 546.0
+margin_right = 735.0
+margin_bottom = 572.0
+custom_fonts/font = SubResource( 1 )
+text = "Nub 5200"
+align = 1
+valign = 1

@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( -5, 0, 0 )
+initial_velocity = 5.0
+orbit_velocity = 0.66
+orbit_velocity_random = 0.0
+radial_accel = 25.42
+radial_accel_random = 1.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 4.05098, 0.360784, 0.368627, 1 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( -5, 0, 0 )
+initial_velocity = 5.0
+orbit_velocity = -0.66
+orbit_velocity_random = 0.0
+radial_accel = 25.42
+radial_accel_random = 1.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 0.37, 0.36, 4, 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PowerMeterRED" type="Particles2D" parent="."]
+amount = 30
+lifetime = 5.0
+process_material = SubResource( 1 )
+
+[node name="PowerMeterBLUE" type="Particles2D" parent="."]
+amount = 30
+lifetime = 5.0
+process_material = SubResource( 2 )

@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Scripts/PatternWave.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Scripts/BulletPattern.gd" type="Script" id=2]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_Circle.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Weapons/Bullets/Sc_Bullet_Template.tscn" type="PackedScene" id=6]
+
+[node name="BulletPattern" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Waves" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="Waves"]
+script = ExtResource( 1 )
+delayUntilNextWave = 0.5
+
+[node name="PatternBullet4" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = -0.981983
+
+[node name="PatternBullet5" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = -0.375358
+
+[node name="PatternBullet6" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.00669149
+
+[node name="PatternBullet7" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.416151
+
+[node name="PatternBullet8" parent="Waves/1" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.96244
+
+[node name="WaveTimer" type="Timer" parent="Waves/1"]
+
+[node name="2" type="Node2D" parent="Waves"]
+script = ExtResource( 1 )
+delayUntilNextWave = 0.5
+
+[node name="PatternBullet4" parent="Waves/2" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = -1.29119
+
+[node name="PatternBullet5" parent="Waves/2" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = -0.662391
+
+[node name="PatternBullet6" parent="Waves/2" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = -0.185717
+
+[node name="PatternBullet7" parent="Waves/2" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.204486
+
+[node name="PatternBullet8" parent="Waves/2" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.679274
+
+[node name="PatternBullet9" parent="Waves/2" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 1.15692
+
+[node name="WaveTimer" type="Timer" parent="Waves/2"]
+
+[node name="3" type="Node2D" parent="Waves"]
+script = ExtResource( 1 )
+delayUntilNextWave = 0.5
+
+[node name="PatternBullet4" parent="Waves/3" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = -0.981983
+scale = Vector2( 0.75, 0.75 )
+
+[node name="PatternBullet5" parent="Waves/3" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = -0.375358
+scale = Vector2( 0.75, 0.75 )
+
+[node name="PatternBullet6" parent="Waves/3" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.00669149
+scale = Vector2( 0.75, 0.75 )
+
+[node name="PatternBullet7" parent="Waves/3" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.416151
+scale = Vector2( 0.75, 0.75 )
+
+[node name="PatternBullet8" parent="Waves/3" instance=ExtResource( 6 )]
+position = Vector2( 1.90735e-06, -4.76837e-07 )
+rotation = 0.96244
+scale = Vector2( 0.75, 0.75 )
+
+[node name="WaveTimer" type="Timer" parent="Waves/3"]
+
+[node name="WavesTimer" type="Timer" parent="."]
+
+[node name="Dummy" type="Sprite" parent="."]
+position = Vector2( 0.239998, 0 )
+scale = Vector2( 0.01, 0.01 )
+texture = ExtResource( 4 )
+
+[connection signal="timeout" from="Waves/1/WaveTimer" to="Waves/1" method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="Waves/2/WaveTimer" to="Waves/2" method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="Waves/3/WaveTimer" to="Waves/3" method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="WavesTimer" to="." method="_on_WavesTimer_timeout"]

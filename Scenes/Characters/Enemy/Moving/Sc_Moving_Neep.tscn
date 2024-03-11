@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Sc_MovingEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Weapons/Weapons/Enemy Weapons/Sc_Weapon_Neep.tscn" type="PackedScene" id=2]
+
+[node name="Neep" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
+weaponScene = ExtResource( 2 )
+maxHealth = 1400.0
+baseMovementSpeed = 125.0

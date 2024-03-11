@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/HubRoom/EnemyStatue/EnemyStatue.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Level/Hub/Narrative enviorement/TemplateEnviorement.tscn" type="PackedScene" id=2]
+
+[node name="TemplateEnviorement" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, 0 )
+scale = Vector2( 0.196472, 0.187036 )
+texture = ExtResource( 1 )

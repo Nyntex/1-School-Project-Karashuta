@@ -1,0 +1,242 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Movements/Sc_MovingEnemy_MovementEngage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Characters/Boss/placeholder/2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Weapons/Weapons/Boss Weapons/Sc_Weapon_Boss_TriggerTwinsClone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Movements/Sc_MovingEnemy_MovementSearching.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/Enemy/Moving/General/Movements/Sc_MovingEnemy_MovementIdle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Characters/Boss/Trigger Twins Clone/Trigger Twin Clone.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/VFX/BossDeath.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Placeholders/General/Sp_Placeholder_white.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Characters/Enemy/EnemyHealth.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Characters/Boss/Trigger Twins Clone/Trigger Twin Clone Manager.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Weapons/Weapons/Boss Weapons/Sc_Weapon_Boss_JumpGun.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Weapons/Weapons/Boss Weapons/Sc_Weapon_Boss_MachineGun.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Weapons/Weapons/Boss Weapons/Sc_Weapon_ShotGun.tscn" type="PackedScene" id=14]
+[ext_resource path="res://General Scripts/TimerEnhancer.gd" type="Script" id=15]
+[ext_resource path="res://General Scripts/ColorSpriteHolder.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/VFX/FrozenFeedBack.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Characters/Boss/Trigger Twins Clone/MovementAnimation.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Characters/Player/player_shadow_player.png" type="Texture" id=19]
+[ext_resource path="res://Audio/Aud_BossExplosionSound.mp3" type="AudioStream" id=20]
+[ext_resource path="res://Scenes/Characters/DeathSound.tscn" type="PackedScene" id=21]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 40.1123
+
+[sub_resource type="Animation" id=2]
+resource_name = "DamageAnimation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AdvancedAI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.219608, 0.219608, 1 ), Color( 1, 0.219608, 0.219608, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AdvancedAI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Trigger Twin Clone" type="Node2D"]
+script = ExtResource( 11 )
+machineGun = ExtResource( 13 )
+shotGun = ExtResource( 14 )
+jumpGun = ExtResource( 12 )
+
+[node name="AdvancedAI" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+collision/safe_margin = 1.0
+script = ExtResource( 7 )
+spriteHolder = NodePath("ColorSpriteHolder")
+deathParticles = ExtResource( 8 )
+minDistanceToPlayer = 0.0
+weaponScene = ExtResource( 3 )
+maxHealth = 15000.0
+canFlee = false
+engageRange = 1000.0
+
+[node name="PlayerShadowPlayer" type="Sprite" parent="AdvancedAI"]
+position = Vector2( -0.499998, -12.5 )
+scale = Vector2( 0.496094, 0.472656 )
+z_index = -4
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AdvancedAI"]
+position = Vector2( 0, -1 )
+shape = SubResource( 1 )
+
+[node name="WalkingDirection" type="Position2D" parent="AdvancedAI"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="AdvancedAI/WalkingDirection"]
+position = Vector2( 300, 0 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+
+[node name="RotationNode" type="Position2D" parent="AdvancedAI"]
+visible = false
+
+[node name="RayCaster" type="RayCast2D" parent="AdvancedAI"]
+enabled = true
+cast_to = Vector2( 0, 0 )
+collision_mask = 5
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="AdvancedAI"]
+neighbor_dist = 5000.0
+
+[node name="Timer" type="Timer" parent="AdvancedAI"]
+wait_time = 0.5
+autostart = true
+
+[node name="IdleMovement" parent="AdvancedAI" instance=ExtResource( 5 )]
+visible = false
+maxDistanceFromOrigin = 200.0
+
+[node name="SearchingMovement" parent="AdvancedAI" instance=ExtResource( 4 )]
+visible = false
+
+[node name="EngagingMovement" parent="AdvancedAI" instance=ExtResource( 1 )]
+visible = false
+
+[node name="EnemyHealth" type="Control" parent="AdvancedAI"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 10 )
+
+[node name="Healthbar" type="TextureProgress" parent="AdvancedAI/EnemyHealth"]
+visible = false
+margin_left = -9.33333
+margin_top = -23.3333
+margin_right = 9.66667
+margin_bottom = -19.3333
+value = 50.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 9 )
+tint_under = Color( 1, 1, 1, 0.392157 )
+tint_progress = Color( 0.219608, 1, 0, 0.392157 )
+nine_patch_stretch = true
+
+[node name="Timer" type="Timer" parent="AdvancedAI/EnemyHealth"]
+wait_time = 2.0
+
+[node name="ColorSpriteHolder" type="Node2D" parent="AdvancedAI"]
+visible = false
+script = ExtResource( 16 )
+blue = NodePath("Blue")
+red = NodePath("Red")
+yellow = NodePath("Red")
+
+[node name="Blue" type="Sprite" parent="AdvancedAI/ColorSpriteHolder"]
+modulate = Color( 0.0588235, 0.537255, 1, 1 )
+position = Vector2( -1.19209e-07, 0 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 2 )
+
+[node name="Red" type="Sprite" parent="AdvancedAI/ColorSpriteHolder"]
+modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 2 )
+
+[node name="MovementAnimation" parent="AdvancedAI" instance=ExtResource( 18 )]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="FrozenFeedback" parent="AdvancedAI" instance=ExtResource( 17 )]
+position = Vector2( 1, 1 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AdvancedAI"]
+root_node = NodePath("../..")
+anims/DamageAnimation = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+next/DamageAnimation = "RESET"
+
+[node name="DeathSound" parent="AdvancedAI" instance=ExtResource( 21 )]
+stream = ExtResource( 20 )
+
+[node name="Charge" type="Node2D" parent="."]
+
+[node name="ChargeCoolDown" type="Timer" parent="Charge"]
+wait_time = 15.0
+one_shot = true
+script = ExtResource( 15 )
+minVariance = 2.0
+maxVariance = 2.0
+
+[node name="ChargeDuration" type="Timer" parent="Charge"]
+wait_time = 3.0
+one_shot = true
+
+[node name="MachineGun" type="Node2D" parent="."]
+
+[node name="MachineGunCooldown" type="Timer" parent="MachineGun"]
+wait_time = 20.0
+one_shot = true
+script = ExtResource( 15 )
+minVariance = -3.0
+maxVariance = 10.0
+
+[node name="MachineGunDuration" type="Timer" parent="MachineGun"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Shotgun" type="Node2D" parent="."]
+
+[node name="ShotgunCooldown" type="Timer" parent="Shotgun"]
+wait_time = 15.0
+one_shot = true
+script = ExtResource( 15 )
+minVariance = -5.0
+maxVariance = 3.0
+
+[node name="ShotgunDuration" type="Timer" parent="Shotgun"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Jump" type="Node2D" parent="."]
+
+[node name="JumpCoolDown" type="Timer" parent="Jump"]
+wait_time = 10.0
+one_shot = true
+script = ExtResource( 15 )
+minVariance = -5.0
+maxVariance = 3.0
+
+[node name="JumpDuration" type="Timer" parent="Jump"]
+wait_time = 1.25
+one_shot = true
+
+[node name="RageWeaponColorSwitchTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="AdvancedAI/Timer" to="AdvancedAI" method="_on_Timer_timeout"]
+[connection signal="timeout" from="AdvancedAI/EnemyHealth/Timer" to="AdvancedAI/EnemyHealth" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Charge/ChargeCoolDown" to="." method="_on_ChargeCoolDown_timeout"]
+[connection signal="timeout" from="Charge/ChargeDuration" to="." method="_on_ChargeDuration_timeout"]
+[connection signal="timeout" from="MachineGun/MachineGunCooldown" to="." method="_on_MachineGunCooldown_timeout"]
+[connection signal="timeout" from="MachineGun/MachineGunDuration" to="." method="_on_MachineGunDuration_timeout"]
+[connection signal="timeout" from="Shotgun/ShotgunCooldown" to="." method="_on_ShotgunCooldown_timeout"]
+[connection signal="timeout" from="Shotgun/ShotgunDuration" to="." method="_on_ShotgunDuration_timeout"]
+[connection signal="timeout" from="Jump/JumpCoolDown" to="." method="_on_JumpCoolDown_timeout"]
+[connection signal="timeout" from="Jump/JumpDuration" to="." method="_on_JumpDuration_timeout"]
+[connection signal="timeout" from="RageWeaponColorSwitchTimer" to="." method="_on_RageWeaponColorSwitchTimer_timeout"]

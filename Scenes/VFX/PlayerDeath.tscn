@@ -1,0 +1,149 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_I.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_III.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_IV.png" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_VI.png" type="Texture" id=5]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_II.png" type="Texture" id=6]
+[ext_resource path="res://Assets/VFX/VFX_Textures/Death/DeathFrame_V.png" type="Texture" id=7]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id=2]
+min_value = -10.0
+max_value = 10.0
+_data = [ Vector2( 0.0111821, -10 ), 0.0, 0.0, 0, 0, Vector2( 1, 10 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -10.0
+max_value = 10.0
+_data = [ Vector2( 0, 10 ), 0.0, 0.0, 0, 0, Vector2( 1, -10 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 4 )
+
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.413738, 60.1994 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 2.86889, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=22]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.413738, 0.16181 ), 0.796697, 4.57201, 0, 0, Vector2( 0.822684, 0.873466 ), -2.46889, -2.46889, 0, 0, Vector2( 1, 0 ), -7.5064, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=23]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+lifetime_randomness = 0.25
+emission_shape = 2
+emission_box_extents = Vector3( 50, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, -100, 0 )
+angular_velocity_curve = SubResource( 20 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping_curve = SubResource( 22 )
+angle = 90.0
+angle_random = 0.2
+angle_curve = SubResource( 19 )
+scale = 0.1
+scale_random = 0.2
+scale_curve = SubResource( 23 )
+color_ramp = SubResource( 21 )
+
+[sub_resource type="AnimatedTexture" id=13]
+flags = 4
+frames = 6
+fps = 12.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 6 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 3 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 4 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 7 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 5 )
+frame_5/delay_sec = 0.0
+
+[sub_resource type="Gradient" id=18]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 18 )
+
+[sub_resource type="ParticlesMaterial" id=17]
+emission_shape = 5
+emission_ring_radius = 50.0
+emission_ring_inner_radius = 0.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 51.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 0, 0, 2, 1 )
+color_ramp = SubResource( 24 )
+
+[sub_resource type="Gradient" id=14]
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=25]
+gradient = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+emission_shape = 5
+emission_ring_radius = 50.0
+emission_ring_inner_radius = 0.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 50.99
+scale = 2.0
+scale_random = 1.0
+color = Color( 2, 0, 0, 1 )
+color_ramp = SubResource( 25 )
+
+[node name="PlayerDeath" type="Node2D"]
+
+[node name="PlayerDeathBlack" type="Particles2D" parent="."]
+material = SubResource( 1 )
+amount = 16
+lifetime = 1.25
+process_material = SubResource( 12 )
+texture = SubResource( 13 )
+
+[node name="PlayerDeathBlue" type="Particles2D" parent="."]
+position = Vector2( 0, 20 )
+amount = 25
+process_material = SubResource( 17 )
+
+[node name="PlayerDeathRed" type="Particles2D" parent="."]
+position = Vector2( 0, 10 )
+amount = 25
+process_material = SubResource( 16 )
